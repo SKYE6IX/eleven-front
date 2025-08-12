@@ -1,13 +1,35 @@
 import type { Metadata } from "next";
+import localFont from "next/font/local";
 import { NextIntlClientProvider, hasLocale } from "next-intl";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
-import "../global.scss";
+import "../../global-styles/globals.scss";
 
 export const metadata: Metadata = {
    title: "Eleven Web Agency in Moscow",
-   description: "",
+   description: "We are web design agency located in Moscow.",
 };
+const fontMontreal = localFont({
+   src: [
+      {
+         path: "../../../public/font/montreal/PPNeueMontreal-Bold.otf",
+         weight: "800",
+      },
+      {
+         path: "../../../public/font/montreal/PPNeueMontreal-Book.otf",
+         weight: "400",
+      },
+      {
+         path: "../../../public/font/montreal/PPNeueMontreal-Medium.otf",
+         weight: "530",
+      },
+      {
+         path: "../../../public/font/montreal/PPNeueMontreal-Thin.otf",
+         weight: "200",
+      },
+   ],
+   variable: "--font-montreal",
+});
 
 export default async function RootLayout({
    children,
@@ -21,7 +43,7 @@ export default async function RootLayout({
       notFound();
    }
    return (
-      <html lang={locale}>
+      <html lang={locale} className={fontMontreal.variable}>
          <body>
             <NextIntlClientProvider>{children}</NextIntlClientProvider>
          </body>

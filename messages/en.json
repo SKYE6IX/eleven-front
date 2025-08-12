@@ -1,1 +1,11 @@
-{}
+{
+   "Navigations": {
+      "home": "Home",
+      "service": "Service",
+      "work": "Work",
+      "contact": "Contact"
+   },
+   "CtaButton": {
+      "text": "Start A Project"
+   }
+}
