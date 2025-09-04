@@ -1,0 +1,171 @@
+@use "@/global-styles/variables.scss" as *;
+@use "@/global-styles/shared-styles.scss" as *;
+
+.hero-block {
+   overflow: hidden;
+   margin-top: 100px;
+   width: 100%;
+   @include max-breakpoint("md") {
+      margin-top: 80px;
+   }
+   @include max-breakpoint("820px") {
+      margin-top: 40px;
+   }
+}
+.hero-block__top {
+   width: 100%;
+   @include flex-layout(column, center, none, none);
+}
+.hero-block__tagline-wrapper {
+   overflow: hidden;
+   width: 327px;
+   height: 54px;
+   background: linear-gradient(to right, #5cff46 20%, #d3ddd1 100%);
+   position: relative;
+   border-radius: 30px;
+   @include max-breakpoint("md") {
+      width: 300px;
+      height: 50px;
+   }
+   @include max-breakpoint("s") {
+      width: 250px;
+      height: 48px;
+   }
+}
+.hero-block__tagline {
+   width: calc(100% - 8px);
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   background-color: $secondary-tint;
+   font-family: $font-montreal, sans-serif;
+   font-size: 1.25rem;
+   font-weight: 400;
+   line-height: 24px;
+   color: $primary;
+   padding: 11px 30px;
+   border-radius: inherit;
+   text-align: center;
+   @include max-breakpoint("md") {
+      font-size: 1.125rem;
+      line-height: 21.6px;
+      padding: 10px 20px;
+   }
+   @include max-breakpoint("s") {
+      font-size: 1rem;
+      line-height: 19.2px;
+      padding: 10px 15px;
+   }
+}
+.hero-block__title {
+   margin-top: 30px;
+   max-width: 1082px;
+   font-family: $font-montreal, sans-serif;
+   font-size: 4rem;
+   line-height: 83.2px;
+   font-weight: 700;
+   letter-spacing: 2px;
+   text-align: center;
+   color: $primary;
+   @include max-breakpoint("md") {
+      max-width: 816px;
+      font-size: 3rem;
+      line-height: 62px;
+   }
+   @include max-breakpoint("820px") {
+      max-width: 600px;
+      font-size: 2rem;
+      line-height: 38.4px;
+   }
+   @include max-breakpoint("s") {
+      width: calc(100% - 40px);
+      letter-spacing: 0.654px;
+   }
+}
+.hero-block__title-city {
+   background: url("./assets/moscow.jpg") center/cover no-repeat;
+   background-clip: text;
+   text-fill-color: transparent;
+   -webkit-background-clip: text;
+   -webkit-text-fill-color: transparent;
+}
+.hero-block__bottom {
+   width: 100%;
+   margin-top: 60px;
+   @include flex-layout(row, none, center, 120px);
+   @include max-breakpoint("md") {
+      gap: 60px;
+   }
+   @include max-breakpoint("820px") {
+      flex-direction: column;
+   }
+   @include max-breakpoint("s") {
+      margin-top: 40px;
+      gap: 40px;
+   }
+}
+.hero-block__showcase {
+   @include flex-layout(column, center, none, 50px);
+   @include max-breakpoint("md") {
+      gap: 25px;
+   }
+   @include max-breakpoint("s") {
+      gap: 20px;
+   }
+}
+.hero-block__showcase:nth-child(2) {
+   margin-top: 100px;
+   @include max-breakpoint("md") {
+      margin-top: 60px;
+   }
+   @include max-breakpoint("820px") {
+      flex-direction: column-reverse;
+      margin-top: 0px;
+   }
+}
+.hero-block__showcase-image-container {
+   position: relative;
+   width: 520px;
+   height: auto;
+   aspect-ratio: 3 / 3.5;
+   border-radius: 30px;
+   @include max-breakpoint("md") {
+      width: 400px;
+   }
+   @include max-breakpoint("820px") {
+      width: calc(100% - 80px);
+   }
+   @include max-breakpoint("s") {
+      width: calc(100% - 40px);
+   }
+}
+.hero-block__showcase-image {
+   object-fit: cover;
+   object-position: left top;
+   border-radius: inherit;
+}
+.hero-block__showcase-text {
+   max-width: 500px;
+   font-family: $font-montreal, sans-serif;
+   font-size: 2rem;
+   font-weight: 530;
+   line-height: 38.4px;
+   color: $primary;
+   text-align: center;
+   @include max-breakpoint("md") {
+      max-width: 400px;
+      font-size: 1.5rem;
+      line-height: 28.8px;
+   }
+   @include max-breakpoint("820px") {
+      max-width: 500px;
+      font-size: 2rem;
+      line-height: 38.4px;
+   }
+   @include max-breakpoint("s") {
+      width: calc(100% - 40px);
+      font-size: 1.5rem;
+      line-height: 28.8px;
+   }
+}

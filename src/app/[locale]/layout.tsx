@@ -33,6 +33,20 @@ const fontMontreal = localFont({
    variable: "--font-montreal",
 });
 
+const fontMontrealItalic = localFont({
+   src: [
+      {
+         path: "../../../public/font/montreal/PPNeueMontreal-Italic.otf",
+         weight: "400",
+      },
+      {
+         path: "../../../public/font/montreal/PPNeueMontreal-SemiBolditalic.otf",
+         weight: "700",
+      },
+   ],
+   variable: "--font-montreal-italic",
+});
+
 export default async function RootLayout({
    children,
    params,
@@ -45,7 +59,10 @@ export default async function RootLayout({
       notFound();
    }
    return (
-      <html lang={locale} className={fontMontreal.variable}>
+      <html
+         lang={locale}
+         className={`${fontMontreal.variable} ${fontMontrealItalic.variable}`}
+      >
          <body>
             <NextIntlClientProvider>
                <GsapWrapper>

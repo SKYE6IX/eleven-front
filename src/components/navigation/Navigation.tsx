@@ -73,108 +73,111 @@ function Navigation() {
             gsap.set(".header__navigation-wrapper", {
                clearProps: "height",
             });
-         });
-         mm.add("(max-width: 912px)", () => {
-            if (initialToggle.current === false) {
-               menuBarTl.current = gsap
-                  .timeline({ paused: true, defaults: { duration: 0.3 } })
-                  .to(".menu-bar-dot", {
-                     opacity: 0,
-                     stagger: 0.2,
-                  })
-                  .to(".menu-bar-pipe.pipe2", { opacity: 0 })
-                  .to(
-                     ".menu-bar-pipe.pipe1",
-                     {
-                        y: 1,
-                        rotate: "45deg",
-                        transformOrigin: "left center",
-                     },
-                     "<"
-                  )
-                  .to(
-                     ".menu-bar-pipe.pipe3",
-                     {
-                        y: -1,
-                        rotate: "-45deg",
-                        transformOrigin: "left center",
-                     },
-                     "<"
-                  );
-            }
-            const navWidth = navWrapper.current?.offsetWidth;
-            const menuTl = gsap.timeline({
-               defaults: { ease: "power2.inOut", duration: 0.5 },
+            gsap.set(".header__menu-container", {
+               clearProps: "all",
             });
-            if (isOpen) {
-               menuBarTl.current?.play();
-               menuTl
-                  .fromTo(
-                     ".header__navigation-wrapper",
-                     {
-                        width: navWidth + "px",
-                     },
-                     {
-                        width: "calc(100% - 30px)",
-                     }
-                  )
-                  .fromTo(
-                     ".header__navigation-wrapper",
-                     {
-                        height: "3.75rem",
-                     },
-                     {
-                        height: "26.25rem",
-                     },
-                     ">-0.5"
-                  )
-                  .to(
-                     ".header__navigation-bg-layer",
-                     {
-                        autoAlpha: 1,
-                     },
-                     ">-0.9"
-                  )
-                  .to(".header__menu-container", {
-                     autoAlpha: 1,
-                     duration: 0.2,
-                  });
-            }
-            if (initialToggle.current && !isOpen) {
-               menuBarTl.current?.reverse();
-               menuTl
-                  .to(".header__menu-container", {
-                     autoAlpha: 0,
-                  })
-                  .fromTo(
-                     ".header__navigation-wrapper",
-                     {
-                        height: "26.25rem",
-                     },
-                     {
-                        height: "3.75rem",
-                     },
-                     ">-0.2"
-                  )
-                  .fromTo(
-                     ".header__navigation-wrapper",
-                     {
-                        width: navWidth + "px",
-                     },
-                     {
-                        width: isScrollTrigger ? "18rem" : "99vw",
-                     },
-                     ">-0.2"
-                  )
-                  .to(
-                     ".header__navigation-bg-layer",
-                     {
-                        autoAlpha: isScrollTrigger ? 1 : 0,
-                     },
-                     ">-0.2"
-                  );
-            }
          });
+
+         if (!initialToggle.current) {
+            menuBarTl.current = gsap
+               .timeline({ paused: true, defaults: { duration: 0.3 } })
+               .to(".menu-bar-dot", {
+                  opacity: 0,
+                  stagger: 0.2,
+               })
+               .to(".menu-bar-pipe.pipe2", { opacity: 0 })
+               .to(
+                  ".menu-bar-pipe.pipe1",
+                  {
+                     y: 1,
+                     rotate: "45deg",
+                     transformOrigin: "left center",
+                  },
+                  "<"
+               )
+               .to(
+                  ".menu-bar-pipe.pipe3",
+                  {
+                     y: -1,
+                     rotate: "-45deg",
+                     transformOrigin: "left center",
+                  },
+                  "<"
+               );
+         }
+         const navWidth = navWrapper.current?.offsetWidth;
+         const menuTl = gsap.timeline({
+            defaults: { ease: "power2.inOut", duration: 0.5 },
+         });
+         if (isOpen) {
+            menuBarTl.current?.play();
+            menuTl
+               .fromTo(
+                  ".header__navigation-wrapper",
+                  {
+                     width: navWidth + "px",
+                  },
+                  {
+                     width: "calc(100% - 30px)",
+                  }
+               )
+               .fromTo(
+                  ".header__navigation-wrapper",
+                  {
+                     height: "3.75rem",
+                  },
+                  {
+                     height: "26.25rem",
+                  },
+                  ">-0.5"
+               )
+               .to(
+                  ".header__navigation-bg-layer",
+                  {
+                     autoAlpha: 1,
+                  },
+                  ">-0.9"
+               )
+               .to(".header__menu-container", {
+                  autoAlpha: 1,
+                  duration: 0.2,
+               });
+         }
+
+         if (initialToggle.current && !isOpen) {
+            menuBarTl.current?.reverse();
+            menuTl
+               .to(".header__menu-container", {
+                  autoAlpha: 0,
+               })
+               .fromTo(
+                  ".header__navigation-wrapper",
+                  {
+                     height: "26.25rem",
+                  },
+                  {
+                     height: "3.75rem",
+                  },
+                  ">-0.2"
+               )
+               .fromTo(
+                  ".header__navigation-wrapper",
+                  {
+                     width: navWidth + "px",
+                  },
+                  {
+                     width: isScrollTrigger ? "18rem" : "99vw",
+                  },
+                  ">-0.2"
+               )
+               .to(
+                  ".header__navigation-bg-layer",
+                  {
+                     autoAlpha: isScrollTrigger ? 1 : 0,
+                  },
+                  ">-0.2"
+               );
+         }
       },
       { scope: containerRef, dependencies: [isOpen] }
    );

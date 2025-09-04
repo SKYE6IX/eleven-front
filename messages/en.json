@@ -7,5 +7,11 @@
    },
    "CtaButton": {
       "text": "Start A Project"
+   },
+   "HeroBlock": {
+      "title": "We Are Web Developer In <important>Moscow</important>, Building Extraordinary Digital Experience.",
+      "tagline": "Crafting unique brand Identites",
+      "showcaseText1": "We design and produce world-class digital products for forward-thinking brands",
+      "showcaseText2": "We are independent and young team. We care, build relationships and have industry experience."
    }
 }
