@@ -1,9 +1,10 @@
-import CtaButton from "@/components/cta-button/CtaButton";
 export default function Home() {
    return (
       <div>
-         <CtaButton />
-         Home
+         <div
+            id="navigation-trigger"
+            style={{ height: "40px", marginTop: "40px" }}
+         />
       </div>
    );
 }

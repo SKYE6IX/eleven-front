@@ -1,0 +1,147 @@
+@use "@/global-styles/variables.scss" as *;
+@use "@/global-styles/shared-styles.scss" as *;
+
+// TODO: Prevent Scrolling when menu is active
+
+.header {
+   width: 100%;
+   position: fixed;
+   top: 0px;
+   left: 0px;
+   padding-top: 20px;
+   z-index: 1000;
+}
+.header.menu-active {
+   // border: 1px solid red;
+   // overflow: hidden;
+   // height: 90vh;
+   // overscroll-behavior: contain;
+}
+.header__inner-wrapper {
+   width: 100%;
+   height: 80px;
+   position: relative;
+   @include max-breakpoint("sm") {
+      height: 60px;
+   }
+}
+.header__navigation-wrapper {
+   position: absolute;
+   height: 100%;
+   width: 55rem;
+   padding: 20px;
+   top: 0px;
+   left: 50%;
+   transform: translateX(-50%);
+   @include max-breakpoint("md") {
+      width: 50rem;
+   }
+   @include max-breakpoint("sm") {
+      width: 18rem;
+   }
+}
+.header__navigation-bg-layer {
+   position: absolute;
+   left: 0px;
+   top: 0px;
+   width: 100%;
+   height: 100%;
+   background-color: $neutral;
+   z-index: 1;
+   clip-path: inset(0% 0% 0% 0% round 30px);
+   @include max-breakpoint("sm") {
+      clip-path: inset(0% 0% 0% 0% round 20px);
+   }
+}
+.header__navigation {
+   height: 100%;
+   width: 100%;
+   position: relative;
+   z-index: 10;
+   @include flex-layout(row, center, space-between, none);
+}
+.header__title-wrapper {
+   @include flex-layout(row, start, none, 2px);
+   @include max-breakpoint("sm") {
+      position: absolute;
+      left: 0px;
+      top: -3px;
+   }
+}
+.header__title {
+   font-family: $font-montreal;
+   font-size: 2rem;
+   line-height: 38.4px;
+   font-weight: 530;
+   letter-spacing: 3px;
+   text-transform: uppercase;
+   color: $primary;
+   @include max-breakpoint("md") {
+      font-size: 1.5rem;
+      line-height: 26.4px;
+      letter-spacing: 2.133px;
+   }
+}
+.header__title-icon {
+   height: 24px;
+   align-self: flex-end;
+}
+.header__menu-container {
+   list-style: none;
+   @include flex-layout(row, none, none, 15px);
+   @include max-breakpoint("sm") {
+      top: 60px;
+      left: 0px;
+      padding-top: 10px;
+      position: absolute;
+      flex-direction: column;
+      gap: 20px;
+      visibility: hidden;
+   }
+}
+.header__menu-item {
+   width: max-content;
+   padding: 5px 10px;
+   font-family: $font-montreal;
+   font-weight: 530;
+   font-size: 1rem;
+   line-height: 19.2px;
+   color: $primary;
+   cursor: pointer;
+   @include max-breakpoint("sm") {
+      font-size: 1.73975rem;
+      line-height: 33.403px;
+      padding: 5px 15px;
+   }
+}
+.header__menu-item.active {
+   border-radius: 15px;
+   color: $support;
+   background-color: $primary;
+}
+.header__button-wrapper.large {
+   @include max-breakpoint("sm") {
+      display: none;
+   }
+}
+.header__button-wrapper.small {
+   display: none;
+
+   @include max-breakpoint("sm") {
+      display: block;
+   }
+}
+.header__menu-bar-wrapper {
+   display: none;
+   @include max-breakpoint("sm") {
+      display: block;
+      position: absolute;
+      right: 0px;
+      top: -5px;
+   }
+}
+.header__menu-bar-button {
+   background: none;
+   border: none;
+   outline: none;
+}

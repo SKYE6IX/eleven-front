@@ -3,6 +3,8 @@ import localFont from "next/font/local";
 import { NextIntlClientProvider, hasLocale } from "next-intl";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
+import Navigation from "@/components/navigation/Navigation";
+import GsapWrapper from "@/context/GsapWrapper";
 import "../../global-styles/globals.scss";
 
 export const metadata: Metadata = {
@@ -45,7 +47,12 @@ export default async function RootLayout({
    return (
       <html lang={locale} className={fontMontreal.variable}>
          <body>
-            <NextIntlClientProvider>{children}</NextIntlClientProvider>
+            <NextIntlClientProvider>
+               <GsapWrapper>
+                  <Navigation />
+                  {children}
+               </GsapWrapper>
+            </NextIntlClientProvider>
          </body>
       </html>
    );
