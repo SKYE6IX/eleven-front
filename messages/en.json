@@ -13,5 +13,13 @@
       "tagline": "Crafting unique brand Identites",
       "showcaseText1": "We design and produce world-class digital products for forward-thinking brands",
       "showcaseText2": "We are independent and young team. We care, build relationships and have industry experience."
+   },
+   "WhyUsBlock": {
+      "title": "Why us?",
+      "whyUsItems": {
+         "item1": "We create fast-loading, fully responsive websites that perform flawlessly across all devices, reducing bounce rates and keeping visitors engaged.",
+         "item2": "We prioritise long-term partnerships, offering personalised solutions, regular check-ins, to ensure your vision is realised and your business thrives.",
+         "item3": ""
+      }
    }
 }

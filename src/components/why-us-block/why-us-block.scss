@@ -1,0 +1,123 @@
+@use "@/global-styles/variables.scss" as *;
+@use "@/global-styles/shared-styles.scss" as *;
+
+.why-us-block {
+   overflow: hidden;
+   position: relative;
+   margin-top: 70px;
+   padding-top: 50px;
+   width: 100%;
+   @include max-breakpoint("md") {
+      margin-top: 30px;
+   }
+   @include max-breakpoint("s") {
+      margin-top: 0px;
+   }
+}
+.why-us-block__inner-wrapper {
+   max-width: 1240px;
+   margin-left: auto;
+   margin-right: auto;
+   @include flex-layout(column, center, none, 100px);
+   @include max-breakpoint("md") {
+      gap: 70px;
+      width: calc(100% - 100px);
+   }
+   @include max-breakpoint("s") {
+      width: calc(100% - 40px);
+   }
+}
+.why-us-block__title-wrapper {
+   position: relative;
+   @include flex-layout(row, center, none, 20px);
+   @include max-breakpoint("s") {
+      gap: 10px;
+   }
+}
+.why-us-block__title {
+   font-family: $font-montreal-italic, sans-serif;
+   font-size: 7.5rem;
+   line-height: 132px;
+   color: $primary;
+   font-weight: 700;
+   letter-spacing: 1.105px;
+   @include max-breakpoint("md") {
+      font-size: 5.5625rem;
+      line-height: 98.241px;
+      letter-spacing: 0.822px;
+   }
+   @include max-breakpoint("s") {
+      font-size: 3.25rem;
+      line-height: 58px;
+   }
+}
+.why-us-block__title-icon {
+   position: absolute;
+   left: calc(100% + 20px);
+   bottom: 30px;
+   @include max-breakpoint("md") {
+      bottom: 20px;
+   }
+   @include max-breakpoint("s") {
+      bottom: 10px;
+      svg {
+         width: 55.647px;
+         height: 6.246px;
+      }
+   }
+}
+.why-us-block__list {
+   width: 100%;
+   @include flex-layout(row, none, space-between, none);
+   @include max-breakpoint("md") {
+      flex-direction: column;
+      gap: 50px;
+   }
+   @include max-breakpoint("s") {
+      gap: 30px;
+   }
+}
+.why-us-block__list-item {
+   @include flex-layout(row, center, none, 15px);
+}
+.why-us-block__list-item-index {
+   flex-shrink: 0;
+   font-family: $font-montreal-italic, sans-serif;
+   font-size: 5rem;
+   line-height: 88px;
+   color: $primary;
+   letter-spacing: 2px;
+   @include max-breakpoint("md") {
+      width: 170px;
+      font-size: 8rem;
+      line-height: 140px;
+   }
+   @include max-breakpoint("s") {
+      width: 90px;
+      font-size: 4.3125rem;
+      line-height: 75.922px;
+      letter-spacing: 1.725px;
+   }
+}
+.why-us-block__list-item-text {
+   max-width: 288px;
+   font-family: $font-montreal, sans-serif;
+   font-size: 1.2rem;
+   line-height: 23.04px;
+   font-weight: 530;
+   color: $primary;
+   @include max-breakpoint("md") {
+      max-width: 100%;
+      font-size: 2rem;
+      line-height: 40px;
+   }
+   @include max-breakpoint("sm") {
+      max-width: 100%;
+      font-size: 1.5rem;
+      line-height: 33.6px;
+   }
+   @include max-breakpoint("s") {
+      font-size: 1rem;
+      line-height: 19.2px;
+   }
+}
