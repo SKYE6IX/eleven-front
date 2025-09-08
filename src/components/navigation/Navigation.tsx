@@ -3,7 +3,7 @@ import React, { useRef, useState } from "react";
 import { useTranslations } from "next-intl";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
-import CtaButton from "../cta-button/CtaButton";
+import Button from "../button/Button";
 import GreenDotIcon from "../icons/GreenDotIcon";
 import MenuBarIcon from "../icons/MenuBarIcon";
 import { Link, usePathname } from "@/i18n/navigation";
@@ -222,12 +222,16 @@ function Navigation() {
                            </li>
                         ))}
                         <div className="header__button-wrapper small">
-                           <CtaButton />
+                           <Button
+                              type="link"
+                              textKey="contact"
+                              href="/contact"
+                           />
                         </div>
                      </ul>
                   </nav>
                   <div className="header__button-wrapper large">
-                     <CtaButton />
+                     <Button type="link" textKey="contact" href="/contact" />
                   </div>
                   <div className="header__menu-bar-wrapper">
                      <button

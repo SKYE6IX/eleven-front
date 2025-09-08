@@ -20,7 +20,7 @@ describe("Why us block component", () => {
 
       // Assert
       expect(blockTitle).toBeInTheDocument();
-      expect(blockTitle).toHaveTextContent("Why us?");
+      expect(blockTitle).toHaveTextContent("Why us ?");
    });
 
    it("render block item index numbers", () => {

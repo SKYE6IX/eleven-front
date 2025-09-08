@@ -51,11 +51,13 @@ function WhyUsBlock() {
                .timeline({
                   defaults: {
                      duration: 0.8,
+                     ease: "sine.inOut",
                   },
                   scrollTrigger: {
                      trigger: innerWrapper.current,
-                     start: "top 80%",
-                     end: () => "+=" + innerWrapper.current?.offsetHeight,
+                     start: "top bottom",
+                     scrub: 3,
+                     end: () => "+=700",
                   },
                })
                .from(".why-us-block__title-wrapper", {
@@ -89,9 +91,9 @@ function WhyUsBlock() {
                      xPercent: 50,
                   },
                   {
+                     duration: 0.5,
                      autoAlpha: 1,
                      xPercent: 0,
-                     duration: 0.5,
                   }
                )
                .fromTo(
@@ -109,7 +111,6 @@ function WhyUsBlock() {
                   ">-0.5"
                );
          };
-
          runAnimation();
          let width = 0;
          const handleResize = () => {

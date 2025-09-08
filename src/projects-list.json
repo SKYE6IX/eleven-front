@@ -1,0 +1,95 @@
+{
+   "project-list": [
+      {
+         "name": "Kasatkin",
+         "key": "kasatkin",
+         "images": [
+            "/projects-images/kastakin/image1.webp",
+            "/projects-images/kastakin/image2.webp",
+            "/projects-images/kastakin/image3.webp"
+         ],
+         "category": "Web Agency",
+         "technologies": ["Next.js", "Motion"],
+         "siteUrl": "",
+         "tags": ["showcase"]
+      },
+      {
+         "name": "Fast Car Sale",
+         "key": "fast-car-sale",
+         "images": [
+            "/projects-images/fast-car-sale/image1.webp",
+            "/projects-images/fast-car-sale/image2.webp",
+            "/projects-images/fast-car-sale/image3.webp"
+         ],
+         "category": "Car Sales",
+         "technologies": ["React.js"],
+         "siteUrl": "",
+         "tags": ["showcase"]
+      },
+      {
+         "name": "Perevodik",
+         "key": "perevodik",
+         "images": [
+            "/projects-images/perevodik/image1.webp",
+            "/projects-images/perevodik/image2.webp",
+            "/projects-images/perevodik/image3.webp"
+         ],
+         "category": "Translation Agency",
+         "technologies": ["Next.js", "SCSS"],
+         "siteUrl": "",
+         "tags": [""]
+      },
+      {
+         "name": "Ventimax",
+         "key": "ventimax",
+         "images": [
+            "/projects-images/ventimax/image1.webp",
+            "/projects-images/ventimax/image2.webp",
+            "/projects-images/ventimax/image3.webp"
+         ],
+         "category": "Animal Husbandry Equipments",
+         "technologies": ["Next.js", "GSAP", "SCSS", "next-intl"],
+         "siteUrl": "",
+         "tags": ["showcase"]
+      },
+      {
+         "name": "Re Market",
+         "key": "re-market",
+         "images": [
+            "/projects-images/re-market/image1.webp",
+            "/projects-images/re-market/image2.webp",
+            "/projects-images/re-market/image3.webp"
+         ],
+         "category": "Mini App",
+         "technologies": ["Next.js", "Express", "Redux", "SCSS"],
+         "siteUrl": "",
+         "tags": [""]
+      },
+      {
+         "name": "Tap",
+         "key": "tap",
+         "images": [
+            "/projects-images/tap/image1.webp",
+            "/projects-images/tap/image2.webp",
+            "/projects-images/tap/image3.webp"
+         ],
+         "category": "Web3",
+         "technologies": ["React.js", "React Router", "SCSS", "i18n"],
+         "siteUrl": "",
+         "tags": [""]
+      },
+      {
+         "name": "Rabotnik",
+         "key": "rabotnik",
+         "images": [
+            "/projects-images/rabotnik/image1.webp",
+            "/projects-images/rabotnik/image2.webp",
+            "/projects-images/rabotnik/image3.webp"
+         ],
+         "category": "Hiring Agency",
+         "technologies": ["React.js", "GSAP", "React Router"],
+         "siteUrl": "",
+         "tags": ["showcase"]
+      }
+   ]
+}

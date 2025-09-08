@@ -67,6 +67,10 @@ export default async function RootLayout({
             <NextIntlClientProvider>
                <GsapWrapper>
                   <Navigation />
+                  <div
+                     id="navigation-trigger"
+                     style={{ height: "40px", marginTop: "40px" }}
+                  />
                   {children}
                </GsapWrapper>
             </NextIntlClientProvider>

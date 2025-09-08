@@ -5,8 +5,43 @@
       "work": "Проекты",
       "contact": "Контакты"
    },
-   "CtaButton": {
-      "text": "Начать проект"
+   "Button": {
+      "text": {
+         "contact": "Начать проект",
+         "submit": "Send",
+         "visitWebsite": "Visit Website"
+      }
+   },
+   "ProjectDetails": {
+      "technologiesUsed": "Technologies Used:",
+      "kasatkin": {
+         "heading": "KASATKIN is an outsource web3 agency that provides web3 products for B2B.",
+         "description": "The landing page was to showcase their previous projects, given clear process about how they work, and expressing the advantage the web 3 enthusiastic user will get by working with them. An elegant UI production techniques mirrored the quality and craftsmanship of the company, supported by clear technical information and CTA’s to drive consumer consideration and in-bound enquiry. Seamless animation with framer motion to create a sophisticated looks and providing best user experience(UX)."
+      },
+      "rabotnik": {
+         "heading": "Rabotnik is a leading marketing and recruitment agency, specializing in connecting top-tier creative talent with innovative brands seeking impactful marketing solutions.",
+         "description": "This website was a pivotal element in Rabotnik’s brand repositioning campaign, designed to reflect the agency’s premium expertise while making critical service details, such as recruitment processes and marketing campaign offerings, highly accessible. The solution was a dynamic, content-rich digital platform that harmonized form and function. A polished browsing experience, crafted with elegant UI design and cutting-edge production techniques, echoed the agency’s commitment to creativity and precision, supported by clear service breakdowns and strategic CTAs to drive client engagement and candidate applications."
+      },
+      "fast-car-sale": {
+         "heading": "Fast Car Sale company specialising in selling high-performance luxury vehicles tailored for discerning drivers seeking unparalleled style and engineering.",
+         "description": "The website was a cornerstone of Fast Car Sale brand relaunch, designed to convey the brand’s premium identity while ensuring critical product details, such as vehicle specifications and customisation options, were easily accessible. It was a content-rich digital experience that seamlessly blended form and function. A refined browsing experience, featuring sleek UI design, complemented by clear technical information and strategic CTAs to drive customer engagement and inquiries."
+      },
+      "ventimax": {
+         "heading": "Venitmax is a leading development and provider of advanced animal husbandry equipment, they produce and sell reliable solutions for livestock management.",
+         "description": "This is a Chinese based company, they decided to expand into Russia market and this website was a critical component to showcase the company’s quality products, while ensuring essential product details, such as equipment specifications and operational features, were easily accessible.  With a sophisticated browsing interface, built with elegant UI design and modern production techniques, reflected the durability and precision of Ventimax equipment range, complemented by clear technical information and strategic CTAs to drive customer engagement and inquiries."
+      },
+      "perevodik": {
+         "heading": "Perevodik is an agency specialising in official document translation, delivering precise and certified translations to foreigner living in Russia.",
+         "description": "We designed to convey the agency’s expertise while ensuring critical service information, such as translation processes and certification details. A refined browsing experience, crafted with elegant UI design that mirrored the accuracy and professionalism of Perevodik services, supported by clear service descriptions and strategic CTAs to drive client engagement and inquiries."
+      },
+      "re-market": {
+         "heading": "ReMarket is a Telegram mini app designed as a seamless platform for buying and selling goods for Russian diaspora living abroad.",
+         "description": "The aim of this app was to convey a sense of trust and user experience while ensuring critical platform features, such as product listings and transaction processes, were highly intuitive and accessible. With a streamlined interface that balanced form and function effortlessly. A sophisticated user experience, crafted with elegant UI design and efficient techniques, reflected the platform’s reliability and ease of use, supported by clear navigational flows."
+      },
+      "tap": {
+         "heading": "Tap is a dynamic Telegram mini app designed to engage users through online games, enabling them to earn coins and redeem rewards in TON.",
+         "description": "With the goal of making gaming both rewarding and accessible, we collaborated closely with the other development team to strategise how a Telegram-based platform could bridge entertainment with tangible incentives, encouraging sustained user participation. Tap integrates gamification and user-centric features to deliver a vibrant mobile experience, incorporating seamless gameplay mechanics, coin-earning challenges, and clear reward redemption pathways, all while providing feedback loops to enhance user motivation and engagement."
+      }
    },
    "HeroBlock": {
       "title": "Мы веб-разработчики из <important>Москвы</important>,создающие уникальный цифровой опыт",
