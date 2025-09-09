@@ -56,5 +56,27 @@
          "item2": "We prioritise long-term partnerships, offering personalised solutions, regular check-ins, to ensure your vision is realised and your business thrives.",
          "item3": "From initial consultation to ongoing maintenance, we offer timely, comprehensive support to keep your website running smoothly."
       }
+   },
+   "ServiceListBlock": {
+      "title": "Services",
+      "heading": "We are here to help your business standout with brand identity that captivates and converts effectively.",
+      "serviceList": {
+         "design": {
+            "title": "Design",
+            "briefText": "We provide designs by crafting visuals to match your brand."
+         },
+         "develop": {
+            "title": "Develop",
+            "briefText": "We provide web development to the highest standards, and matching industrial requirements."
+         },
+         "support": {
+            "title": "Support",
+            "briefText": "We provide support and maintain your products through it’s life cycle."
+         },
+         "technologies": {
+            "title": "Technologies",
+            "briefText": "We build with cutting edge technologies, to bring your idea to life."
+         }
+      }
    }
 }

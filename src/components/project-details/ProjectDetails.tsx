@@ -90,10 +90,7 @@ function ProjectDetails({
          >
             {project && (
                <>
-                  <div
-                     className="project-details__layer"
-                     onClick={handleCloseModal}
-                  />
+                  <div className="project-details__layer" />
                   <div className="project-details__inner-wrapper">
                      <div className="project-details__content-wrapper-outer">
                         <div

@@ -56,8 +56,8 @@ function WhyUsBlock() {
                   scrollTrigger: {
                      trigger: innerWrapper.current,
                      start: "top bottom",
-                     scrub: 3,
-                     end: () => "+=700",
+                     scrub: 1,
+                     end: () => "+=750",
                   },
                })
                .from(".why-us-block__title-wrapper", {
