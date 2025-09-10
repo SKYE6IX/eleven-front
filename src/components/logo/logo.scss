@@ -1,0 +1,43 @@
+.logo {
+   width: 240px;
+   height: 320px;
+   position: relative;
+   flex-shrink: 0;
+}
+.logo__pole,
+.logo__base {
+   position: absolute;
+}
+.logo__pole {
+   width: 48px;
+   top: 0px;
+   bottom: 0px;
+}
+.logo__base {
+   width: 96px;
+   height: 48px;
+   border-radius: 0 8px 8px 0;
+   right: 0px;
+}
+.logo__pole.pole-1 {
+   border-radius: 8px;
+   background: linear-gradient(0deg, #9ebd13 0%, #008552 100%);
+}
+.logo__pole.pole-2 {
+   border-radius: 8px;
+   background: linear-gradient(180deg, #9ebd13 0%, #008552 100%);
+   left: 50%;
+   transform: translateX(calc(-50% - 16px));
+}
+.logo__base.base-1 {
+   background: linear-gradient(90deg, #cfd409 0%, #0a9967 100%);
+}
+.logo__base.base-2 {
+   background: linear-gradient(270deg, #cfd409 0%, #0a9967 100%);
+   top: 50%;
+   transform: translateY(-50%);
+}
+.logo__base.base-3 {
+   background: linear-gradient(90deg, #cfd409 0%, #0a9967 100%);
+   bottom: 0px;
+}
