@@ -41,7 +41,12 @@
 }
 .project-details__content-wrapper-outer {
    width: 100%;
+   position: relative;
    @include flex-layout(row, none, center, none);
+}
+.project-details__modal-close-trigger {
+   position: absolute;
+   inset: 0;
 }
 .project-details__content-wrapper {
    margin-top: max(20vh, 200px);

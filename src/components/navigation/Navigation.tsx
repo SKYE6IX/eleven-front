@@ -73,11 +73,11 @@ function Navigation() {
             gsap.set(".header__navigation-wrapper", {
                clearProps: "height",
             });
-            gsap.set(".header__menu-container", {
+            gsap.set(".mobile-menu-item", {
                clearProps: "all",
             });
          });
-
+         //** ANIMATION FOR MENU BUGGER BAR*/
          if (!initialToggle.current) {
             menuBarTl.current = gsap
                .timeline({ paused: true, defaults: { duration: 0.3 } })
@@ -106,9 +106,12 @@ function Navigation() {
                );
          }
          const navWidth = navWrapper.current?.offsetWidth;
+
          const menuTl = gsap.timeline({
-            defaults: { ease: "power2.inOut", duration: 0.5 },
+            defaults: { ease: "power2.inOut" },
          });
+
+         //** ANIMATION FOR WHEN THE MENU IS OPEN */
          if (isOpen) {
             menuBarTl.current?.play();
             menuTl
@@ -138,18 +141,32 @@ function Navigation() {
                   },
                   ">-0.9"
                )
-               .to(".header__menu-container", {
-                  autoAlpha: 1,
-                  duration: 0.2,
-               });
+               .fromTo(
+                  ".mobile-menu-item",
+                  { y: -50, autoAlpha: 0 },
+                  {
+                     y: 0,
+                     autoAlpha: 1,
+                     stagger: 0.1,
+                     ease: "power3.out",
+                  }
+               );
          }
-
+         //** ANIMATION FOR WHEN THE MENU IS CLOSE */
          if (initialToggle.current && !isOpen) {
             menuBarTl.current?.reverse();
             menuTl
-               .to(".header__menu-container", {
-                  autoAlpha: 0,
-               })
+               .fromTo(
+                  ".mobile-menu-item",
+                  { y: 0, autoAlpha: 1 },
+                  {
+                     y: -50,
+                     autoAlpha: 0,
+                     stagger: 0.1,
+                     duration: 0.4,
+                     ease: "power3.out",
+                  }
+               )
                .fromTo(
                   ".header__navigation-wrapper",
                   {
@@ -158,7 +175,7 @@ function Navigation() {
                   {
                      height: "3.75rem",
                   },
-                  ">-0.2"
+                  ">-0.3"
                )
                .fromTo(
                   ".header__navigation-wrapper",
@@ -186,7 +203,6 @@ function Navigation() {
       setIsOpen(!isOpen);
       initialToggle.current = true;
    };
-
    return (
       <header
          className={["header", isOpen ? "menu-active" : ""].join(" ")}
@@ -208,7 +224,7 @@ function Navigation() {
                            <li
                               key={nav.key}
                               className={[
-                                 "header__menu-item",
+                                 "header__menu-item mobile-menu-item",
                                  pathname === nav.href ? "active" : "",
                               ].join(" ")}
                            >
@@ -221,7 +237,7 @@ function Navigation() {
                               </Link>
                            </li>
                         ))}
-                        <div className="header__button-wrapper small">
+                        <div className="header__button-wrapper small mobile-menu-item">
                            <Button
                               type="link"
                               textKey="contact"

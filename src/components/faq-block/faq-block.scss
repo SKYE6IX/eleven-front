@@ -1,0 +1,237 @@
+@use "@/global-styles/variables.scss" as *;
+@use "@/global-styles/shared-styles.scss" as *;
+
+.faq-block {
+   //    border: 1px solid red;
+   overflow: hidden;
+   position: relative;
+   padding-top: 120px;
+   padding-bottom: 50px;
+   //    padding-bottom: 150px;
+   width: 100%;
+   background-color: $neutral;
+   @include flex-layout(row, center, center, none);
+   @include max-breakpoint("md") {
+      padding-top: 80px;
+   }
+   @include max-breakpoint("s") {
+      padding-top: 40px;
+   }
+}
+.faq-block__layer {
+   position: absolute;
+   inset: 0;
+   background-color: $secondary-tint;
+   z-index: 1;
+}
+.faq-block__inner-wrapper {
+   //    border: 1px solid red;
+   position: relative;
+   z-index: 10;
+   width: clamp(1200px, calc(100% - 200px), 1500px);
+   @include flex-layout(row, none, center, 100px);
+   @include max-breakpoint("md") {
+      width: calc(100% - 100px);
+      gap: 50px;
+   }
+   @include max-breakpoint("sm") {
+      flex-direction: column-reverse;
+      align-items: center;
+   }
+   @include max-breakpoint("s") {
+      width: calc(100% - 40px);
+      gap: 20px;
+   }
+}
+.faq-block__left-container {
+   align-self: flex-end;
+   width: 100%;
+   @include flex-layout(column, center, none, 20px);
+}
+.faq-block__card {
+   max-width: 560px;
+   padding: 0px 20px 20px 20px;
+   border-radius: 15px;
+   background: rgba(15, 29, 7, 0.9);
+   @include between-breakpoints("md", "lg") {
+      max-width: 100%;
+      padding: 0px 15px 15px 15px;
+   }
+   @include max-breakpoint("sm") {
+      max-width: 650px;
+   }
+   @include max-breakpoint("s") {
+      padding: 0px 15px 15px 15px;
+      width: 100%;
+   }
+}
+.faq-block__card-header {
+   padding-top: 20px;
+   @include flex-layout(row, center, space-between, 20px);
+   cursor: pointer;
+   -webkit-tap-highlight-color: transparent;
+   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+   outline: none;
+   @include between-breakpoints("md", "lg") {
+      padding-top: 15px;
+   }
+   @include max-breakpoint("s") {
+      padding-top: 15px;
+      gap: 15px;
+   }
+}
+.faq-block__card-header .arrow-up-icon {
+   align-self: flex-start;
+   transition: transform 0.5s linear;
+}
+.faq-block__card-header.open .arrow-up-icon {
+   transform: rotate(180deg);
+}
+.faq-block__card-header.close .arrow-up-icon {
+   transform: rotate(0deg);
+}
+.faq-block__card-question {
+   font-family: $font-montreal;
+   font-size: 1.125rem;
+   line-height: 24px;
+   font-weight: 530;
+   color: $neutral;
+   @include between-breakpoints("md", "lg") {
+      font-size: 1rem;
+      line-height: 19.2px;
+   }
+   @include max-breakpoint("s") {
+      font-size: 1rem;
+      line-height: 19.2px;
+   }
+}
+.faq-block__card-body {
+   display: grid;
+   transition: grid-template-rows 0.4s linear;
+}
+.faq-block__card-body.open {
+   grid-template-rows: 1fr;
+}
+.faq-block__card-body.close {
+   grid-template-rows: 0fr;
+}
+.faq-block__card-answer-wrapper {
+   overflow: hidden;
+}
+.faq-block__card-answer {
+   margin-top: 16px;
+   font-family: $font-montreal;
+   font-size: 1rem;
+   line-height: 19.2px;
+   font-weight: 430;
+   color: $neutral;
+   @include between-breakpoints("md", "lg") {
+      margin-top: 10px;
+      font-size: 0.875rem;
+      line-height: 19.6px;
+   }
+   @include max-breakpoint("s") {
+      margin-top: 10px;
+      font-size: 0.875rem;
+      line-height: 19.6px;
+   }
+}
+.faq-block__card-answer.open {
+   animation: accordionIn 0.45s normal ease-in-out both 1;
+}
+.faq-block__card-answer.close {
+   animation: accordionOut 0.45s normal ease-in-out both 1;
+}
+.faq-block__right-container {
+   width: 100%;
+}
+.faq-block__title {
+   font-family: $font-montreal;
+   font-size: 3.75rem;
+   line-height: 66px;
+   font-weight: 530;
+   letter-spacing: 0.5px;
+   color: $primary;
+   @include max-breakpoint("md") {
+      font-size: 2.5rem;
+      line-height: 44px;
+   }
+   @include max-breakpoint("sm") {
+      font-size: 3rem;
+      line-height: 57.6px;
+   }
+   @include max-breakpoint("s") {
+      font-size: 2.5rem;
+      line-height: 44px;
+   }
+}
+.faq-block__heading-text {
+   max-width: 500px;
+   margin-top: 20px;
+   font-family: $font-montreal;
+   font-size: 2rem;
+   line-height: 38.4px;
+   font-weight: 400;
+   letter-spacing: 0.5px;
+   color: $primary-mute;
+   @include max-breakpoint("md") {
+      margin-top: 15px;
+      font-size: 1.5rem;
+      line-height: 28px;
+   }
+   @include max-breakpoint("sm") {
+      font-size: 1.8rem;
+      line-height: 34.56px;
+   }
+   @include max-breakpoint("s") {
+      max-width: 100%;
+      margin-top: 15px;
+      font-size: 1.5rem;
+      line-height: 28px;
+   }
+}
+.faq-block__image-container {
+   margin-top: 40px;
+   position: relative;
+   width: 600px;
+   height: auto;
+   aspect-ratio: 4 / 3.5;
+   border-radius: 30px;
+   box-shadow: 0 0 46.233px 0 #f3f3e9;
+   @include max-breakpoint("md") {
+      margin-top: 30px;
+      width: 450px;
+   }
+   @include max-breakpoint("sm") {
+      width: 100%;
+   }
+   @include max-breakpoint("s") {
+      border-radius: 20px;
+   }
+}
+.faq-block__image {
+   border-radius: inherit;
+   object-fit: cover;
+   object-position: left top;
+}
+@keyframes accordionIn {
+   0% {
+      opacity: 0;
+      transform: scale(0.9) rotateX(-60deg);
+      transform-origin: 50% 0;
+   }
+   100% {
+      opacity: 1;
+      transform: scale(1);
+   }
+}
+@keyframes accordionOut {
+   0% {
+      opacity: 1;
+      transform: scale(1);
+   }
+   100% {
+      opacity: 0;
+      transform: scale(0.9) rotateX(-60deg);
+   }
+}

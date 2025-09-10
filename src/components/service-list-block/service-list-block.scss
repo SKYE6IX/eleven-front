@@ -4,6 +4,7 @@
 .service-list-block {
    overflow: hidden;
    margin-top: 120px;
+   padding-bottom: 50px;
    width: 100%;
    @include flex-layout(row, none, center, none);
    @include max-breakpoint("md") {

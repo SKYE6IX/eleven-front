@@ -94,6 +94,10 @@ function ProjectDetails({
                   <div className="project-details__inner-wrapper">
                      <div className="project-details__content-wrapper-outer">
                         <div
+                           className="project-details__modal-close-trigger"
+                           onClick={handleCloseModal}
+                        />
+                        <div
                            className="project-details__content-wrapper"
                            ref={contentWrapperRef}
                         >

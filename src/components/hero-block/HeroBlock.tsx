@@ -31,7 +31,7 @@ function HeroBlock() {
             .timeline({ defaults: { duration: 0.8 } })
             .from(".hero-block__title", {
                duration: 1,
-               yPercent: 150,
+               yPercent: 100,
                autoAlpha: 0,
             })
             .to(".hero-block__title", {

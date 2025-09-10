@@ -82,5 +82,35 @@
    "AboutUsBlock": {
       "headingText": "Good design for great people, make life better!",
       "text": "Eleven experiences are the foundation of everything we do - we are young team that cares about clients relationship, team collaboration and an unwavering focus on the end user. With <important>5+</important> years industrial experiences, we bring energetic, fresh and vibrant team offering creative talent. Our goal is to create meaningful impact and compelling experiences for our amazing clients. Our capabilities are centred around our ability to deliver world-class websites and apps. We’re 100% in-house and work end-to-end, ensuring each project is delivered to the highest standard."
+   },
+   "FAQBlock": {
+      "title": "Answers",
+      "headingText": "Find answers to common questions about how Eleven works.",
+      "faqList": {
+         "q1": {
+            "question": "How long does a website project usually take to complete?",
+            "answer": "Timeline depends on the specifications of the website project, but  for example a basic landing page usually take up to three weeks."
+         },
+         "q2": {
+            "question": "How much does a website cost?",
+            "answer": "We don’t have a set project prices. Every project request we receive has different requirement which alter the specification of the job. So once we received your request, we can give you indication of cost and timescale."
+         },
+         "q3": {
+            "question": "We have a limited budget, will you still work with us?",
+            "answer": "We work with a range of clients, from individual, start-up to large organisation. Our mindset is to work with clients and help them reach their goal. In terms of budget, the easiest way to find out if a project is possible is to let us know what your budget is."
+         },
+         "q4": {
+            "question": "We’re not based in Moscow, does that matter ?",
+            "answer": "We work with clients all over the Russia and all over the world in fact. So location does not matter. We will guide you through the process and communicate clearly at certain stages via email and sometimes Zoom. If possible, we are happy to have face-to-face meetings."
+         },
+         "q5": {
+            "question": "What are your payment terms?",
+            "answer": "We usually do 25% upfront, 25% on design sign-off, and 50% on build. But these terms can be discussed if need be. We are flexible. We just want to work with the right partner."
+         },
+         "q6": {
+            "question": "Can we arrange a conference call to discuss?",
+            "answer": "Yes of course, we can schedule a zoom meeting into the diary that convenient for both parties."
+         }
+      }
    }
 }

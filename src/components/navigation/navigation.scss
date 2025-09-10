@@ -2,7 +2,6 @@
 @use "@/global-styles/shared-styles.scss" as *;
 
 // TODO: Prevent Scrolling when menu is active
-
 .header {
    width: 100%;
    position: fixed;
@@ -10,12 +9,6 @@
    left: 0px;
    padding-top: 20px;
    z-index: 500;
-}
-.header.menu-active {
-   // border: 1px solid red;
-   // overflow: hidden;
-   // height: 90vh;
-   // overscroll-behavior: contain;
 }
 .header__inner-wrapper {
    width: 100%;
@@ -96,7 +89,6 @@
       position: absolute;
       flex-direction: column;
       gap: 20px;
-      visibility: hidden;
    }
 }
 .header__menu-item {
@@ -112,6 +104,11 @@
       font-size: 1.73975rem;
       line-height: 33.403px;
       padding: 5px 15px;
+   }
+}
+.mobile-menu-item {
+   @include max-breakpoint("sm") {
+      visibility: hidden;
    }
 }
 .header__menu-item.active {
