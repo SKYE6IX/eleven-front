@@ -55,7 +55,7 @@ function WhyUsBlock() {
                   },
                   scrollTrigger: {
                      trigger: innerWrapper.current,
-                     start: "top bottom",
+                     start: "clamp(top bottom)",
                      scrub: 1,
                      end: () => "+=750",
                   },
