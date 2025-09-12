@@ -1,7 +1,6 @@
 @use "@/global-styles/variables.scss" as *;
 @use "@/global-styles/shared-styles.scss" as *;
 
-// TODO: Prevent Scrolling when menu is active
 .header {
    width: 100%;
    position: fixed;
@@ -9,6 +8,20 @@
    left: 0px;
    padding-top: 20px;
    z-index: 500;
+   @include max-breakpoint("sm") {
+      & .header__menu-container {
+         pointer-events: none;
+         touch-action: none;
+      }
+   }
+}
+.header.menu-active {
+   @include max-breakpoint("sm") {
+      & .header__menu-container {
+         pointer-events: all;
+         touch-action: all;
+      }
+   }
 }
 .header__inner-wrapper {
    width: 100%;

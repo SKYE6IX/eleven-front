@@ -4,11 +4,6 @@ import messages from "../../../../messages/en.json";
 import ProjectDetails from "../ProjectDetails";
 
 describe("Project details component", () => {
-   beforeEach(() => {
-      jest.mock("@gsap/react", () => ({
-         contextSafe: jest.fn(),
-      }));
-   });
    it("render project name", () => {
       // Arrange
       const mockToggle = jest.fn();

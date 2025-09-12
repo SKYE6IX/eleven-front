@@ -16,7 +16,6 @@ function ProjectsShowcase() {
    const showcaseProjects = projects["project-list"].filter((project) =>
       project.tags.includes("showcase")
    );
-
    const [isModalOpen, setIsModalOpen] = useState(false);
    const { contextSafe } = useGSAP(
       () => {
@@ -79,6 +78,7 @@ function ProjectsShowcase() {
       customCursor.current.style.left = e.clientX + "px";
       customCursor.current.style.top = e.clientY + "px";
    };
+
    const toggleModal = (key: string) => {
       setProjectKey(key);
       setIsModalOpen(!isModalOpen);
@@ -95,8 +95,8 @@ function ProjectsShowcase() {
             <div className="project-showcase__inner-wrapper">
                {showcaseProjects.map((project) => (
                   <div
-                     key={project.key}
                      className="projects-showcase__image-container"
+                     key={project.key}
                      onMouseEnter={handleMouseEnter}
                      onMouseLeave={handleMouseLeave}
                      onMouseMove={handleMouseMove}
@@ -114,8 +114,8 @@ function ProjectsShowcase() {
             </div>
          </section>
          <ProjectDetails
-            toggleModal={toggleModal}
             isModalOpen={isModalOpen}
+            toggleModal={toggleModal}
             projectKey={projectKey}
          />
       </>
