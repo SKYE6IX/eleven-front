@@ -5,6 +5,13 @@
       "work": "Проекты",
       "contact": "Контакты"
    },
+   "Footer": {
+      "headingText": "Do you like what you see ? Let’s make something together.",
+      "briefHeading": "We work globally",
+      "submitBrief": "Submit a brief",
+      "getInTouch": "Get in touch",
+      "reserveText": "ALL RIGHT RESERVED"
+   },
    "Button": {
       "text": {
          "contact": "Начать проект",

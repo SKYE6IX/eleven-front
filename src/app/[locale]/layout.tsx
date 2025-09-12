@@ -4,6 +4,7 @@ import { NextIntlClientProvider, hasLocale } from "next-intl";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
 import Navigation from "@/components/navigation/Navigation";
+import Footer from "@/components/footer/Footer";
 import GsapWrapper from "@/context/GsapWrapper";
 import "../../global-styles/globals.scss";
 
@@ -72,6 +73,7 @@ export default async function RootLayout({
                      style={{ height: "40px", marginTop: "40px" }}
                   />
                   {children}
+                  <Footer />
                </GsapWrapper>
             </NextIntlClientProvider>
          </body>

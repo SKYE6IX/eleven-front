@@ -1,0 +1,195 @@
+@use "@/global-styles/variables.scss" as *;
+@use "@/global-styles/shared-styles.scss" as *;
+
+.footer {
+   overflow: hidden;
+   padding-top: 120px;
+   padding-bottom: 50px;
+   background: $neutral;
+   @include flex-layout(row, center, center, none);
+   @include max-breakpoint("md") {
+      padding-top: 80px;
+   }
+   @include max-breakpoint("s") {
+      padding-top: 40px;
+   }
+}
+.footer__inner-wrapper {
+   width: clamp(1200px, calc(100% - 200px), 1500px);
+   @include max-breakpoint("md") {
+      width: calc(100% - 100px);
+   }
+   @include max-breakpoint("sm") {
+      width: calc(100% - 60px);
+   }
+   @include max-breakpoint("s") {
+      width: calc(100% - 40px);
+   }
+}
+.footer__heading-text {
+   margin-bottom: 20px;
+   max-width: 485px;
+   font-family: $font-montreal, sans-serif;
+   font-size: 2.25rem;
+   line-height: 43.2px;
+   font-weight: 530;
+   color: $primary;
+   @include max-breakpoint("md") {
+      max-width: 345px;
+      font-size: 1.5996875rem;
+      line-height: 30px;
+   }
+   @include max-breakpoint("s") {
+      margin-bottom: 15px;
+   }
+}
+.footer__top-inner-wrapper {
+   margin-top: 40px;
+   @include flex-layout(row, center, space-between, none);
+   @include max-breakpoint("s") {
+      margin-top: 30px;
+      flex-direction: column;
+      gap: 20px;
+   }
+}
+.footer__contact-wrapper {
+   width: 100%;
+   @include flex-layout(row, none, space-between, none);
+}
+.footer__contact-submit-brief-heading,
+.footer__contact-submit-brief-button,
+.footer__contact-heading {
+   font-family: $font-montreal, sans-serif;
+   font-size: 1.25rem;
+   line-height: 24px;
+   font-weight: 530;
+   color: $primary;
+   @include max-breakpoint("s") {
+      font-size: 0.875rem;
+      line-height: 16.8px;
+   }
+}
+.footer__contact-submit-brief-heading,
+.footer__contact-submit-brief-button {
+   @include flex-layout(row, center, none, 7px);
+}
+.footer__contact-submit-brief-button {
+   margin-top: 15px;
+   margin-left: 25px;
+   @include max-breakpoint("s") {
+      margin-top: 10px;
+   }
+}
+.footer__contact-list {
+   margin-top: 15px;
+   list-style: none;
+   @include flex-layout(column, none, none, 15px);
+   @include max-breakpoint("s") {
+      margin-top: 10px;
+      gap: 10px;
+   }
+}
+.footer__contact-item {
+   font-family: $font-montreal, sans-serif;
+   font-size: 1rem;
+   line-height: 19px;
+   font-weight: 400;
+   color: $primary-mute;
+   @include flex-layout(row, center, none, 5px);
+}
+.footer__site-title-wrapper {
+   width: 100%;
+   @include flex-layout(row, none, flex-end, none);
+   @include max-breakpoint("s") {
+      justify-content: center;
+   }
+}
+.footer__site-title {
+   font-family: $font-montreal, sans-serif;
+   font-size: 6.125rem;
+   line-height: 118.4px;
+   font-weight: 530;
+   letter-spacing: 9.25px;
+   @include max-breakpoint("md") {
+      font-size: 4.38425rem;
+      line-height: 84.178px;
+      letter-spacing: 6.576px;
+   }
+}
+.footer__site-title-icon {
+   flex-shrink: 0;
+   margin-top: auto;
+   margin-bottom: 20px;
+   svg {
+      width: 30.833px;
+      height: 30.833px;
+   }
+   @include max-breakpoint("md") {
+      margin-bottom: 15px;
+      svg {
+         width: 21.921px;
+         height: 21.921px;
+      }
+   }
+}
+.footer__divider {
+   margin-top: 50px;
+   width: 100%;
+   height: 1px;
+   background-color: $support;
+   @include max-breakpoint("md") {
+      margin-top: 30px;
+   }
+}
+.footer__bottom {
+   margin-top: 20px;
+   @include flex-layout(row, center, space-between, none);
+   @include max-breakpoint("md") {
+      margin-top: 10px;
+   }
+   @include max-breakpoint("s") {
+      flex-direction: column;
+      gap: 30px;
+      justify-content: center;
+   }
+}
+.footer__all-right-reserved {
+   @include flex-layout(row, center, none, 20px);
+}
+.footer__all-right-reserved-heading {
+   font-family: $font-montreal, sans-serif;
+   font-size: 1rem;
+   line-height: 19px;
+   font-weight: 530;
+}
+.footer__all-right-reserved-text {
+   font-family: $font-montreal, sans-serif;
+   font-size: 0.875rem;
+   line-height: 16px;
+   font-weight: 400;
+   color: $primary-mute;
+}
+.footer__social-wrapper {
+   list-style: none;
+   @include flex-layout(row, center, none, 40px);
+   @include max-breakpoint("md") {
+      gap: 30px;
+   }
+}
+.footer__social {
+   font-family: $font-montreal, sans-serif;
+   font-size: 1rem;
+   line-height: 19px;
+   font-weight: 530;
+   color: $primary;
+}
+.footer__social .fade-effect {
+   width: 50px;
+   background-image: url("./sprinkle-twitter.png");
+   background-size: cover;
+}
+.footer__social:has(.fade-effect) {
+   a {
+      @include flex-layout(row, none, none, 5px);
+   }
+}

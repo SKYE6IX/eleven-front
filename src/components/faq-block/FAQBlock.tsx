@@ -12,7 +12,6 @@ import "./faq-block.scss";
 
 const faqList = ["q1", "q2", "q3", "q4", "q5", "q6"];
 
-// TODO: Create the clip-path animation when done with Footer
 function FAQBlock() {
    const containerRef = useRef<HTMLElement>(null);
    const innerWrapperRef = useRef<HTMLDivElement>(null);
@@ -21,9 +20,47 @@ function FAQBlock() {
    const handleToggleIsOpen = (newIdx: number) => {
       setCurrentOpenIdx((prvIdx) => (prvIdx === newIdx ? prvIdx : newIdx));
    };
+
    useGSAP(
       () => {
-         if (!innerWrapperRef.current) return;
+         const mm = gsap.matchMedia();
+         const getClipPathValue = (radius: string) => {
+            const innerWrapperLeft = innerWrapperRef.current!.offsetLeft;
+            const moveX = innerWrapperLeft / 2;
+            return `inset(0px ${moveX}px 0px ${moveX}px round 0px 0px ${radius}px ${radius}px)`;
+         };
+         const getEndValue = () => {
+            const innerWrapperLeft = innerWrapperRef.current!.offsetLeft;
+            return "+=" + innerWrapperLeft * 2;
+         };
+         mm.add("(min-width: 1100px)", () => {
+            gsap.to(".faq-block__layer", {
+               duration: 1.5,
+               clipPath: () => getClipPathValue("60"),
+               ease: "power1.out",
+               scrollTrigger: {
+                  trigger: innerWrapperRef.current,
+                  start: "clamp(bottom 90%)",
+                  end: () => getEndValue(),
+                  scrub: 1,
+                  invalidateOnRefresh: true,
+               },
+            });
+         });
+         mm.add("(max-width: 912px)", () => {
+            gsap.to(".faq-block__layer", {
+               duration: 1.5,
+               clipPath: () => getClipPathValue("30"),
+               ease: "power1.out",
+               scrollTrigger: {
+                  trigger: innerWrapperRef.current,
+                  start: "clamp(bottom 90%)",
+                  end: () => getEndValue(),
+                  scrub: 1,
+                  invalidateOnRefresh: true,
+               },
+            });
+         });
          const split = SplitText.create(".faq-block__title", { type: "chars" });
          gsap.from(split.chars, {
             ease: "power4",
@@ -64,6 +101,7 @@ function FAQBlock() {
             autoAlpha: 0,
          });
          ScrollTrigger.batch(".faq-block__card", {
+            batchMax: 6,
             onEnter: (batch) => {
                gsap.to(batch, {
                   duration: 1.2,
@@ -73,20 +111,12 @@ function FAQBlock() {
                   stagger: 0.3,
                });
             },
-            onLeaveBack: (batch) => {
-               gsap.to(batch, {
-                  y: 60,
-                  autoAlpha: 0,
-                  ease: "power2.in",
-                  stagger: 0.3,
-               });
-            },
-            start: "top 90%",
+            start: "top 95%",
+            end: "+=500",
          });
       },
       { scope: containerRef }
    );
-
    return (
       <section className="faq-block" ref={containerRef}>
          <div className="faq-block__layer" />

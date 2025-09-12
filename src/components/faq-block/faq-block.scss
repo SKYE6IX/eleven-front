@@ -2,12 +2,10 @@
 @use "@/global-styles/shared-styles.scss" as *;
 
 .faq-block {
-   //    border: 1px solid red;
    overflow: hidden;
    position: relative;
    padding-top: 120px;
-   padding-bottom: 50px;
-   //    padding-bottom: 150px;
+   padding-bottom: 100px;
    width: 100%;
    background-color: $neutral;
    @include flex-layout(row, center, center, none);
@@ -21,11 +19,14 @@
 .faq-block__layer {
    position: absolute;
    inset: 0;
+   top: -1px;
    background-color: $secondary-tint;
    z-index: 1;
+   @media only screen and (min-width: "920px") and (max-width: "1024px") {
+      border-radius: 0px 0px 60px 60px;
+   }
 }
 .faq-block__inner-wrapper {
-   //    border: 1px solid red;
    position: relative;
    z-index: 10;
    width: clamp(1200px, calc(100% - 200px), 1500px);
