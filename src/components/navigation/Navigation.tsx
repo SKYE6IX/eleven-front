@@ -23,8 +23,8 @@ function Navigation() {
 
    const navigationList = [
       { key: "home", href: "/" },
-      { key: "about", href: "#about" },
-      { key: "work", href: "#work" },
+      { key: "about", href: "/about" },
+      { key: "work", href: "/work" },
       { key: "contact", href: "/contact" },
    ];
 

@@ -142,6 +142,56 @@
                "message": "Tell us about your project"
             }
          }
+      },
+      "AboutUsPage": {
+         "whoWeAreBlock": {
+            "headingText": "Who we are",
+            "text1": "We are a creative collective with a killer instinct for design, dev and digital products.",
+            "text2": "We create innovative products and experiences, we maintain long term relationships.",
+            "text3": "We drive drive growth and productivity for all ambitious companies around the world."
+         },
+         "whoBelieveBlock": {
+            "headingText": "Who believe",
+            "text1": "Well structured online presence will help brands growth rapidly.",
+            "text2": "The future will be defined by intelligent interactions between brands and users."
+         },
+         "ourOfferingBlock": {
+            "headingText": "Our offering",
+            "text": "We design experiences and build tech behind them.",
+            "serviceList": {
+               "strategy": {
+                  "headingText": "Strategy & UX",
+                  "list": {
+                     "item1": "User Research",
+                     "item2": "Information Architecture",
+                     "item3": "User Journey Mapping",
+                     "item4": "Wireframing"
+                  }
+               },
+               "design": {
+                  "headingText": "Design",
+                  "list": {
+                     "item1": "Interaction Design",
+                     "item2": "User Interface Design",
+                     "item3": "Prototyping & Animation"
+                  }
+               },
+               "development": {
+                  "headingText": "Development",
+                  "list": {
+                     "item1": "Product Architecture",
+                     "item2": "Front + Backend Development",
+                     "item3": "Dev Infrastructure",
+                     "item4": "CI / CD Pipeline",
+                     "item5": "eCommerce"
+                  }
+               }
+            }
+         },
+         "workBlock": {
+            "headingText": "Work",
+            "linkText": "Explore More Work"
+         }
       }
    }
 }

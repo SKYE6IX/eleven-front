@@ -1,0 +1,239 @@
+@use "@/global-styles/variables.scss" as *;
+@use "@/global-styles/shared-styles.scss" as *;
+
+.about-us-page {
+   position: relative;
+   width: 100%;
+}
+.about-us-page__layer-effect,
+.about-us-page__logo-bg {
+   position: absolute;
+   height: 100vh;
+   width: 100%;
+   @include max-breakpoint("md") {
+      height: 800px;
+   }
+   @include max-breakpoint("s") {
+      height: 600px;
+   }
+}
+.about-us-page__layer-effect {
+   z-index: 10;
+   top: -80px;
+   opacity: 0.5;
+   background: linear-gradient(0deg, #eaebdd 0%, #a3a790 55.5%, #a6ae87 100%);
+}
+.about-us-page__logo-bg {
+   z-index: 5;
+   @include flex-layout(row, none, center, none);
+}
+.about-us-page__image-container {
+   position: relative;
+   width: 712px;
+   height: 700px;
+   @include max-breakpoint("md") {
+      width: 500px;
+      height: 650px;
+   }
+   @include max-breakpoint("s") {
+      width: 194.317px;
+      height: 345.75px;
+   }
+}
+.about-us-page__image {
+   width: 100%;
+   height: 100%;
+   object-fit: contain;
+}
+.about-us-page__inner-wrapper {
+   overflow-x: hidden;
+   position: relative;
+   z-index: 20;
+   width: clamp(1200px, calc(100% - 200px), 1500px);
+   margin: 0px auto;
+   @include max-breakpoint("md") {
+      width: calc(100% - 100px);
+   }
+   @include max-breakpoint("s") {
+      width: calc(100% - 40px);
+   }
+}
+.about-us-page__who-we-are {
+   width: 100%;
+   height: 100vh;
+   @include max-breakpoint("md") {
+      height: 100%;
+   }
+}
+.about-us-page__who-we-are-content-wrapper,
+.about-us-page__who-believe-content-wrapper,
+.about-us-page__service-content-wrapper {
+   padding-top: 100px;
+   @include flex-layout(column, none, none, 150px);
+   @include max-breakpoint("md") {
+      padding-top: 50px;
+      gap: 100px;
+   }
+   @include max-breakpoint("sm") {
+      gap: 60px;
+   }
+   @include max-breakpoint("s") {
+      padding-top: 40px;
+      gap: 50px;
+   }
+}
+.about-us-page__who-we-are-heading-wrapper,
+.about-us-page__who-believe-heading-wrapper,
+.about-us-page__service-heading-wrapper {
+   width: max-content;
+   position: relative;
+}
+.about-us-page__who-we-are-heading-text,
+.about-us-page__who-believe-heading-text,
+.about-us-page__service-heading-text {
+   font-family: $font-montreal, sans-serif;
+   font-size: 6.8125rem;
+   line-height: 131px;
+   font-weight: 530;
+   color: $primary;
+   letter-spacing: 3px;
+   @include max-breakpoint("md") {
+      font-size: 5.0625rem;
+      line-height: 97.69px;
+      letter-spacing: 2px;
+   }
+   @include max-breakpoint("sm") {
+      font-size: 3.8rem;
+      line-height: 66px;
+   }
+   @include max-breakpoint("s") {
+      font-size: 2.25rem;
+      line-height: 44.25px;
+   }
+}
+.about-us-page__who-we-are-heading-icon,
+.about-us-page__who-believe-heading-icon,
+.about-us-page__service-heading-icon {
+   position: absolute;
+   left: calc(100% + 20px);
+   bottom: 30px;
+   @include max-breakpoint("sm") {
+      svg {
+         width: 50px;
+         height: 15px;
+      }
+      bottom: 20px;
+   }
+   @include max-breakpoint("s") {
+      left: calc(100% + 10px);
+      bottom: 5px;
+   }
+}
+.about-us-page__who-we-are-text-wrapper,
+.about-us-page__who-believe-text-wrapper {
+   align-self: flex-end;
+   width: 539px;
+   @include flex-layout(column, none, none, 40px);
+   @include max-breakpoint("md") {
+      max-width: 401px;
+      gap: 30px;
+   }
+   @include max-breakpoint("s") {
+      align-self: center;
+      max-width: 100%;
+      gap: 20px;
+   }
+}
+.about-us-page__who-we-are-text,
+.about-us-page__who-believe-text,
+.about-us-page__service-list-item {
+   font-family: $font-montreal, sans-serif;
+   font-size: 2rem;
+   font-weight: 530;
+   line-height: 38.4px;
+   color: $primary;
+   letter-spacing: 2px;
+   @include max-breakpoint("md") {
+      font-size: 1.5rem;
+      line-height: 28px;
+      letter-spacing: 1px;
+   }
+   @include max-breakpoint("s") {
+      font-size: 1.25rem;
+      line-height: 25.118px;
+      letter-spacing: 1px;
+   }
+}
+.about-us-page__who-believe {
+   height: 80vh;
+   width: 100%;
+   @include max-breakpoint("md") {
+      height: 100%;
+   }
+}
+.about-us-page__service {
+   width: 100%;
+   min-height: 100vh;
+   padding-bottom: 50px;
+   @include max-breakpoint("md") {
+      min-height: 100%;
+   }
+}
+.about-us-page__service-wrapper {
+   @include flex-layout(row, none, space-between, none);
+   @include max-breakpoint("sm") {
+      gap: 50px;
+   }
+   @include max-breakpoint("s") {
+      flex-direction: column;
+      gap: 20px;
+   }
+}
+.about-us-page__service-text {
+   margin-top: 50px;
+   max-width: 650px;
+   font-family: $font-montreal, sans-serif;
+   font-size: 4rem;
+   font-weight: 530;
+   line-height: 70.4px;
+   @include max-breakpoint("md") {
+      max-width: 480px;
+      font-size: 2.9375rem;
+      line-height: 52px;
+   }
+   @include max-breakpoint("sm") {
+      max-width: 350px;
+      font-size: 2rem;
+      line-height: 38.4px;
+   }
+   @include max-breakpoint("sm") {
+      max-width: 100%;
+      margin-top: 0px;
+   }
+}
+.about-us-page__service-item-container:nth-child(n + 2) {
+   margin-top: 50px;
+   @include max-breakpoint("md") {
+      margin-top: 30px;
+   }
+}
+.about-us-page__service-item-heading {
+   font-family: $font-montreal, sans-serif;
+   font-size: 2.5rem;
+   font-weight: 700;
+   line-height: 57.6px;
+   color: $primary;
+   @include max-breakpoint("md") {
+      font-size: 1.8125rem;
+      line-height: 42px;
+   }
+}
+.about-us-page__service-list {
+   margin-top: 20px;
+   list-style: none;
+   @include flex-layout(column, none, none, 20px);
+   @include max-breakpoint("md") {
+      margin-top: 15px;
+      gap: 15px;
+   }
+}
