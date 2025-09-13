@@ -10,9 +10,15 @@ type ModalProps = {
    isOpen: boolean;
    children: React.ReactNode;
    onModalClose: () => void;
+   contentBackground: "secondary-tint" | "neutral";
 };
 
-function Modal({ children, isOpen, onModalClose }: ModalProps) {
+function Modal({
+   children,
+   isOpen,
+   onModalClose,
+   contentBackground,
+}: ModalProps) {
    const containerRef = useRef<HTMLElement>(null);
    const contentWrapperRef = useRef<HTMLDivElement>(null);
    const [isBrowser, setIsBrowser] = useState(false);
@@ -41,7 +47,6 @@ function Modal({ children, isOpen, onModalClose }: ModalProps) {
                invalidateOnRefresh: true,
             },
          });
-
          scrollTl
             .to(".modal__content-bg", {
                left: () => -getMoveXValue(),
@@ -90,7 +95,12 @@ function Modal({ children, isOpen, onModalClose }: ModalProps) {
                      className="modal__content-wrapper"
                      ref={contentWrapperRef}
                   >
-                     <div className="modal__content-bg" />
+                     <div
+                        className={[
+                           "modal__content-bg",
+                           contentBackground,
+                        ].join(" ")}
+                     />
                      <button
                         className="modal__close-button"
                         onClick={handleCloseModal}

@@ -16,7 +16,8 @@
       "text": {
          "contact": "Начать проект",
          "submit": "Send",
-         "visitWebsite": "Visit Website"
+         "visitWebsite": "Visit Website",
+         "submitRequest": "Submit your request"
       }
    },
    "ProjectDetails": {
@@ -117,6 +118,29 @@
          "q6": {
             "question": "Can we arrange a conference call to discuss?",
             "answer": "Yes of course, we can schedule a zoom meeting into the diary that convenient for both parties."
+         }
+      },
+      "ContactPage": {
+         "headingText": {
+            "span1": "It’s nice to",
+            "span2": "meet you!"
+         },
+         "form": {
+            "headingText": "Let’s get started ",
+            "subHeadingText": "For general enquiries, please fill out the form to get in touch.",
+            "label": {
+               "name": "Name",
+               "email": "Email",
+               "phone": "Phone",
+               "hearAboutUs": "How do you hear about Eleven?",
+               "message": "Message"
+            },
+            "placeholder": {
+               "name": "Your name",
+               "email": "Your email",
+               "phone": "Phone(optional)",
+               "message": "Tell us about your project"
+            }
          }
       }
    }

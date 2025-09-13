@@ -115,6 +115,7 @@ function Footer() {
                </div>
             </div>
             <div className="footer__divider" />
+
             <div className="footer__bottom">
                <div className="footer__all-right-reserved">
                   <h4 className="footer__all-right-reserved-heading">ELEVEN</h4>

@@ -203,6 +203,7 @@ function Navigation() {
       setIsOpen(!isOpen);
       initialToggle.current = true;
    };
+
    return (
       <header
          className={["header", isOpen ? "menu-active" : ""].join(" ")}

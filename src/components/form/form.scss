@@ -1,0 +1,161 @@
+@use "@/global-styles/variables.scss" as *;
+@use "@/global-styles/shared-styles.scss" as *;
+
+.form-block {
+   width: 100%;
+   margin-left: 150px;
+   margin-top: 50px;
+   @include max-breakpoint("md") {
+      margin-left: 0px;
+      margin-top: 30px;
+      button {
+         margin-left: 50px;
+      }
+   }
+   @include max-breakpoint("s") {
+      margin-top: 50px;
+      button {
+         margin-left: 15px;
+      }
+   }
+}
+.form-block__heading-text {
+   font-family: $font-montreal, sans-serif;
+   font-size: 4rem;
+   font-weight: 530;
+   line-height: 76.8px;
+   color: #6969a8;
+   @include max-breakpoint("md") {
+      font-size: 2.8125rem;
+      line-height: 55.021px;
+      margin-left: 50px;
+   }
+   @include max-breakpoint("s") {
+      margin-left: 15px;
+      font-size: 2rem;
+      line-height: 39.325px;
+   }
+}
+.form-block__sub-heading-text {
+   max-width: 317px;
+   margin-top: 20px;
+   font-family: $font-montreal, sans-serif;
+   font-size: 1.25rem;
+   line-height: 26px;
+   font-weight: 530;
+   color: $primary;
+   @include max-breakpoint("md") {
+      font-size: 1.125rem;
+      line-height: 21.6px;
+      margin-left: 50px;
+   }
+   @include max-breakpoint("s") {
+      max-width: calc(100% - 30px);
+      font-size: 1rem;
+      line-height: 19px;
+      margin: 10px auto 0px auto;
+   }
+}
+.form-block__input-wrapper {
+   margin-top: 30px;
+   margin-bottom: 40px;
+   width: 830px;
+   display: grid;
+   grid-template-columns: repeat(2, auto);
+   column-gap: 30px;
+   row-gap: 60px;
+   @include max-breakpoint("md") {
+      width: calc(100% - 100px);
+      margin-top: 20px;
+      margin-left: auto;
+      margin-right: auto;
+      column-gap: 20px;
+      row-gap: 40px;
+   }
+   @include max-breakpoint("s") {
+      margin-bottom: 20px;
+      width: calc(100% - 30px);
+      @include flex-layout(column, none, center, 20px);
+   }
+}
+.form-block__input-contaner {
+   display: inline-flex;
+   flex-direction: column;
+   gap: 10px;
+}
+.form-block__input-contaner.text-area {
+   grid-area: 3 / 1 / 4 / 3;
+}
+.form-block__input-contaner.select {
+   position: relative;
+}
+.form-block__input-contaner.select .form-block__input {
+   position: relative;
+   height: 100%;
+   cursor: pointer;
+   & .selected-option {
+      color: #595976;
+   }
+   & .arrow-icon {
+      position: absolute;
+      right: 20px;
+      bottom: 50%;
+      transform: translateY(50%) rotate(180deg);
+      svg {
+         path {
+            fill: #6969a8;
+         }
+      }
+   }
+}
+.form-block__input-contaner.select .select-options-wrapper {
+   position: absolute;
+   left: 0px;
+   right: 0px;
+   top: calc(100% + 5px);
+   list-style: none;
+   padding: 20px;
+   z-index: 10;
+   border-radius: 15px;
+   background-color: $secondary-tint;
+   display: inline-flex;
+   flex-direction: column;
+   gap: 10px;
+}
+.form-block__input-contaner.select .select-option {
+   max-width: max-content;
+   padding: 5px;
+   border-radius: 10px;
+   transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+   cursor: pointer;
+}
+.form-block__input-contaner.select .select-option:hover {
+   color: $neutral;
+   background-color: $primary;
+}
+.form-block__input-label,
+.form-block__input,
+.form-block__input-contaner.select .select-option {
+   font-family: $font-montreal, sans-serif;
+   font-size: 1.3rem;
+   font-weight: 530;
+   line-height: 24.96px;
+   color: $primary;
+   @include max-breakpoint("md") {
+      font-size: 1rem;
+      line-height: 19.2px;
+   }
+}
+.form-block__input {
+   padding: 20px;
+   border-radius: 15px;
+   border: 1px solid #6969a8;
+   background: rgba(217, 217, 217, 0);
+}
+.form-block__input::placeholder {
+   color: #595976;
+}
+.form-block__input-contaner.text-area .form-block__input {
+   resize: none;
+   height: 220px;
+}

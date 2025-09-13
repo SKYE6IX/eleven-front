@@ -54,21 +54,30 @@
    width: clamp(1200px, calc(100% - 100px), 1500px);
    transform: translateY(100%);
    @include max-breakpoint("md") {
-      margin-top: max(10vh, 100px);
+      margin-top: max(40vh, 300px);
       width: calc(100% - 60px);
       border-radius: 40px 40px 0px 0px;
    }
+   @include max-breakpoint("820px") {
+      margin-top: max(35vh, 250px);
+   }
    @include max-breakpoint("s") {
+      margin-top: max(20vh, 100px);
       width: calc(100% - 40px);
       border-radius: 40px 40px 0px 0px;
    }
 }
 .modal__content-bg {
-   background-color: $secondary-tint;
    position: absolute;
    inset: 0;
    border-radius: 60px 60px 0px 0px;
    z-index: -1;
+}
+.modal__content-bg.secondary-tint {
+   background-color: $secondary-tint;
+}
+.modal__content-bg.neutral {
+   background-color: $neutral;
 }
 .modal__close-button {
    border: none;

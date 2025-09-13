@@ -6,16 +6,18 @@ import "./button.scss";
 
 interface ButtonProps {
    textKey: string;
-   href: string;
-   type: "link" | "submit";
+   href?: string;
+   type: "link" | "submit" | "toggle";
+   handleClick?: () => void;
 }
 
-function Button({ textKey, href, type }: ButtonProps) {
+function Button({ textKey, href, type, handleClick }: ButtonProps) {
    const t = useTranslations("Button");
+   const submit = type === "submit" ? type : "button";
    return (
-      <button className="button">
+      <button className="button" onClick={handleClick} type={submit}>
          {type === "link" && (
-            <Link href={href} className="button__link">
+            <Link href={href ? href : ""} className="button__link">
                <span className="button__text" data-testid="button-text">
                   {t(`text.${textKey}`)}
                </span>
@@ -24,7 +26,7 @@ function Button({ textKey, href, type }: ButtonProps) {
                </span>
             </Link>
          )}
-         {type === "submit" && (
+         {(type === "submit" || type === "toggle") && (
             <>
                <span className="button__text" data-testid="button-text">
                   {t(`text.${textKey}`)}

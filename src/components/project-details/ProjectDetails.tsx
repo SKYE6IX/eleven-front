@@ -31,7 +31,11 @@ function ProjectDetails({
    };
 
    return (
-      <Modal isOpen={isModalOpen} onModalClose={handleOnModalClose}>
+      <Modal
+         isOpen={isModalOpen}
+         onModalClose={handleOnModalClose}
+         contentBackground="secondary-tint"
+      >
          {project && (
             <div className="project-details__content">
                <div className="project-details__content-left">

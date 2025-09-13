@@ -1,0 +1,99 @@
+@use "@/global-styles/variables.scss" as *;
+@use "@/global-styles/shared-styles.scss" as *;
+
+.contact-page {
+   width: 100%;
+   min-height: 100%;
+   @include flex-layout(column, none, none, none);
+   background: linear-gradient(
+      180deg,
+      #c0c0d7 0%,
+      rgba(230, 230, 236, 0.9) 69.23%,
+      #c0c0d7 100%
+   );
+   & .footer {
+      margin-top: auto;
+      background: transparent;
+   }
+   & .footer__top-container {
+      button {
+         display: none;
+      }
+   }
+   & .footer__heading-text,
+   & .footer__site-title-wrapper,
+   & .footer__contact-submit-brief-button {
+      display: none;
+   }
+   & .footer__contact-wrapper {
+      max-width: 700px;
+      @include max-breakpoint("md") {
+         max-width: 100%;
+      }
+   }
+   & .footer__divider {
+      background: #6969a8;
+   }
+}
+.contact-page__inner-wrapper {
+   overflow-x: hidden;
+   width: 100%;
+   min-height: 100%;
+   @include flex-layout(column, none, none, none);
+}
+.contact-page__content-wrapper {
+   margin-top: 80px;
+   position: relative;
+   left: 50%;
+   transform: translateX(-50%);
+   width: clamp(1200px, calc(100% - 200px), 1500px);
+   @include flex-layout(row, center, none, none);
+   @include max-breakpoint("md") {
+      width: calc(100% - 100px);
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 150px;
+   }
+   @include max-breakpoint("s") {
+      width: calc(100% - 40px);
+   }
+}
+.contact-page__text-wrapper {
+   flex-shrink: 0;
+   svg {
+      path {
+         fill: #6969a8;
+      }
+   }
+   @include max-breakpoint("s") {
+      width: 100%;
+   }
+}
+.contact-page__heading-text {
+   width: 500px;
+   margin-bottom: 50px;
+   font-family: $font-montreal;
+   font-size: 6rem;
+   font-weight: 530;
+   line-height: 81px;
+   color: $neutral;
+   @include flex-layout(column, none, none, none);
+   @include max-breakpoint("s") {
+      width: 100%;
+      font-size: 4.6753125rem;
+      line-height: 63.117px;
+   }
+}
+.contact-page__heading-text-span:nth-child(1) {
+   margin-left: auto;
+}
+.contact-page__logo-container {
+   width: 240px;
+   height: 320px;
+   margin-left: auto;
+   margin-right: 200px;
+   @include max-breakpoint("md") {
+      align-self: center;
+      margin: 0px;
+   }
+}
