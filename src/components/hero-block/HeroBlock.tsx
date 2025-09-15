@@ -11,37 +11,54 @@ import "./hero-block.scss";
 function HeroBlock() {
    const t = useTranslations("HeroBlock");
    const containerRef = useRef<HTMLElement>(null);
+   const headingTextRef = useRef<HTMLHeadingElement>(null);
 
    useGSAP(
       () => {
-         const title = document.querySelector(".hero-block__title");
-         if (!title) return;
-         const titleRect = title.getBoundingClientRect();
+         const headingTextRect =
+            headingTextRef.current!.getBoundingClientRect();
          const vw = window.innerWidth;
          const vh = window.innerHeight;
-         const maxScaleX = vw / titleRect.width;
-         const maxScaleY = vh / titleRect.height;
+         const maxScaleX = vw / headingTextRect.width;
+         const maxScaleY = vh / headingTextRect.height;
          const maxAllowedScale = Math.min(maxScaleX, maxScaleY);
          const preferredScale = 1.4;
          const startScale = Math.min(preferredScale, maxAllowedScale);
-         gsap.set(".hero-block__title", {
+         gsap.set(headingTextRef.current, {
             scale: startScale,
+            y: "50%",
+         });
+         gsap.from(headingTextRef.current, {
+            yPercent: 100,
+            opacity: 0,
+            duration: 1.5,
+            ease: "power2.out",
          });
          gsap
-            .timeline({ defaults: { duration: 0.8 } })
-            .from(".hero-block__title", {
-               duration: 1,
-               yPercent: 100,
-               autoAlpha: 0,
+            .timeline({
+               scrollTrigger: {
+                  trigger: containerRef.current,
+                  start: "clamp(top 80px)",
+                  end: "+=" + containerRef.current?.offsetHeight,
+                  scrub: true,
+                  pin: true,
+               },
             })
-            .to(".hero-block__title", {
+            .to(headingTextRef.current, {
                scale: 1,
             })
+            .to(
+               headingTextRef.current,
+               {
+                  y: 0,
+               },
+               "<"
+            )
             .from(
                ".hero-block__tagline-wrapper",
                {
                   scale: 0.5,
-                  autoAlpha: 0,
+                  opacity: 0,
                },
                "<"
             )
@@ -49,7 +66,7 @@ function HeroBlock() {
                ".hero-block__showcase",
                {
                   scale: 0.5,
-                  autoAlpha: 0,
+                  opacity: 0,
                },
                "<"
             );
@@ -62,7 +79,7 @@ function HeroBlock() {
             <div className="hero-block__tagline-wrapper">
                <h5 className="hero-block__tagline">{t("tagline")}</h5>
             </div>
-            <h1 className="hero-block__title">
+            <h1 className="hero-block__title" ref={headingTextRef}>
                {t.rich("title", {
                   important: (chucks) => (
                      <span className="hero-block__title-city">{chucks}</span>
@@ -70,6 +87,7 @@ function HeroBlock() {
                })}
             </h1>
          </div>
+
          <div className="hero-block__bottom">
             <div className="hero-block__showcase">
                <div className="hero-block__showcase-image-container">

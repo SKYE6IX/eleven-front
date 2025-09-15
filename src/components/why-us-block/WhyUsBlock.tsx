@@ -47,42 +47,31 @@ function WhyUsBlock() {
                scale: startScale,
             });
 
-            tl.current = gsap
-               .timeline({
-                  defaults: {
-                     duration: 0.8,
-                     ease: "sine.inOut",
-                  },
-                  scrollTrigger: {
-                     trigger: innerWrapper.current,
-                     start: "clamp(top bottom)",
-                     scrub: 1,
-                     end: () => "+=750",
-                  },
-               })
-               .from(".why-us-block__title-wrapper", {
-                  autoAlpha: 0,
-               })
-               .from(
-                  ".why-us-block__title-wrapper",
-                  {
-                     yPercent: 150,
-                  },
-                  "<"
-               )
+            tl.current = gsap.timeline({
+               defaults: {
+                  duration: 0.8,
+                  ease: "power2.out",
+               },
+               scrollTrigger: {
+                  trigger: innerWrapper.current,
+                  start: "clamp(top bottom)",
+                  scrub: 1.5,
+                  end: () => "+=750",
+               },
+            });
+            tl.current.from(".why-us-block__title-wrapper", {
+               yPercent: 150,
+            });
+            tl.current.to(".why-us-block__title-wrapper", {
+               scale: 1,
+            });
+            tl.current
                .to(
                   ".why-us-block__title-wrapper",
                   {
                      x: -left,
                   },
-                  ">-0.2"
-               )
-               .to(
-                  ".why-us-block__title-wrapper",
-                  {
-                     scale: 1,
-                  },
-                  ">-0.9"
+                  "<"
                )
                .fromTo(
                   ".why-us-block__title-icon",
@@ -111,8 +100,11 @@ function WhyUsBlock() {
                   ">-0.5"
                );
          };
+
          runAnimation();
+
          let width = 0;
+
          const handleResize = () => {
             if (width !== window.innerWidth) {
                runAnimation();
@@ -125,7 +117,6 @@ function WhyUsBlock() {
       },
       { scope: containerRef }
    );
-
    return (
       <section className="why-us-block" ref={containerRef}>
          <div className="why-us-block__inner-wrapper" ref={innerWrapper}>
