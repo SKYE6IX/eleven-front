@@ -11,7 +11,7 @@
          "category": "Web Agency",
          "technologies": ["Next.js", "Motion"],
          "siteUrl": "",
-         "tags": ["showcase"]
+         "tags": ["showcase", "all-screen"]
       },
       {
          "name": "Fast Car Sale",
@@ -24,7 +24,7 @@
          "category": "Car Sales",
          "technologies": ["React.js"],
          "siteUrl": "",
-         "tags": ["showcase"]
+         "tags": ["showcase", "all-screen"]
       },
       {
          "name": "Perevodik",
@@ -37,7 +37,7 @@
          "category": "Translation Agency",
          "technologies": ["Next.js", "SCSS"],
          "siteUrl": "",
-         "tags": [""]
+         "tags": ["all-screen"]
       },
       {
          "name": "Ventimax",
@@ -50,33 +50,7 @@
          "category": "Animal Husbandry Equipments",
          "technologies": ["Next.js", "GSAP", "SCSS", "next-intl"],
          "siteUrl": "",
-         "tags": ["showcase"]
-      },
-      {
-         "name": "Re Market",
-         "key": "re-market",
-         "images": [
-            "/projects-images/re-market/image1.webp",
-            "/projects-images/re-market/image2.webp",
-            "/projects-images/re-market/image3.webp"
-         ],
-         "category": "Mini App",
-         "technologies": ["Next.js", "Express", "Redux", "SCSS"],
-         "siteUrl": "",
-         "tags": [""]
-      },
-      {
-         "name": "Tap",
-         "key": "tap",
-         "images": [
-            "/projects-images/tap/image1.webp",
-            "/projects-images/tap/image2.webp",
-            "/projects-images/tap/image3.webp"
-         ],
-         "category": "Web3",
-         "technologies": ["React.js", "React Router", "SCSS", "i18n"],
-         "siteUrl": "",
-         "tags": [""]
+         "tags": ["showcase", "all-screen"]
       },
       {
          "name": "Rabotnik",
@@ -89,7 +63,33 @@
          "category": "Hiring Agency",
          "technologies": ["React.js", "GSAP", "React Router"],
          "siteUrl": "",
-         "tags": ["showcase"]
+         "tags": ["showcase", "all-screen"]
+      },
+      {
+         "name": "Re Market",
+         "key": "re-market",
+         "images": [
+            "/projects-images/re-market/image1.webp",
+            "/projects-images/re-market/image2.webp",
+            "/projects-images/re-market/image3.webp"
+         ],
+         "category": "Mini App",
+         "technologies": ["Next.js", "Express", "Redux", "SCSS"],
+         "siteUrl": "",
+         "tags": ["mobile-only"]
+      },
+      {
+         "name": "Tap",
+         "key": "tap",
+         "images": [
+            "/projects-images/tap/image1.webp",
+            "/projects-images/tap/image2.webp",
+            "/projects-images/tap/image3.webp"
+         ],
+         "category": "Web3",
+         "technologies": ["React.js", "React Router", "SCSS", "i18n"],
+         "siteUrl": "",
+         "tags": ["mobile-only"]
       }
    ]
 }

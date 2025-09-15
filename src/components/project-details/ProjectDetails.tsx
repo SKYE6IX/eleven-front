@@ -76,37 +76,98 @@ function ProjectDetails({
                   </div>
                </div>
                <div className="project-details__content-right">
-                  <div className="project-details__top-image-container">
-                     <Image
-                        src={project.images[0]}
-                        alt="Kasatkin"
-                        fill={true}
-                        priority
-                        className="project-details__image"
-                        data-testid="project-details-image"
-                     />
-                  </div>
+                  {project.tags.includes("all-screen") && (
+                     <div className="project-details__top-image-container">
+                        <Image
+                           src={project.images[0]}
+                           alt="Kasatkin"
+                           fill={true}
+                           priority
+                           className="project-details__image"
+                           data-testid="project-details-image"
+                        />
+                     </div>
+                  )}
+                  {project.tags.includes("mobile-only") && (
+                     <div
+                        className="project-details__top-image-container blur"
+                        style={{
+                           backgroundImage: `url(${project.images[0]})`,
+                        }}
+                     >
+                        <div className="project-details__project-image-container-blur" />
+                        <Image
+                           src={project.images[0]}
+                           alt="Kasatkin"
+                           fill={true}
+                           priority
+                           className="project-details__image"
+                           data-testid="project-details-image"
+                        />
+                     </div>
+                  )}
+
                   <div className="project-details__bottom-image-wrapper">
-                     <div className="project-details__bottom-image-container">
-                        <Image
-                           src={project.images[1]}
-                           alt="Kasatkin"
-                           fill={true}
-                           priority
-                           className="project-details__image"
-                           data-testid="project-details-image"
-                        />
-                     </div>
-                     <div className="project-details__bottom-image-container">
-                        <Image
-                           src={project.images[2]}
-                           alt="Kasatkin"
-                           fill={true}
-                           priority
-                           className="project-details__image"
-                           data-testid="project-details-image"
-                        />
-                     </div>
+                     {project.tags.includes("all-screen") && (
+                        <>
+                           <div className="project-details__bottom-image-container">
+                              <Image
+                                 src={project.images[1]}
+                                 alt="Kasatkin"
+                                 fill={true}
+                                 priority
+                                 className="project-details__image"
+                                 data-testid="project-details-image"
+                              />
+                           </div>
+                           <div className="project-details__bottom-image-container">
+                              <Image
+                                 src={project.images[2]}
+                                 alt="Kasatkin"
+                                 fill={true}
+                                 priority
+                                 className="project-details__image"
+                                 data-testid="project-details-image"
+                              />
+                           </div>
+                        </>
+                     )}
+                     {project.tags.includes("mobile-only") && (
+                        <>
+                           <div
+                              className="project-details__bottom-image-container blur"
+                              style={{
+                                 backgroundImage: `url(${project.images[1]})`,
+                              }}
+                           >
+                              <div className="project-details__project-image-container-blur" />
+                              <Image
+                                 src={project.images[1]}
+                                 alt="Kasatkin"
+                                 fill={true}
+                                 priority
+                                 className="project-details__image"
+                                 data-testid="project-details-image"
+                              />
+                           </div>
+                           <div
+                              className="project-details__bottom-image-container blur"
+                              style={{
+                                 backgroundImage: `url(${project.images[2]})`,
+                              }}
+                           >
+                              <div className="project-details__project-image-container-blur" />
+                              <Image
+                                 src={project.images[2]}
+                                 alt="Kasatkin"
+                                 fill={true}
+                                 priority
+                                 className="project-details__image"
+                                 data-testid="project-details-image"
+                              />
+                           </div>
+                        </>
+                     )}
                   </div>
                </div>
             </div>

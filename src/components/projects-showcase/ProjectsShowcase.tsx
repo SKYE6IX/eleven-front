@@ -11,7 +11,7 @@ import "./project-showcase.scss";
 function ProjectsShowcase() {
    const containerRef = useRef<HTMLElement>(null);
    const customCursor = useRef<HTMLDivElement>(null);
-   const customCursorTl = useRef<GSAPTimeline>(null);
+   const customCursorTween = useRef<GSAPTween>(null);
    const [projectKey, setProjectKey] = useState("");
    const showcaseProjects = projects["project-list"].filter((project) =>
       project.tags.includes("showcase")
@@ -19,17 +19,15 @@ function ProjectsShowcase() {
    const [isModalOpen, setIsModalOpen] = useState(false);
    const { contextSafe } = useGSAP(
       () => {
-         customCursorTl.current = gsap.timeline({ paused: true }).fromTo(
-            ".project-showcase__custom-cursor",
-            {
-               scale: 0.3,
-               autoAlpha: 0,
-            },
-            {
-               scale: 1,
-               autoAlpha: 1,
-            }
-         );
+         gsap.set(customCursor.current, {
+            scale: 0.3,
+            autoAlpha: 0,
+         });
+         customCursorTween.current = gsap.to(customCursor.current, {
+            paused: true,
+            scale: 1,
+            autoAlpha: 1,
+         });
          gsap.set(".projects-showcase__image-container", {
             y: 100,
             autoAlpha: 0,
@@ -66,10 +64,10 @@ function ProjectsShowcase() {
    );
 
    const handleMouseEnter = contextSafe(() => {
-      customCursorTl.current?.play();
+      customCursorTween.current?.play();
    });
    const handleMouseLeave = contextSafe(() => {
-      customCursorTl.current?.reverse();
+      customCursorTween.current?.reverse();
    });
    const handleMouseMove = (
       e: React.MouseEvent<HTMLDivElement, MouseEvent>
