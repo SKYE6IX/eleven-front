@@ -2,8 +2,14 @@
 @use "@/global-styles/shared-styles.scss" as *;
 
 .about-us-page {
-   position: relative;
+   overflow-x: clip;
    width: 100%;
+}
+// BACKGROUND IMAGE AND BACKDROP EFFECT STYLES START//
+.about-us-page__who-we-are-effect-wrapper {
+   width: 100%;
+   position: relative;
+   z-index: 5;
 }
 .about-us-page__layer-effect,
 .about-us-page__logo-bg {
@@ -18,12 +24,16 @@
    }
 }
 .about-us-page__layer-effect {
+   width: 100vw;
+   right: 50%;
+   transform: translateX(50%);
    z-index: 10;
    top: -80px;
    opacity: 0.5;
    background: linear-gradient(0deg, #eaebdd 0%, #a3a790 55.5%, #a6ae87 100%);
 }
 .about-us-page__logo-bg {
+   top: 40px;
    z-index: 5;
    @include flex-layout(row, none, center, none);
 }
@@ -45,10 +55,10 @@
    height: 100%;
    object-fit: contain;
 }
-.about-us-page__inner-wrapper {
-   overflow-x: hidden;
-   position: relative;
-   z-index: 20;
+// BACKGROUND IMAGE AND BACKDROP EFFECT STYLES END //
+
+.about-us-page__inner-wrapper,
+.about-us-page__service {
    width: clamp(1200px, calc(100% - 200px), 1500px);
    margin: 0px auto;
    @include max-breakpoint("md") {
@@ -65,21 +75,18 @@
       height: 100%;
    }
 }
+.about-us-page__who-we-are-content-wrapper {
+   position: relative;
+   z-index: 20;
+}
 .about-us-page__who-we-are-content-wrapper,
 .about-us-page__who-believe-content-wrapper,
 .about-us-page__service-content-wrapper {
    padding-top: 100px;
-   @include flex-layout(column, none, none, 150px);
+   @include flex-layout(column, none, none, 50px);
    @include max-breakpoint("md") {
       padding-top: 50px;
-      gap: 100px;
-   }
-   @include max-breakpoint("sm") {
-      gap: 60px;
-   }
-   @include max-breakpoint("s") {
-      padding-top: 40px;
-      gap: 50px;
+      gap: 20px;
    }
 }
 .about-us-page__who-we-are-heading-wrapper,
@@ -88,6 +95,7 @@
    width: max-content;
    position: relative;
 }
+
 .about-us-page__who-we-are-heading-text,
 .about-us-page__who-believe-heading-text,
 .about-us-page__service-heading-text {
@@ -165,18 +173,39 @@
    }
 }
 .about-us-page__who-believe {
+   z-index: 20;
+   position: relative;
    height: 80vh;
    width: 100%;
    @include max-breakpoint("md") {
       height: 100%;
    }
 }
-.about-us-page__service {
-   width: 100%;
+.about-us-page__service-block {
+   position: relative;
    min-height: 100vh;
-   padding-bottom: 50px;
+   width: 100%;
+   padding-bottom: 100px;
+   background-color: $neutral;
    @include max-breakpoint("md") {
       min-height: 100%;
+   }
+}
+.about-us-page__service-block-layer {
+   position: absolute;
+   inset: 0;
+   top: -1px;
+   background-color: $secondary-tint;
+   z-index: 1;
+   @media only screen and (min-width: "920px") and (max-width: "1024px") {
+      border-radius: 0px 0px 60px 60px;
+   }
+}
+.about-us-page__service {
+   position: relative;
+   z-index: 1;
+   @include max-breakpoint("s") {
+      padding-left: 10px;
    }
 }
 .about-us-page__service-wrapper {
@@ -209,6 +238,8 @@
    @include max-breakpoint("sm") {
       max-width: 100%;
       margin-top: 0px;
+      font-size: 1.5rem;
+      line-height: 28.8px;
    }
 }
 .about-us-page__service-item-container:nth-child(n + 2) {

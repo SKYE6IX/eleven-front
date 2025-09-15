@@ -7,10 +7,7 @@ export default async function RootLayout({
 }>) {
    return (
       <>
-         <div
-            id="navigation-trigger"
-            style={{ height: "40px", marginTop: "40px" }}
-         />
+         <div id="navigation-trigger" style={{ height: "80px" }} />
          {children}
          <Footer />
       </>
