@@ -12,6 +12,7 @@ function HeroBlock() {
    const t = useTranslations("HeroBlock");
    const containerRef = useRef<HTMLElement>(null);
    const headingTextRef = useRef<HTMLHeadingElement>(null);
+   const tl = useRef<GSAPTimeline>(null);
 
    useGSAP(
       () => {
@@ -26,50 +27,38 @@ function HeroBlock() {
          const startScale = Math.min(preferredScale, maxAllowedScale);
          gsap.set(headingTextRef.current, {
             scale: startScale,
-            y: "50%",
          });
-         gsap.from(headingTextRef.current, {
-            yPercent: 100,
-            opacity: 0,
-            duration: 1.5,
-            ease: "power2.out",
-         });
-         gsap
-            .timeline({
-               scrollTrigger: {
-                  trigger: containerRef.current,
-                  start: "clamp(top 80px)",
-                  end: "+=" + containerRef.current?.offsetHeight,
-                  scrub: true,
-                  pin: true,
-               },
+         if (tl.current) {
+            tl.current.kill();
+         }
+         tl.current = gsap.timeline({ defaults: { duration: 1.2 } });
+         tl.current
+            ?.from(headingTextRef.current, {
+               yPercent: 130,
+               opacity: 0,
+               ease: "power2.out",
             })
-            .to(headingTextRef.current, {
-               scale: 1,
-            })
-            .to(
-               headingTextRef.current,
-               {
-                  y: 0,
-               },
-               "<"
-            )
-            .from(
-               ".hero-block__tagline-wrapper",
-               {
-                  scale: 0.5,
-                  opacity: 0,
-               },
-               "<"
-            )
             .from(
                ".hero-block__showcase",
                {
-                  scale: 0.5,
+                  yPercent: 100,
                   opacity: 0,
                },
                "<"
+            )
+            .to(headingTextRef.current, {
+               duration: 1,
+               scale: 1,
+            })
+            .from(
+               ".hero-block__tagline-wrapper",
+               {
+                  scale: 0.7,
+                  opacity: 0,
+               },
+               ">-0.5"
             );
+         tl.current = null;
       },
       { scope: containerRef }
    );
