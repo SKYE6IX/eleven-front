@@ -16,7 +16,6 @@ function Contact() {
    const handleOpenForm = () => {
       setOpenForm(!openForm);
    };
-
    useGSAP(
       () => {
          gsap.from(".top", {
@@ -32,11 +31,9 @@ function Contact() {
       },
       { scope: containerRef }
    );
-
    return (
       <>
          <div className="contact-page" ref={containerRef}>
-            <div id="navigation-trigger" style={{ height: "80px" }} />
             <div className="contact-page__inner-wrapper">
                <div className="contact-page__content-wrapper">
                   <div className="contact-page__text-wrapper">

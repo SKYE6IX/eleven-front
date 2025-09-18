@@ -1,14 +1,19 @@
 import { render, screen } from "@testing-library/react";
 import { NextIntlClientProvider } from "next-intl";
+import { useGSAP } from "@gsap/react";
 import messages from "../../../../messages/en.json";
 import Navigation from "../Navigation";
 
 jest.mock("@gsap/react");
 
 describe("Navigation component", () => {
+   beforeEach(() => {
+      (useGSAP as jest.Mock).mockReturnValue({
+         contextSafe: jest.fn(),
+      });
+   });
    it("render site title", () => {
       // Arrange
-
       render(
          <NextIntlClientProvider locale="en" messages={messages}>
             <Navigation />
@@ -25,7 +30,6 @@ describe("Navigation component", () => {
 
    it("render navigation menu items", () => {
       // Arrange
-
       render(
          <NextIntlClientProvider locale="en" messages={messages}>
             <Navigation />

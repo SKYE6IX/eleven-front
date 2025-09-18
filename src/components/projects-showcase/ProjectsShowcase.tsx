@@ -82,6 +82,8 @@ function ProjectsShowcase() {
       setIsModalOpen(!isModalOpen);
    };
 
+   const prefix = process.env.NODE_ENV === "production" ? "/eleven-front" : "";
+
    return (
       <>
          <section className="projects-showcase" ref={containerRef}>
@@ -101,7 +103,7 @@ function ProjectsShowcase() {
                      onClick={() => toggleModal(project.key)}
                   >
                      <Image
-                        src={project.images[0]}
+                        src={prefix + project.images[0]}
                         alt={project.name}
                         fill={true}
                         className="projects-showcase__image"

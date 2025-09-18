@@ -4,6 +4,7 @@
 .contact-page {
    width: 100%;
    min-height: 100%;
+   margin-top: -80px;
    @include flex-layout(column, none, none, none);
    background: linear-gradient(
       180deg,
@@ -42,7 +43,9 @@
    @include flex-layout(column, none, none, none);
 }
 .contact-page__content-wrapper {
-   margin-top: 80px;
+   // Needed to be moved twice the margin top i gave it's container to
+   // respect the actual space i wanted to give to it. 80px
+   margin-top: 160px;
    position: relative;
    left: 50%;
    transform: translateX(-50%);

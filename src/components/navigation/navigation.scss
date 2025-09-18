@@ -1,26 +1,17 @@
 @use "@/global-styles/variables.scss" as *;
 @use "@/global-styles/shared-styles.scss" as *;
-
 .header {
    width: 100%;
    position: fixed;
    top: 0px;
    left: 0px;
    padding-top: 20px;
+   padding-left: 5px;
+   padding-right: 5px;
    z-index: 500;
-   @include max-breakpoint("sm") {
-      & .header__menu-container {
-         pointer-events: none;
-         touch-action: none;
-      }
-   }
-}
-.header.menu-active {
-   @include max-breakpoint("sm") {
-      & .header__menu-container {
-         pointer-events: all;
-         touch-action: all;
-      }
+   @include max-breakpoint("md") {
+      padding-left: 10px;
+      padding-right: 10px;
    }
 }
 .header__inner-wrapper {
@@ -29,22 +20,6 @@
    position: relative;
    @include max-breakpoint("sm") {
       height: 60px;
-   }
-}
-
-.header__navigation-wrapper {
-   position: absolute;
-   height: 100%;
-   width: 55rem;
-   padding: 20px;
-   top: 0px;
-   left: 50%;
-   transform: translateX(-50%);
-   @include max-breakpoint("md") {
-      width: 50rem;
-   }
-   @include max-breakpoint("sm") {
-      width: 18rem;
    }
 }
 .header__navigation-bg-layer {
@@ -60,6 +35,31 @@
    backdrop-filter: blur(10px);
    @include max-breakpoint("sm") {
       clip-path: inset(0% 0% 0% 0% round 20px);
+   }
+}
+.header__navigation-sentinel {
+   position: absolute;
+   width: 55rem;
+   @include max-breakpoint("md") {
+      width: 50rem;
+   }
+   @include max-breakpoint("sm") {
+      width: 18rem;
+   }
+}
+.header__navigation-wrapper {
+   position: absolute;
+   height: 100%;
+   padding: 20px 15px;
+   top: 0px;
+   left: 50%;
+   width: 55rem;
+   transform: translateX(-50%);
+   @include max-breakpoint("md") {
+      width: 50rem;
+   }
+   @include max-breakpoint("sm") {
+      width: 18rem;
    }
 }
 .header__navigation {
@@ -95,20 +95,26 @@
    height: 24px;
    align-self: flex-end;
 }
+
 .header__menu-container {
    list-style: none;
    @include flex-layout(row, none, none, 15px);
+}
+.header__menu-container.large {
    @include max-breakpoint("sm") {
+      display: none;
+   }
+}
+.header__menu-container.small {
+   display: none;
+   @include max-breakpoint("sm") {
+      display: flex;
       top: 60px;
       left: 0px;
       padding-top: 10px;
       position: absolute;
       flex-direction: column;
       gap: 20px;
-   }
-}
-.mobile-menu-item {
-   @include max-breakpoint("sm") {
       visibility: hidden;
    }
 }
@@ -130,7 +136,7 @@
       padding: 5px 15px;
    }
 }
-.header__menu-item:hover:not(.active) {
+.header__menu-container.large .header__menu-item:hover:not(.active) {
    color: $neutral;
    background-color: rgba(0, 0, 0, 0.3);
 }
@@ -139,16 +145,11 @@
    color: $support;
    background-color: $primary;
 }
+.header__menu-container.small .mobile-menu-item {
+}
 .header__button-wrapper.large {
    @include max-breakpoint("sm") {
       display: none;
-   }
-}
-.header__button-wrapper.small {
-   display: none;
-
-   @include max-breakpoint("sm") {
-      display: block;
    }
 }
 .header__menu-bar-wrapper {

@@ -29,7 +29,7 @@ function ProjectDetails({
    const handleOnModalClose = () => {
       toggleModal(projectKey);
    };
-
+   const prefix = process.env.NODE_ENV === "production" ? "/eleven-front" : "";
    return (
       <Modal
          isOpen={isModalOpen}
@@ -79,7 +79,7 @@ function ProjectDetails({
                   {project.tags.includes("all-screen") && (
                      <div className="project-details__top-image-container">
                         <Image
-                           src={project.images[0]}
+                           src={prefix + project.images[0]}
                            alt="Kasatkin"
                            fill={true}
                            priority
@@ -92,12 +92,14 @@ function ProjectDetails({
                      <div
                         className="project-details__top-image-container blur"
                         style={{
-                           backgroundImage: `url(${project.images[0]})`,
+                           backgroundImage: `url(${
+                              prefix + project.images[0]
+                           })`,
                         }}
                      >
                         <div className="project-details__project-image-container-blur" />
                         <Image
-                           src={project.images[0]}
+                           src={prefix + project.images[0]}
                            alt="Kasatkin"
                            fill={true}
                            priority
@@ -112,7 +114,7 @@ function ProjectDetails({
                         <>
                            <div className="project-details__bottom-image-container">
                               <Image
-                                 src={project.images[1]}
+                                 src={prefix + project.images[1]}
                                  alt="Kasatkin"
                                  fill={true}
                                  priority
@@ -122,7 +124,7 @@ function ProjectDetails({
                            </div>
                            <div className="project-details__bottom-image-container">
                               <Image
-                                 src={project.images[2]}
+                                 src={prefix + project.images[2]}
                                  alt="Kasatkin"
                                  fill={true}
                                  priority
@@ -137,12 +139,14 @@ function ProjectDetails({
                            <div
                               className="project-details__bottom-image-container blur"
                               style={{
-                                 backgroundImage: `url(${project.images[1]})`,
+                                 backgroundImage: `url(${
+                                    prefix + project.images[1]
+                                 })`,
                               }}
                            >
                               <div className="project-details__project-image-container-blur" />
                               <Image
-                                 src={project.images[1]}
+                                 src={prefix + project.images[1]}
                                  alt="Kasatkin"
                                  fill={true}
                                  priority
@@ -153,12 +157,14 @@ function ProjectDetails({
                            <div
                               className="project-details__bottom-image-container blur"
                               style={{
-                                 backgroundImage: `url(${project.images[2]})`,
+                                 backgroundImage: `url(${
+                                    prefix + project.images[2]
+                                 })`,
                               }}
                            >
                               <div className="project-details__project-image-container-blur" />
                               <Image
-                                 src={project.images[2]}
+                                 src={prefix + project.images[2]}
                                  alt="Kasatkin"
                                  fill={true}
                                  priority

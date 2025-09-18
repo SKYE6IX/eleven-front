@@ -1,13 +1,12 @@
 import Footer from "@/components/footer/Footer";
 
-export default async function RootLayout({
+export default async function Layout({
    children,
 }: Readonly<{
    children: React.ReactNode;
 }>) {
    return (
       <>
-         <div id="navigation-trigger" style={{ height: "80px" }} />
          {children}
          <Footer />
       </>
