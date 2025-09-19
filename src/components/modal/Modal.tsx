@@ -21,6 +21,7 @@ function Modal({
 }: ModalProps) {
    const containerRef = useRef<HTMLElement>(null);
    const contentWrapperRef = useRef<HTMLDivElement>(null);
+   const tl = useRef<GSAPTimeline>(null);
    const [isBrowser, setIsBrowser] = useState(false);
 
    useEffect(() => {
@@ -30,10 +31,11 @@ function Modal({
    const { contextSafe } = useGSAP(
       () => {
          if (!contentWrapperRef.current) return;
-         const getMoveXValue = () => {
-            return contentWrapperRef.current!.offsetLeft;
-         };
-         const scrollTl = gsap.timeline({
+         const moveXValue = contentWrapperRef.current!.offsetLeft;
+         if (tl.current) {
+            tl.current.kill();
+         }
+         tl.current = gsap.timeline({
             defaults: {
                ease: "sine.inOut",
                duration: 0.7,
@@ -42,21 +44,20 @@ function Modal({
                trigger: ".modal__inner-child ",
                scroller: ".modal__inner-wrapper",
                start: "top top",
-               end: () => "+=" + contentWrapperRef.current!.offsetTop,
+               end: "+=" + contentWrapperRef.current!.offsetTop,
                scrub: 0.5,
-               invalidateOnRefresh: true,
             },
          });
-         scrollTl
+         tl.current
             .to(".modal__content-bg", {
-               left: () => -getMoveXValue(),
-               right: () => -getMoveXValue(),
+               left: -moveXValue,
+               right: -moveXValue,
                borderRadius: "0px 0px 0px 0px",
             })
             .to(
                ".modal__close-button",
                {
-                  x: () => contentWrapperRef.current!.offsetLeft,
+                  x: contentWrapperRef.current!.offsetLeft,
                },
                "<"
             );
@@ -69,11 +70,13 @@ function Modal({
       },
       { scope: containerRef, dependencies: [isOpen] }
    );
-
    const handleCloseModal = contextSafe(() => {
       gsap.to(".modal__content-wrapper", {
          ease: "power2.in",
          y: "100%",
+      });
+      gsap.set(".modal__content-bg", {
+         clearProps: "borderRadius",
       });
       onModalClose();
    });

@@ -41,7 +41,13 @@ function ProjectDetails({
                <div className="project-details__content-left">
                   <h3 className="project-details__title">{project.name}</h3>
                   <div className="project-details__action-wrapper">
-                     <Button type="link" textKey="visitWebsite" href="#" />
+                     {project.siteUrl && (
+                        <Button
+                           type="link"
+                           textKey="visitWebsite"
+                           href={project.siteUrl}
+                        />
+                     )}
                      <span
                         className="project-details__category"
                         data-testid="project-details-category"

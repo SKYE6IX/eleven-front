@@ -57,6 +57,9 @@
 .project-details__action-wrapper {
    margin-top: 20px;
    @include flex-layout(row, center, none, 30px);
+   & .button {
+      flex-shrink: 0;
+   }
    @include max-breakpoint("s") {
       margin-top: 15px;
       gap: 20px;

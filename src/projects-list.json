@@ -10,7 +10,7 @@
          ],
          "category": "Web Agency",
          "technologies": ["Next.js", "Motion"],
-         "siteUrl": "",
+         "siteUrl": "#",
          "tags": ["showcase", "all-screen"]
       },
       {
@@ -23,7 +23,7 @@
          ],
          "category": "Car Sales",
          "technologies": ["React.js"],
-         "siteUrl": "",
+         "siteUrl": "#",
          "tags": ["showcase", "all-screen"]
       },
       {
@@ -36,7 +36,7 @@
          ],
          "category": "Translation Agency",
          "technologies": ["Next.js", "SCSS"],
-         "siteUrl": "",
+         "siteUrl": "#",
          "tags": ["all-screen"]
       },
       {
@@ -49,7 +49,7 @@
          ],
          "category": "Animal Husbandry Equipments",
          "technologies": ["Next.js", "GSAP", "SCSS", "next-intl"],
-         "siteUrl": "",
+         "siteUrl": "#",
          "tags": ["showcase", "all-screen"]
       },
       {
@@ -62,7 +62,7 @@
          ],
          "category": "Hiring Agency",
          "technologies": ["React.js", "GSAP", "React Router"],
-         "siteUrl": "",
+         "siteUrl": "#",
          "tags": ["showcase", "all-screen"]
       },
       {
