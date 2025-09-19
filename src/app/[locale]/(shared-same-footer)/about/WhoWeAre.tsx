@@ -16,27 +16,33 @@ type Props = {
 };
 function WhoWeAre({ getMoveXAndStartScale }: Props) {
    const containerRef = useRef<HTMLDivElement>(null);
+   const headingTextRef = useRef<HTMLHeadingElement>(null);
+   const tl = useRef<GSAPTimeline>(null);
+   const tl2 = useRef<GSAPTimeline>(null);
    const t = useTranslations("AboutUsPage");
    useGSAP(
       () => {
          const mm = gsap.matchMedia();
-         const headingText = document.querySelector<HTMLDivElement>(
-            ".about-us-page__who-we-are-heading-text"
-         );
          //** DESKTOP ANINAMTIONS */
          mm.add("(min-width: 1200px)", () => {
-            if (!headingText) return;
-            const { moveX, startScale } = getMoveXAndStartScale(headingText);
-            gsap.set(headingText, {
+            if (!headingTextRef.current) return;
+            const { moveX, startScale } = getMoveXAndStartScale(
+               headingTextRef.current
+            );
+            gsap.set(headingTextRef.current, {
                scale: startScale,
                x: moveX,
             });
-            gsap.from(headingText, {
+            gsap.from(headingTextRef.current, {
                duration: 1.5,
                opacity: 0,
                yPercent: 300,
             });
-            const tl = gsap.timeline({
+
+            if (tl.current) {
+               tl.current.kill();
+            }
+            tl.current = gsap.timeline({
                scrollTrigger: {
                   trigger: containerRef.current,
                   start: "camp(top 80px)",
@@ -45,17 +51,17 @@ function WhoWeAre({ getMoveXAndStartScale }: Props) {
                   pin: true,
                },
             });
-            tl.to(headingText, {
+            tl.current.to(headingTextRef.current, {
                scale: 1,
             });
-            tl.to(
-               headingText,
+            tl.current.to(
+               headingTextRef.current,
                {
                   x: 0,
                },
                "-=0.5"
             );
-            tl.from(
+            tl.current.from(
                ".about-us-page__who-we-are-heading-icon",
                {
                   x: 150,
@@ -63,7 +69,7 @@ function WhoWeAre({ getMoveXAndStartScale }: Props) {
                },
                "-=0.15"
             );
-            tl.from(".about-us-page__who-we-are-text", {
+            tl.current.from(".about-us-page__who-we-are-text", {
                y: 150,
                opacity: 0,
                stagger: 0.2,
@@ -72,12 +78,16 @@ function WhoWeAre({ getMoveXAndStartScale }: Props) {
 
          //** MOBILE ANINAMTIONS */
          mm.add("(max-width: 1024px)", () => {
-            const tl = gsap.timeline();
-            tl.from(headingText, {
-               duration: 1,
-               x: 150,
-               opacity: 0,
-            })
+            if (tl2.current) {
+               tl2.current.kill();
+            }
+            tl2.current = gsap.timeline();
+            tl2.current
+               .from(headingTextRef.current, {
+                  duration: 1,
+                  x: 150,
+                  opacity: 0,
+               })
                .from(
                   ".about-us-page__who-we-are-heading-icon",
                   {
@@ -118,7 +128,10 @@ function WhoWeAre({ getMoveXAndStartScale }: Props) {
          </div>
          <div className="about-us-page__who-we-are-content-wrapper">
             <div className="about-us-page__who-we-are-heading-wrapper">
-               <h3 className="about-us-page__who-we-are-heading-text heading-text">
+               <h3
+                  className="about-us-page__who-we-are-heading-text heading-text"
+                  ref={headingTextRef}
+               >
                   {t("whoWeAreBlock.headingText")}
                </h3>
                <span className="about-us-page__who-we-are-heading-icon">

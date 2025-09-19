@@ -12,6 +12,9 @@
    @include max-breakpoint("md") {
       padding-top: 80px;
    }
+   @include max-breakpoint("sm") {
+      padding-bottom: 50px;
+   }
    @include max-breakpoint("s") {
       padding-top: 40px;
    }

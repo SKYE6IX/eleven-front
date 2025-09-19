@@ -15,7 +15,6 @@
    },
    "dependencies": {
       "@gsap/react": "^2.1.2",
-      "lodash": "^4.17.21",
       "next": "15.4.6",
       "next-intl": "^4.3.4",
       "react": "19.1.0",

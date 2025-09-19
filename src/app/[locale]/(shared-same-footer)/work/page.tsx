@@ -47,11 +47,10 @@ function WorkPage() {
                },
             });
          });
-
          mm.add("(max-width: 912px)", () => {
             gsap.to(".work-page__layer", {
                duration: 1.5,
-               clipPath: () => getClipPathValue("60"),
+               clipPath: () => getClipPathValue("30"),
                ease: "power1.out",
                scrollTrigger: {
                   trigger: containerRef.current,
@@ -76,10 +75,14 @@ function WorkPage() {
                });
             },
          });
+
          gsap.set(customCursor.current, {
             scale: 0.3,
             autoAlpha: 0,
          });
+         if (customCursorTween.current) {
+            customCursorTween.current.kill();
+         }
          customCursorTween.current = gsap.to(customCursor.current, {
             paused: true,
             scale: 1,
@@ -119,6 +122,7 @@ function WorkPage() {
       },
       { scope: containerRef }
    );
+
    const handleMouseEnter = contextSafe(() => {
       customCursorTween.current?.play();
    });

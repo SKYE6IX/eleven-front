@@ -190,6 +190,9 @@
    @include max-breakpoint("md") {
       min-height: 100%;
    }
+   @include max-breakpoint("sm") {
+      padding-bottom: 50px;
+   }
 }
 .about-us-page__service-block-layer {
    position: absolute;

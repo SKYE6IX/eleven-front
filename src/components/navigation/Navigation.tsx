@@ -6,6 +6,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Button from "../button/Button";
 import GreenDotIcon from "../icons/GreenDotIcon";
 import MenuBarIcon from "../icons/MenuBarIcon";
+import { Link } from "@/i18n/navigation";
 import NavLink from "./NavLink";
 import "./navigation.scss";
 
@@ -243,7 +244,9 @@ function Navigation() {
                   <div className="header__navigation-bg-layer"></div>
                   <div className="header__navigation">
                      <div className="header__title-wrapper">
-                        <h3 className="header__title">eleven</h3>
+                        <Link href="/">
+                           <h3 className="header__title">eleven</h3>
+                        </Link>
                         <span className="header__title-icon">
                            <GreenDotIcon />
                         </span>

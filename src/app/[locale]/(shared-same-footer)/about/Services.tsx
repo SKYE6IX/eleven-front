@@ -17,7 +17,10 @@ type Props = {
 function Services({ getMoveXAndStartScale }: Props) {
    const containerRef = useRef<HTMLDivElement>(null);
    const innerWrapperRef = useRef<HTMLDivElement>(null);
+   const headingTextRef = useRef<HTMLHeadingElement>(null);
+   const tl = useRef<GSAPTimeline>(null);
    const t = useTranslations("AboutUsPage");
+
    useGSAP(
       () => {
          const mm = gsap.matchMedia();
@@ -30,22 +33,25 @@ function Services({ getMoveXAndStartScale }: Props) {
             const innerWrapperLeft = innerWrapperRef.current!.offsetLeft;
             return "+=" + innerWrapperLeft * 2;
          };
+
          const split = SplitText.create(".about-us-page__service-text", {
             type: "words",
          });
-         const headingText = document.querySelector<HTMLDivElement>(
-            ".about-us-page__service-heading-text"
-         );
-
          //** DESKTOP ANINAMTIONS */
          mm.add("(min-width: 1200px)", () => {
-            if (!headingText) return;
-            const { moveX, startScale } = getMoveXAndStartScale(headingText);
-            gsap.set(headingText, {
+            if (!headingTextRef.current) return;
+            const { moveX, startScale } = getMoveXAndStartScale(
+               headingTextRef.current
+            );
+            gsap.set(headingTextRef.current, {
                scale: startScale,
                x: moveX,
             });
-            const tl = gsap.timeline({
+
+            if (tl.current) {
+               tl.current.kill();
+            }
+            tl.current = gsap.timeline({
                scrollTrigger: {
                   trigger: containerRef.current,
                   start: "camp(top 80px)",
@@ -54,26 +60,39 @@ function Services({ getMoveXAndStartScale }: Props) {
                   pin: true,
                },
             });
-            tl.to(headingText, { scale: 1, duration: 1, ease: "none" });
-            tl.to(headingText, { x: 0, duration: 1, ease: "none" }, "-=0.9");
-            tl.from(
-               ".about-us-page__service-heading-icon",
-               {
-                  x: 150,
-                  opacity: 0,
-               },
-               "-=0.15"
-            ).from(
-               split.words,
-               {
-                  ease: "none",
-                  duration: 0.8,
-                  opacity: 0.5,
-                  stagger: 0.5,
-               },
-               "<"
+
+            tl.current.to(headingTextRef.current, {
+               scale: 1,
+               duration: 1,
+               ease: "none",
+            });
+
+            tl.current.to(
+               headingTextRef.current,
+               { x: 0, duration: 1, ease: "none" },
+               "-=0.9"
             );
-            tl.from(".about-us-page__service-item-container", {
+
+            tl.current
+               .from(
+                  ".about-us-page__service-heading-icon",
+                  {
+                     x: 150,
+                     opacity: 0,
+                  },
+                  "-=0.15"
+               )
+               .from(
+                  split.words,
+                  {
+                     ease: "none",
+                     duration: 0.8,
+                     opacity: 0.5,
+                     stagger: 0.5,
+                  },
+                  "<"
+               );
+            tl.current.from(".about-us-page__service-item-container", {
                duration: 0.7,
                y: 150,
                opacity: 0,
@@ -99,12 +118,12 @@ function Services({ getMoveXAndStartScale }: Props) {
             gsap
                .timeline({
                   scrollTrigger: {
-                     trigger: headingText,
+                     trigger: headingTextRef.current,
                      start: "top 90%",
                      toggleActions: "play none none reverse",
                   },
                })
-               .from(headingText, {
+               .from(headingTextRef.current, {
                   duration: 1,
                   x: 150,
                   opacity: 0,
@@ -151,7 +170,7 @@ function Services({ getMoveXAndStartScale }: Props) {
          mm.add("(max-width: 912px)", () => {
             gsap.to(".about-us-page__service-block-layer", {
                duration: 1.5,
-               clipPath: () => getClipPathValue("60"),
+               clipPath: () => getClipPathValue("30"),
                ease: "power1.out",
                scrollTrigger: {
                   trigger: containerRef.current,
@@ -172,7 +191,10 @@ function Services({ getMoveXAndStartScale }: Props) {
          <section className="about-us-page__service" ref={innerWrapperRef}>
             <div className="about-us-page__service-content-wrapper">
                <div className="about-us-page__service-heading-wrapper">
-                  <h3 className="about-us-page__service-heading-text">
+                  <h3
+                     className="about-us-page__service-heading-text"
+                     ref={headingTextRef}
+                  >
                      {t("ourOfferingBlock.headingText")}
                   </h3>
                   <span className="about-us-page__service-heading-icon">

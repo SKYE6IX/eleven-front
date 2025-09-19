@@ -33,6 +33,7 @@ function FAQBlock() {
             const innerWrapperLeft = innerWrapperRef.current!.offsetLeft;
             return "+=" + innerWrapperLeft * 2;
          };
+
          mm.add("(min-width: 1100px)", () => {
             gsap.to(".faq-block__layer", {
                duration: 1.5,
@@ -47,6 +48,7 @@ function FAQBlock() {
                },
             });
          });
+
          mm.add("(max-width: 912px)", () => {
             gsap.to(".faq-block__layer", {
                duration: 1.5,

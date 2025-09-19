@@ -7,13 +7,13 @@ import FAQBlock from "@/components/faq-block/FAQBlock";
 
 export default function Home() {
    return (
-      <div>
+      <>
          <HeroBlock />
          <WhyUsBlock />
          <ProjectsShowcase />
          <ServiceListBlock />
          <AboutUsBlock />
          <FAQBlock />
-      </div>
+      </>
    );
 }

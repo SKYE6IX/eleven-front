@@ -6,7 +6,7 @@ import { useTranslations } from "next-intl";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { SplitText } from "gsap/SplitText";
-import { Link as IntLink } from "@/i18n/navigation";
+import { Link as IntLink, usePathname } from "@/i18n/navigation";
 import WorldIcon from "../icons/WorldIcon";
 import GreenDotIcon from "../icons/GreenDotIcon";
 import ArrowLeftIcon from "../icons/ArrowLeftIcon";
@@ -15,12 +15,23 @@ import TelephoneIcon from "../icons/TelephoneIcon";
 import "./footer.scss";
 
 function Footer() {
+   const pathname = usePathname();
    const t = useTranslations("Footer");
+   const tl = useRef<GSAPTimeline>(null);
+   const split1 = useRef<SplitText>(null);
+   const split2 = useRef<SplitText>(null);
    const date = new Date();
    const containerRef = useRef<HTMLElement>(null);
+
    useGSAP(
       () => {
-         SplitText.create(".footer__heading-text", {
+         if (split1.current || split2.current) {
+            split1.current?.revert();
+            split1.current = null;
+            split2.current?.revert();
+            split2.current = null;
+         }
+         split1.current = SplitText.create(".footer__heading-text", {
             type: "lines",
             autoSplit: true,
             onSplit: (self) => {
@@ -38,30 +49,51 @@ function Footer() {
                });
             },
          });
-         const tl = gsap.timeline({
-            scrollTrigger: {
-               trigger: ".footer__site-title",
-               start: "top 90%",
-               toggleActions: "play none none reverse",
-            },
-         });
-         const split = SplitText.create(".footer__site-title", {
+         split2.current = SplitText.create(".footer__site-title", {
             type: "chars",
          });
-         tl.from(split.chars, {
-            x: 150,
-            autoAlpha: 0,
-            duration: 0.7,
-            stagger: 0.1,
-            ease: "power2.out",
-         }).from(".footer__site-title-icon", {
-            y: -100,
-            autoAlpha: 0,
-            duration: 1,
-            ease: "bounce.out",
+         if (tl.current) {
+            tl.current.kill();
+            tl.current.scrollTrigger?.kill();
+         }
+         tl.current = gsap.timeline({
+            scrollTrigger: {
+               trigger: ".footer__site-title-wrapper",
+               start: "clamp(top 90%)",
+               end: "+=150",
+               toggleActions: "play none none reverse",
+               onEnter: () => {
+                  console.log("I enter");
+               },
+               onLeaveBack: () => {
+                  console.log("I leave back");
+               },
+            },
          });
+         gsap.set(split2.current.chars, {
+            x: 150,
+            opacity: 0,
+         });
+         gsap.set(".footer__site-title-icon", {
+            y: -100,
+            opacity: 0,
+         });
+         tl.current
+            .to(split2.current.chars, {
+               x: 0,
+               opacity: 1,
+               duration: 0.7,
+               stagger: 0.1,
+               ease: "power2.out",
+            })
+            .to(".footer__site-title-icon", {
+               y: 0,
+               opacity: 1,
+               duration: 1,
+               ease: "bounce.out",
+            });
       },
-      { scope: containerRef }
+      { scope: containerRef, dependencies: [pathname] }
    );
    return (
       <footer className="footer" ref={containerRef}>
@@ -115,7 +147,6 @@ function Footer() {
                </div>
             </div>
             <div className="footer__divider" />
-
             <div className="footer__bottom">
                <div className="footer__all-right-reserved">
                   <h4 className="footer__all-right-reserved-heading">ELEVEN</h4>
