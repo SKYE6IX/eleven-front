@@ -57,8 +57,9 @@
    width: 100%;
    @include flex-layout(row, none, space-between, none);
 }
-.footer__contact-submit-brief-heading,
-.footer__contact-submit-brief-button,
+
+.footer__contact-text-global,
+.footer__contact-text-location,
 .footer__contact-heading {
    font-family: $font-montreal, sans-serif;
    font-size: 1.25rem;
@@ -70,17 +71,15 @@
       line-height: 16.8px;
    }
 }
-.footer__contact-submit-brief-heading,
-.footer__contact-submit-brief-button {
+
+.footer__contact-text-global,
+.footer__contact-text-location {
    @include flex-layout(row, center, none, 7px);
 }
-.footer__contact-submit-brief-button {
-   margin-top: 15px;
-   margin-left: 25px;
-   @include max-breakpoint("s") {
-      margin-top: 10px;
-   }
+.footer__contact-text-location {
+   margin-top: 10px;
 }
+
 .footer__contact-list {
    margin-top: 15px;
    list-style: none;

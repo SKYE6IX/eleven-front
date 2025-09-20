@@ -6,10 +6,10 @@ import { useTranslations } from "next-intl";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { SplitText } from "gsap/SplitText";
-import { Link as IntLink, usePathname } from "@/i18n/navigation";
+import { usePathname } from "@/i18n/navigation";
 import WorldIcon from "../icons/WorldIcon";
+import LocationIcon from "../icons/LocationIcon";
 import GreenDotIcon from "../icons/GreenDotIcon";
-import ArrowLeftIcon from "../icons/ArrowLeftIcon";
 import MailIcon from "../icons/MailIcon";
 import TelephoneIcon from "../icons/TelephoneIcon";
 import "./footer.scss";
@@ -103,20 +103,19 @@ function Footer() {
                <Button textKey="contact" href="/contact" type="link" />
                <div className="footer__top-inner-wrapper">
                   <div className="footer__contact-wrapper">
-                     <div className="footer__contact-submit-brief">
-                        <h5 className="footer__contact-submit-brief-heading">
+                     <div className="footer__contact-text-wrapper">
+                        <h5 className="footer__contact-text-global">
                            <span>
                               <WorldIcon />
                            </span>
                            {t("briefHeading")}
                         </h5>
-                        <IntLink
-                           href="#"
-                           className="footer__contact-submit-brief-button"
-                        >
-                           {t("submitBrief")}
-                           <ArrowLeftIcon />
-                        </IntLink>
+                        <h5 className="footer__contact-text-location">
+                           <span>
+                              <LocationIcon />
+                           </span>
+                           Moscow
+                        </h5>
                      </div>
                      <div className="footer__contact-info">
                         <h5 className="footer__contact-heading">
