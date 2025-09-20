@@ -1,16 +1,15 @@
 {
    "Navigations": {
       "home": "Главная",
-      "about": "Услуги",
+      "about": "О нас",
       "work": "Проекты",
       "contact": "Контакты"
    },
    "Footer": {
-      "headingText": "Do you like what you see ? Let’s make something together.",
-      "briefHeading": "We work globally",
-      "submitBrief": "Submit a brief",
-      "getInTouch": "Get in touch",
-      "reserveText": "ALL RIGHT RESERVED"
+      "headingText": "Понравилось? Создадим что-то вместе!",
+      "briefHeading": "Мы работаем по всему миру",
+      "getInTouch": "Связаться с нами",
+      "reserveText": "ВСЕ ПРАВА ЗАЩИЩЕНЫ"
    },
    "Button": {
       "text": {
@@ -44,7 +43,7 @@
                "serviceType": "Оптимизация веб-сайтов",
                "description": "Комплексные SEO-стратегии, включая оптимизацию на странице, аудит контента и построение ссылок для увеличения органического трафика и улучшения позиций в поисковых системах."
             },
-            "websiteMaintenance": {
+            "websiteMaintainace": {
                "name": "Постоянное обслуживание и поддержка веб-сайтов",
                "serviceType": "Обслуживание веб-сайтов",
                "description": "Проактивное обслуживание, обновления безопасности, мониторинг производительности и круглосуточная поддержка для бесперебойной работы вашего сайта."
@@ -67,24 +66,24 @@
       }
    },
    "ServiceListBlock": {
-      "title": "Services",
-      "heading": "We are here to help your business standout with brand identity that captivates and converts effectively.",
+      "title": "Услуги",
+      "heading": "Мы здесь, чтобы помочь вашему бизнесу выделиться с помощью идентичности бренда, которая привлекает внимание и эффективно продает.",
       "serviceList": {
          "design": {
-            "title": "Design",
-            "briefText": "We provide designs by crafting visuals to match your brand."
+            "title": "Дизайн",
+            "briefText": "Мы создаем дизайн, разрабатывая визуальные решения, которые соответствуют вашему бренду."
          },
          "develop": {
-            "title": "Develop",
-            "briefText": "We provide web development to the highest standards, and matching industrial requirements."
+            "title": "Разработка",
+            "briefText": "Мы предоставляем веб-разработку по самым высоким стандартам, соответствующую отраслевым требованиям."
          },
          "support": {
-            "title": "Support",
-            "briefText": "We provide support and maintain your products through it’s life cycle."
+            "title": "Поддержка",
+            "briefText": "Мы предоставляем поддержку и обслуживаем ваши продукты на протяжении всего их жизненного цикла."
          },
          "technologies": {
-            "title": "Technologies",
-            "briefText": "We build with cutting edge technologies, to bring your idea to life."
+            "title": "Технологии",
+            "briefText": "Мы используем современные технологии, чтобы реализовать вашу идею."
          }
       }
    },
@@ -93,8 +92,8 @@
       "text": "Опыт Eleven — основа всего, что мы делаем. Мы — молодая команда, которая заботится об отношениях с клиентами, командном взаимодействии и неизменном внимании к конечному пользователю. Имея более <important>5 лет</important> отраслевого опыта, мы предлагаем энергичную, свежую и динамичную команду с творческим потенциалом. Наша цель — создавать значимые изменения и захватывающий опыт для наших клиентов. Наши возможности сосредоточены на умении разрабатывать сайты и приложения мирового уровня. Мы работаем полностью внутри компании и обеспечиваем полный цикл работ, гарантируя выполнение каждого проекта на самом высоком уровне."
    },
    "FAQBlock": {
-      "title": "Answers",
-      "headingText": "Find answers to common questions about how Eleven works.",
+      "title": "Ответы",
+      "headingText": "Ответы на часто задаваемые вопросы о работе Eleven.",
       "faqList": {
          "q1": {
             "question": "How long does a website project usually take to complete?",

@@ -4,7 +4,7 @@ export function getJsonLd(message: Record<string, any>) {
       "@context": "https://schema.org",
       "@type": "Organization",
       name: message.SEO.jsonLd.name,
-      url: "",
+      url: "https://madebyeleven.com",
       logo: "/logo.png",
       description: message.SEO.jsonLd.description,
       founder: {

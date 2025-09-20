@@ -59,13 +59,13 @@ export async function generateMetadata({
    return {
       title: `${t("metaData.title")}`,
       description: t("metaData.description"),
+      metadataBase: new URL("https://madebyeleven.com"),
       alternates: {
-         // TODO: Later
-         // canonical: "https://ventimax.ru/ru",
-         // languages: {
-         //    en: "https://ventimax.ru/en",
-         //    zh: "https://ventimax.ru/zh",
-         // },
+         canonical: "https://madebyeleven.com",
+         languages: {
+            en: "https://madebyeleven.com/en",
+            zh: "https://madebyeleven.com/ru",
+         },
       },
       robots: {
          index: true,
