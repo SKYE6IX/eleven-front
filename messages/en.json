@@ -20,6 +20,38 @@
          "submitRequest": "Submit your request"
       }
    },
+   "SEO": {
+      "metaData": {
+         "title": "Eleven Web Development Agency in Moscow | Custom Sites & SEO Services",
+         "description": "We are web development agency crafting custom, SEO-optimized websites. From responsive design to e-commerce builds—elevate your brand. Get a free quote today!"
+      },
+      "jsonLd": {
+         "name": "Eleven Web Development Agency in Moscow",
+         "description": "We are web development agency crafting custom, SEO-optimized websites. From responsive design to e-commerce builds—elevate your brand. Get a free quote today!",
+         "services": {
+            "webDesign": {
+               "name": "Custom Web Design Services",
+               "serviceType": "Web Design",
+               "description": "Tailored UI/UX designs that are visually stunning and user-centric, ensuring seamless navigation and brand alignment."
+            },
+            "webDevelopment": {
+               "name": "Full-Stack Web Development",
+               "serviceType": "Web Development",
+               "description": "Robust backend and frontend development using modern stacks like React, Next.js, Node.js, Java, and SpringBoot for scalable, secure websites."
+            },
+            "seoOptimization": {
+               "name": "SEO and Digital Marketing",
+               "serviceType": "Web Optimization",
+               "description": "Comprehensive SEO strategies, including on-page optimization, content audits, and link-building to boost organic traffic and rankings."
+            },
+            "websiteMaintainace": {
+               "name": "Ongoing Website Maintenance and Support",
+               "serviceType": "Website Maintainance",
+               "description": "Proactive maintenance, security updates, performance monitoring, and 24/7 support to keep your site running smoothly."
+            }
+         }
+      }
+   },
    "HeroBlock": {
       "title": "We Are Web Developer In <important>Moscow</important>, Building Extraordinary Digital Experience.",
       "tagline": "Crafting unique brand Identites",
