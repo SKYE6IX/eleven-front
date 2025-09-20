@@ -1,0 +1,9 @@
+services:
+  eleven_front:
+    container_name: eleven-front
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: always
+    ports:
+        - 3000:3000
