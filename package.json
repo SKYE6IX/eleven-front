@@ -5,7 +5,7 @@
    "homepage": "https://skye6ix.github.io/eleven-front",
    "scripts": {
       "dev": "next dev --turbopack",
-      "build": "next build && touch out/.nojekyll",
+      "build": "next build",
       "start": "next start",
       "predeploy": "npm run build",
       "deploy": "gh-pages -d out",

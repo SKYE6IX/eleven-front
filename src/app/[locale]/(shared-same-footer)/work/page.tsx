@@ -141,7 +141,6 @@ function WorkPage() {
       setIsModalOpen(!isModalOpen);
    };
 
-   const prefix = process.env.NODE_ENV === "production" ? "/eleven-front" : "";
    return (
       <>
          <div className="work-page" ref={containerRef}>
@@ -163,7 +162,7 @@ function WorkPage() {
                               onClick={() => toggleModal(project.key)}
                            >
                               <Image
-                                 src={prefix + project.images[0]}
+                                 src={project.images[0]}
                                  alt={project.name}
                                  fill={true}
                                  className="work-page__project-image"
@@ -175,9 +174,7 @@ function WorkPage() {
                            <div
                               className="work-page__project-image-container blur"
                               style={{
-                                 backgroundImage: `url(${
-                                    prefix + project.images[0]
-                                 })`,
+                                 backgroundImage: `url(${project.images[0]})`,
                               }}
                               onMouseEnter={handleMouseEnter}
                               onMouseLeave={handleMouseLeave}
@@ -186,7 +183,7 @@ function WorkPage() {
                            >
                               <div className="work-page__project-image-container-blur" />
                               <Image
-                                 src={prefix + project.images[0]}
+                                 src={project.images[0]}
                                  alt={project.name}
                                  fill={true}
                                  className="work-page__project-image"
