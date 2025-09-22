@@ -146,45 +146,45 @@
    },
    "AboutUsPage": {
       "whoWeAreBlock": {
-         "headingText": "Who we are",
-         "text1": "We are a creative collective with a killer instinct for design, dev and digital products.",
-         "text2": "We create innovative products and experiences, we maintain long term relationships.",
-         "text3": "We drive drive growth and productivity for all ambitious companies around the world."
+         "headingText": "Кто мы",
+         "text1": "Мы — креативная команда с тонким чувством дизайна, разработки и цифровых продуктов.",
+         "text2": "Мы создаём инновационные решения и опыт, строим долгосрочные отношения.",
+         "text3": "Мы помогаем компаниям по всему миру расти и привлекать клиентов."
       },
       "whoBelieveBlock": {
-         "headingText": "Who believe",
-         "text1": "Well structured online presence will help brands growth rapidly.",
-         "text2": "The future will be defined by intelligent interactions between brands and users."
+         "headingText": "Мы верим",
+         "text1": "Мы верим, что каждый бизнес заслуживает сильное онлайн-присутствие.",
+         "text2": "Красивый и удобный сайт способен не только рассказать о продукте, но и стать точкой роста, привлекать новых клиентов и удерживать старых."
       },
       "ourOfferingBlock": {
-         "headingText": "Our offering",
-         "text": "We design experiences and build tech behind them.",
+         "headingText": "Мы предлагаем",
+         "text": "Технологии, за которыми стоит будущее",
          "serviceList": {
             "strategy": {
-               "headingText": "Strategy & UX",
+               "headingText": "Стратегия и UX",
                "list": {
-                  "item1": "User Research",
-                  "item2": "Information Architecture",
-                  "item3": "User Journey Mapping",
-                  "item4": "Wireframing"
+                  "item1": "Анализ аудитории",
+                  "item2": "Создаём структуру сайта",
+                  "item3": "Проектируем путь клиента ",
+                  "item4": "Прототипирование"
                }
             },
             "design": {
-               "headingText": "Design",
+               "headingText": "Дизайн",
                "list": {
-                  "item1": "Interaction Design",
-                  "item2": "User Interface Design",
-                  "item3": "Prototyping & Animation"
+                  "item1": "Концепция взаимодействия",
+                  "item2": "Пользовательский интерфейс",
+                  "item3": "Анимацию и микроэффекты"
                }
             },
             "development": {
-               "headingText": "Development",
+               "headingText": "Разработка",
                "list": {
-                  "item1": "Product Architecture",
-                  "item2": "Front + Backend Development",
-                  "item3": "Dev Infrastructure",
-                  "item4": "CI / CD Pipeline",
-                  "item5": "eCommerce"
+                  "item1": "Архитектура",
+                  "item2": "Frontend и Backend разработка",
+                  "item3": "Техническая инфраструктура",
+                  "item4": "CI/CD процессы",
+                  "item5": "E-commerce проекты"
                }
             }
          }
