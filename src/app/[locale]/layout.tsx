@@ -1,4 +1,6 @@
+/* eslint-disable @next/next/no-img-element */
 import type { Metadata } from "next";
+import Script from "next/script";
 import localFont from "next/font/local";
 import { NextIntlClientProvider, hasLocale } from "next-intl";
 import { notFound } from "next/navigation";
@@ -108,6 +110,10 @@ export async function generateMetadata({
             },
          ],
       },
+      verification: {
+         yandex: "baad47f133889d85",
+         google: "Md3pJr-_1FEuP5-nCIrtDOFVdN49RxqWjbxdG_9bVTM",
+      },
    };
 }
 
@@ -140,12 +146,38 @@ export default async function RootLayout({
                   {children}
                </GsapWrapper>
             </NextIntlClientProvider>
+            <Script
+               id="yandex-metrica"
+               strategy="afterInteractive"
+               dangerouslySetInnerHTML={{
+                  __html: `
+                     <!-- Yandex.Metrika counter -->
+    (function(m,e,t,r,i,k,a){
+        m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+        m[i].l=1*new Date();
+        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+    })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=104241852', 'ym');
+    ym(104241852, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", accurateTrackBounce:true, trackLinks:true});
+<!-- /Yandex.Metrika counter -->
+            `,
+               }}
+            />
             <script
                type="application/ld+json"
                dangerouslySetInnerHTML={{
                   __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c"),
                }}
             />
+            <noscript>
+               <div>
+                  <img
+                     src="https://mc.yandex.ru/watch/104241852"
+                     style={{ position: "absolute", left: "-9999px" }}
+                     alt=""
+                  />
+               </div>
+            </noscript>
          </body>
       </html>
    );
