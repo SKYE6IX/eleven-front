@@ -3,15 +3,17 @@
 
 .about-us-block {
    overflow: hidden;
-   margin-top: 120px;
+   margin-top: 90px;
+   padding-top: 30px;
    padding-bottom: 50px;
    width: 100%;
    @include flex-layout(row, none, center, none);
    @include max-breakpoint("md") {
-      margin-top: 80px;
+      padding-top: 40px;
+      margin-top: 50px;
    }
    @include max-breakpoint("s") {
-      margin-top: 40px;
+      margin-top: 10px;
    }
 }
 .about-us-block__inner-wrapper {
