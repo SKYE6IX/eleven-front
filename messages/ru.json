@@ -14,9 +14,9 @@
    "Button": {
       "text": {
          "contact": "Начать проект",
-         "submit": "Send",
-         "visitWebsite": "Visit Website",
-         "submitRequest": "Submit your request"
+         "submit": "Отправить",
+         "visitWebsite": "Посетить Сайт",
+         "submitRequest": "оставить заявку"
       }
    },
    "SEO": {
@@ -123,24 +123,24 @@
    },
    "ContactPage": {
       "headingText": {
-         "span1": "It’s nice to",
-         "span2": "meet you!"
+         "span1": "Рады",
+         "span2": "Знакомству!"
       },
       "form": {
-         "headingText": "Let’s get started ",
-         "subHeadingText": "For general enquiries, please fill out the form to get in touch.",
+         "headingText": "Давайте сотрудничать!",
+         "subHeadingText": "Хотите задать вопрос? Просто заполните форму ниже.",
          "label": {
-            "name": "Name",
-            "email": "Email",
-            "phone": "Phone",
-            "hearAboutUs": "How do you hear about Eleven?",
-            "message": "Message"
+            "name": "Имя",
+            "email": "Почта",
+            "phone": "Телефон",
+            "hearAboutUs": "Как вы узнали о Eleven?",
+            "message": "Сообщение"
          },
          "placeholder": {
-            "name": "Your name",
-            "email": "Your email",
-            "phone": "Phone(optional)",
-            "message": "Tell us about your project"
+            "name": "Ваше имя",
+            "email": "Ваш почты",
+            "phone": "Телефон (необязательно)",
+            "message": "Расскажите нам о вашем проекте"
          }
       }
    },
@@ -191,7 +191,7 @@
       }
    },
    "WorkPage": {
-      "headingText": "Let’s create distinctive website and digital experience."
+      "headingText": "Создадим сайт, который выделяется."
    },
    "ProjectDetails": {
       "technologiesUsed": "Technologies Used:",

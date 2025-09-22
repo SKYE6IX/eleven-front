@@ -86,6 +86,12 @@
       line-height: 63.117px;
    }
 }
+.contact-page__heading-text:lang(ru) {
+   @include max-breakpoint("s") {
+      font-size: 4rem;
+      line-height: 70.4px;
+   }
+}
 .contact-page__heading-text-span:nth-child(1) {
    margin-left: auto;
 }
