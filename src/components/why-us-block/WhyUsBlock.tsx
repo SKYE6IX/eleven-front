@@ -9,14 +9,14 @@ import "./why-us-block.scss";
 function WhyUsBlock() {
    const t = useTranslations("WhyUsBlock");
    const containerRef = useRef<HTMLElement>(null);
-   const innerWrapper = useRef<HTMLDivElement>(null);
-   const titleWrapper = useRef<HTMLDivElement>(null);
+   const innerWrapperRef = useRef<HTMLDivElement>(null);
+   const titleWrapperRef = useRef<HTMLDivElement>(null);
    const tl = useRef<GSAPTimeline>(null);
 
    useGSAP(
       () => {
          const runAnimation = () => {
-            if (!titleWrapper.current || !innerWrapper.current) {
+            if (!titleWrapperRef.current || !innerWrapperRef.current) {
                return;
             }
             if (tl.current) {
@@ -28,8 +28,8 @@ function WhyUsBlock() {
                });
             }
 
-            const titleRect = titleWrapper.current.getBoundingClientRect();
-            const vw = window.innerWidth;
+            const titleRect = titleWrapperRef.current.getBoundingClientRect();
+            const vw = innerWrapperRef.current.offsetWidth;
             const vh = window.innerHeight;
 
             const maxScaleX = vw / titleRect.width;
@@ -40,8 +40,8 @@ function WhyUsBlock() {
             const startScale = Math.min(preferredScale, maxAllowedScale);
 
             const left =
-               titleWrapper.current.offsetLeft -
-               innerWrapper.current.offsetLeft;
+               titleWrapperRef.current.offsetLeft -
+               innerWrapperRef.current.offsetLeft;
 
             gsap.set(".why-us-block__title-wrapper", {
                scale: startScale,
@@ -53,7 +53,7 @@ function WhyUsBlock() {
                   ease: "power2.out",
                },
                scrollTrigger: {
-                  trigger: innerWrapper.current,
+                  trigger: innerWrapperRef.current,
                   start: "clamp(top bottom)",
                   scrub: 1.5,
                   end: () => "+=750",
@@ -100,11 +100,8 @@ function WhyUsBlock() {
                   ">-0.5"
                );
          };
-
          runAnimation();
-
          let width = 0;
-
          const handleResize = () => {
             if (width !== window.innerWidth) {
                runAnimation();
@@ -112,15 +109,14 @@ function WhyUsBlock() {
             }
          };
          window.addEventListener("resize", handleResize);
-
          return () => window.removeEventListener("resize", handleResize);
       },
       { scope: containerRef }
    );
    return (
       <section className="why-us-block" ref={containerRef}>
-         <div className="why-us-block__inner-wrapper" ref={innerWrapper}>
-            <div className="why-us-block__title-wrapper" ref={titleWrapper}>
+         <div className="why-us-block__inner-wrapper" ref={innerWrapperRef}>
+            <div className="why-us-block__title-wrapper" ref={titleWrapperRef}>
                <h1 className="why-us-block__title">{t("title")}</h1>
                <span className="why-us-block__title-icon">
                   <HyphenIcon />

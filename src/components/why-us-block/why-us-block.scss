@@ -51,6 +51,22 @@
       line-height: 58px;
    }
 }
+.why-us-block__title:lang(ru) {
+   font-size: 6rem;
+   line-height: 105px;
+   @include max-breakpoint("md") {
+      font-size: 4rem;
+      line-height: 44px;
+   }
+   @include max-breakpoint("820px") {
+      font-size: 3.5rem;
+      line-height: 61.6px;
+   }
+   @include max-breakpoint("s") {
+      font-size: 2rem;
+      line-height: 35.2px;
+   }
+}
 .why-us-block__title-icon {
    position: absolute;
    left: calc(100% + 20px);
@@ -60,6 +76,22 @@
    }
    @include max-breakpoint("s") {
       bottom: 10px;
+      svg {
+         width: 55.647px;
+         height: 6.246px;
+      }
+   }
+}
+.why-us-block__title-icon:lang(ru) {
+   @include max-breakpoint("md") {
+      bottom: 0px;
+      svg {
+         width: 100px;
+         height: 20.246px;
+      }
+   }
+   @include max-breakpoint("s") {
+      bottom: 5px;
       svg {
          width: 55.647px;
          height: 6.246px;

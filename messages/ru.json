@@ -54,15 +54,15 @@
    "HeroBlock": {
       "title": "Мы — компания по веб-разработке из <important>Москвы</important>, создающая уникальные цифровые решения",
       "tagline": "Создание фирменного стиля",
-      "showcaseText1": "Мы проектируем, создаём и выпускаем цифровые продукты мирового уровня для прогрессивных брендов.",
-      "showcaseText2": "Мы молодая независимая команда, которая заботится, налаживает связи и имеет опыт в отрасли."
+      "showcaseText1": "Наша команда создает инновационные цифровые продукты для брендов, готовых к росту и развитию.",
+      "showcaseText2": "Мы объединяем свежий взгляд, независимость и опыт, чтобы создавать проекты с заботой о клиентах и партнерах."
    },
    "WhyUsBlock": {
-      "title": "Why us ?",
+      "title": "Преимущества ?",
       "whyUsItems": {
-         "item1": "We create fast-loading, fully responsive websites that perform flawlessly across all devices, reducing bounce rates and keeping visitors engaged.",
-         "item2": "We prioritise long-term partnerships, offering personalised solutions, regular check-ins, to ensure your vision is realised and your business thrives.",
-         "item3": "From initial consultation to ongoing maintenance, we offer timely, comprehensive support to keep your website running smoothly."
+         "item1": "Мы создаём быстрые, полностью адаптивные сайты, которые безупречно работают на всех устройствах, уменьшая показатель отказов и удерживая внимание посетителей.",
+         "item2": "Мы делаем ставку на долгосрочные партнёрства, предлагая персонализированные решения и регулярные встречи, чтобы ваша идея была реализована, а бизнес развивался.",
+         "item3": "От первой консультации до постоянного сопровождения мы обеспечиваем своевременную и комплексную поддержку, чтобы ваш сайт работал бесперебойно."
       }
    },
    "ServiceListBlock": {
