@@ -64,7 +64,7 @@ export async function generateMetadata({
          canonical: "https://madebyeleven.com",
          languages: {
             en: "https://madebyeleven.com/en",
-            zh: "https://madebyeleven.com/ru",
+            ru: "https://madebyeleven.com/ru",
          },
       },
       robots: {
@@ -83,7 +83,7 @@ export async function generateMetadata({
       openGraph: {
          title: `${t("metaData.title")}`,
          description: t("metaData.description"),
-         url: "",
+         url: "https://madebyeleven.com",
          siteName: "Eleven",
          images: [
             {

@@ -122,6 +122,7 @@ function WhoWeAre({ getMoveXAndStartScale }: Props) {
                      fill={true}
                      className="about-us-page__image"
                      data-testid="about-us-page-image"
+                     priority={true}
                   />
                </div>
             </div>

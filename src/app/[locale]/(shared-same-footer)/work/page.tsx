@@ -167,6 +167,7 @@ function WorkPage() {
                                  fill={true}
                                  className="work-page__project-image"
                                  data-testid="work-page-project-image"
+                                 priority={true}
                               />
                            </div>
                         )}
@@ -188,6 +189,7 @@ function WorkPage() {
                                  fill={true}
                                  className="work-page__project-image"
                                  data-testid="work-page-project-image"
+                                 priority={true}
                               />
                            </div>
                         )}

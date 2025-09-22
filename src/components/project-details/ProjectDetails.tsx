@@ -87,7 +87,7 @@ function ProjectDetails({
                            src={project.images[0]}
                            alt="Kasatkin"
                            fill={true}
-                           priority
+                           priority={true}
                            className="project-details__image"
                            data-testid="project-details-image"
                         />
@@ -105,7 +105,7 @@ function ProjectDetails({
                            src={project.images[0]}
                            alt="Kasatkin"
                            fill={true}
-                           priority
+                           priority={true}
                            className="project-details__image"
                            data-testid="project-details-image"
                         />
@@ -120,7 +120,7 @@ function ProjectDetails({
                                  src={project.images[1]}
                                  alt="Kasatkin"
                                  fill={true}
-                                 priority
+                                 priority={true}
                                  className="project-details__image"
                                  data-testid="project-details-image"
                               />
@@ -130,7 +130,7 @@ function ProjectDetails({
                                  src={project.images[2]}
                                  alt="Kasatkin"
                                  fill={true}
-                                 priority
+                                 priority={true}
                                  className="project-details__image"
                                  data-testid="project-details-image"
                               />
@@ -150,7 +150,7 @@ function ProjectDetails({
                                  src={project.images[1]}
                                  alt="Kasatkin"
                                  fill={true}
-                                 priority
+                                 priority={true}
                                  className="project-details__image"
                                  data-testid="project-details-image"
                               />
@@ -166,7 +166,7 @@ function ProjectDetails({
                                  src={project.images[2]}
                                  alt="Kasatkin"
                                  fill={true}
-                                 priority
+                                 priority={true}
                                  className="project-details__image"
                                  data-testid="project-details-image"
                               />

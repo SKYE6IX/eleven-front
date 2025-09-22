@@ -86,6 +86,7 @@ function HeroBlock() {
                      fill={true}
                      className="hero-block__showcase-image"
                      data-testid="hero-block-image"
+                     priority={true}
                   />
                </div>
                <h3 className="hero-block__showcase-text">
@@ -103,6 +104,7 @@ function HeroBlock() {
                      fill={true}
                      className="hero-block__showcase-image"
                      data-testid="hero-block-image"
+                     priority={true}
                   />
                </div>
             </div>
