@@ -1,4 +1,4 @@
-name: Create Docker Image For eleven-front
+name: Create And Deploy Docker Image For eleven-front
 on:
    push:
       branches:
@@ -30,3 +30,24 @@ jobs:
               push: true
               file: Dockerfile
               tags: ${{ vars.DOCKER_USERNAME }}/${{ github.event.repository.name }}:latest
+   deploy:
+      runs-on: ubuntu-latest
+      needs: build
+      steps:
+         - name: Login to Yandex Cloud Container Registry
+           uses: yc-actions/yc-cr-login@v3
+           with:
+              yc-sa-json-credentials: ${{ secrets.YC_SA_KEY_JSON }}
+
+         - name: Pull from Docker Hub and Push to Yandex CR
+           env:
+              CR_REGISTRY_ID: ${{ vars.YC_REGISTRY_ID }}
+              IMAGE_NAME: ${{ github.event.repository.name }}
+              IMAGE_TAG: latest
+           run: |
+              docker pull ${{ vars.DOCKER_USERNAME }}/${{ env.IMAGE_NAME }}:${{ env.IMAGE_TAG }}
+
+              docker tag ${{ vars.DOCKER_USERNAME }}/${{ env.IMAGE_NAME }}:${{ env.IMAGE_TAG }} \
+              cr.yandex/${{ env.CR_REGISTRY_ID }}/${{ env.IMAGE_NAME }}:${{ env.IMAGE_TAG }}
+
+              docker push cr.yandex/${{ env.CR_REGISTRY_ID }}/${{ env.IMAGE_NAME }}:${{ env.IMAGE_TAG }}
