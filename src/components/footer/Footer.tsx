@@ -124,13 +124,19 @@ function Footer() {
                         <ul className="footer__contact-list">
                            <li className="footer__contact-item">
                               <TelephoneIcon />
-                              <Link href="#" data-testid="footer-contact-item">
+                              <Link
+                                 href="tel:+79932707338"
+                                 data-testid="footer-contact-item"
+                              >
                                  +7 993 270 7338
                               </Link>
                            </li>
                            <li className="footer__contact-item">
                               <MailIcon />
-                              <Link href="#" data-testid="footer-contact-item">
+                              <Link
+                                 href="mailTo:azeezabiola@gmail.com"
+                                 data-testid="footer-contact-item"
+                              >
                                  hello@eleven.io
                               </Link>
                            </li>
@@ -155,15 +161,25 @@ function Footer() {
                </div>
                <ul className="footer__social-wrapper">
                   <li className="footer__social">
-                     <Link href="#">Telegram</Link>
+                     <Link href="https://t.me/Skye6ix" target="_target">
+                        Telegram
+                     </Link>
                   </li>
                   <li className="footer__social">
-                     <Link href="#">
+                     <Link
+                        href="https://x.com/skye_6ix?s=21&t=qU1kPU1_zxt295jEhqmDgg"
+                        target="_target"
+                     >
                         <div className="fade-effect" /> <span>X</span>
                      </Link>
                   </li>
                   <li className="footer__social">
-                     <Link href="#">Linkedin</Link>
+                     <Link
+                        href="https://www.linkedin.com/in/azeezabiola/"
+                        target="_target"
+                     >
+                        Linkedin
+                     </Link>
                   </li>
                </ul>
             </div>
