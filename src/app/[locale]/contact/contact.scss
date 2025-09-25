@@ -105,3 +105,31 @@
       margin: 0px;
    }
 }
+.contact-page__buttons-wrapper {
+   display: inline-flex;
+   gap: 30px;
+   @include max-breakpoint("s") {
+      gap: 15px;
+      flex-direction: column;
+   }
+}
+.contact-page__google-link {
+   width: max-content;
+   border-radius: 20px;
+   padding: 5px 15px;
+   @include flex-layout(row, center, none, 15px);
+   background-color: $primary;
+   cursor: pointer;
+   transition: background-color 0.5s ease-in-out, transform 0.3s ease-in-out;
+   span {
+      font-family: $font-montreal, sans-serif;
+      font-size: 1rem;
+      font-weight: 530;
+      line-height: 21px;
+      color: $neutral;
+      transition: color 0.5s ease-in-out;
+   }
+}
+.contact-page__google-link:hover {
+   transform: rotate(2deg);
+}

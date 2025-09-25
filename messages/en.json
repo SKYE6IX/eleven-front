@@ -127,6 +127,7 @@
          "span1": "It’s nice to",
          "span2": "meet you!"
       },
+      "googleLinkText": "Fill on Google",
       "form": {
          "headingText": "Let’s get started",
          "subHeadingText": "For general enquiries, please fill out the form to get in touch.",
