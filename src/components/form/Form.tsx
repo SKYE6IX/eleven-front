@@ -1,24 +1,33 @@
 "use client";
 import React, { useState, useRef } from "react";
-import Modal from "../modal/Modal";
-import Button from "../button/Button";
 import { useTranslations } from "next-intl";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
+import Modal from "../modal/Modal";
+import Button from "../button/Button";
+import FormFeedBack from "../form-feedback/FormFeedBack";
 import ArrowUpIcon from "../icons/ArrowUpIcon";
+import { sendMail } from "./action";
+import { validate, FormFields } from "./validateFormIFields";
 import "./form.scss";
 
-const leadSource = ["Google", "Yandex", "Linkendin", "Friend or Family"];
 type FormProps = {
    isFormOpen: boolean;
    handleOpenForm: () => void;
 };
-
+const leadSource = ["Google", "Yandex", "Linkendin", "Friend or Family"];
 const formInitialState = {
    name: "",
    email: "",
    phone: "",
    message: "",
+};
+
+const initialFormStatus = {
+   openFeedBack: false,
+   isSending: false,
+   isSuccess: false,
+   isError: false,
 };
 
 function Form({ isFormOpen, handleOpenForm }: FormProps) {
@@ -29,6 +38,8 @@ function Form({ isFormOpen, handleOpenForm }: FormProps) {
    const dropDownTl = useRef<GSAPTimeline>(null);
    const [isDropDown, setIsDropDown] = useState(false);
    const [formState, setFromState] = useState(formInitialState);
+   const [errorFeilds, setErrorFeilds] = useState<string[]>([]);
+   const [formStatus, setFormStatus] = useState(initialFormStatus);
 
    const { contextSafe } = useGSAP(
       () => {
@@ -57,7 +68,6 @@ function Form({ isFormOpen, handleOpenForm }: FormProps) {
       },
       { dependencies: [isFormOpen] }
    );
-
    const handleDropDown = contextSafe(() => {
       const currentState = !isDropDown;
       setIsDropDown(currentState);
@@ -81,22 +91,88 @@ function Form({ isFormOpen, handleOpenForm }: FormProps) {
          ...prvState,
          [name]: value,
       }));
+      if (errorFeilds.includes(name)) {
+         setErrorFeilds((prevState) =>
+            prevState.filter((prev) => prev !== name)
+         );
+      }
+   };
+   const formAction = async (formFields: FormFields) => {
+      await sendMail(formFields)
+         .then((res) => {
+            setFormStatus((prvState) => ({
+               ...prvState,
+               isSending: false,
+               isSuccess: res.status === "ok",
+               isError: res.status === "error",
+            }));
+         })
+         .catch((err) => {
+            console.error(err);
+            setFormStatus((prvState) => ({
+               ...prvState,
+               isSending: false,
+               isError: true,
+            }));
+         });
    };
 
+   const handleSumbit = (e: React.FormEvent<HTMLFormElement>) => {
+      e.preventDefault();
+      const formData = new FormData();
+      Object.entries(formState).forEach(([key, value]) => {
+         formData.append(key, value);
+      });
+      formData.set("leadSource", selectedLeadSource);
+      const validatedFields = validate(formData);
+      if (validatedFields.error) {
+         validatedFields.error.issues.forEach((issue) => {
+            setErrorFeilds((prevState) => [
+               ...prevState,
+               issue.path[0].toString(),
+            ]);
+         });
+         return;
+      }
+      setFormStatus((prvState) => ({
+         ...prvState,
+         openFeedBack: true,
+         isSending: true,
+      }));
+      formAction(validatedFields.data);
+   };
+   const handleCloseFeedBack = () => {
+      setFormStatus(initialFormStatus);
+      if (!formStatus.isError) {
+         setFromState(formInitialState);
+         setSelectedLeadSource(leadSource[0]);
+      }
+   };
+   const triggerOpenForm = () => {
+      handleOpenForm();
+      handleCloseFeedBack();
+   };
    return (
       <Modal
          isOpen={isFormOpen}
-         onModalClose={handleOpenForm}
+         onModalClose={triggerOpenForm}
          contentBackground="neutral"
       >
          <div className="form-block">
+            <FormFeedBack
+               isSuccess={formStatus.isSuccess}
+               isError={formStatus.isError}
+               openFeedBack={formStatus.openFeedBack}
+               isSending={formStatus.isSending}
+               handleCloseFeedBack={handleCloseFeedBack}
+            />
             <h3 className="form-block__heading-text">
                {t("form.headingText")}
             </h3>
             <h4 className="form-block__sub-heading-text">
                {t("form.subHeadingText")}
             </h4>
-            <form action="">
+            <form onSubmit={handleSumbit}>
                <div className="form-block__input-wrapper">
                   <div className="form-block__input-contaner">
                      <label
@@ -110,12 +186,14 @@ function Form({ isFormOpen, handleOpenForm }: FormProps) {
                         type="text"
                         name="name"
                         id="name"
-                        className="form-block__input"
+                        className={[
+                           "form-block__input",
+                           errorFeilds.includes("name") ? "error" : "",
+                        ].join(" ")}
                         placeholder={t("form.placeholder.name")}
                         value={formState.name}
                         onChange={handleOnChange}
                         data-testid="form-input"
-                        required
                      />
                   </div>
                   <div className="form-block__input-contaner">
@@ -130,12 +208,14 @@ function Form({ isFormOpen, handleOpenForm }: FormProps) {
                         type="text"
                         name="email"
                         id="email"
-                        className="form-block__input"
+                        className={[
+                           "form-block__input",
+                           errorFeilds.includes("email") ? "error" : "",
+                        ].join(" ")}
                         placeholder={t("form.placeholder.email")}
                         value={formState.email}
                         onChange={handleOnChange}
                         data-testid="form-input"
-                        required
                      />
                   </div>
                   <div className="form-block__input-contaner">
@@ -215,16 +295,22 @@ function Form({ isFormOpen, handleOpenForm }: FormProps) {
                      <textarea
                         name="message"
                         id="message"
-                        className="form-block__input"
+                        className={[
+                           "form-block__input",
+                           errorFeilds.includes("message") ? "error" : "",
+                        ].join(" ")}
                         placeholder={t("form.placeholder.message")}
                         value={formState.message}
                         onChange={handleOnChange}
                         data-testid="form-input"
-                        required
                      />
                   </div>
                </div>
-               <Button textKey="submit" type="submit" />
+               <Button
+                  textKey="submit"
+                  type="submit"
+                  disabled={formStatus.isSending}
+               />
             </form>
          </div>
       </Modal>

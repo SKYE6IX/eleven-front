@@ -2,7 +2,6 @@
 
 .button {
    background-color: $primary;
-   padding: 15px;
    border-radius: 20px;
    border: none;
    display: inline-flex;
@@ -12,7 +11,11 @@
    cursor: pointer;
    transition: background-color 0.5s ease-in-out, transform 0.3s ease-in-out;
 }
+.button__content {
+   padding: 15px;
+}
 .button__link {
+   padding: 15px;
    display: inline-flex;
    align-items: center;
    justify-content: center;

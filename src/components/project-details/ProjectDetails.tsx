@@ -45,6 +45,7 @@ function ProjectDetails({
                            type="link"
                            textKey="visitWebsite"
                            href={project.siteUrl}
+                           target={true}
                         />
                      )}
                      <span

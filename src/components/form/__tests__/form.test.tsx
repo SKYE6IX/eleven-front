@@ -84,11 +84,6 @@ describe("Form Component", () => {
 
       for (const el of inputs) {
          expect(el).toBeInTheDocument();
-         if ((el as HTMLInputElement).name === "phone") {
-            expect(el).not.toHaveAttribute("required");
-         } else {
-            expect(el).toHaveAttribute("required");
-         }
          expect(el).toHaveAttribute("placeholder");
       }
    });

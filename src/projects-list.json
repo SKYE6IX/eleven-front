@@ -9,8 +9,8 @@
             "/projects-images/kastakin/image3.webp"
          ],
          "category": "Web Agency",
-         "technologies": ["Next.js", "Motion"],
-         "siteUrl": "#",
+         "technologies": ["next.js", "framer motion", "next-intl"],
+         "siteUrl": "https://kasatkin.io/ru",
          "tags": ["showcase", "all-screen"]
       },
       {
@@ -22,8 +22,8 @@
             "/projects-images/fast-car-sale/image3.webp"
          ],
          "category": "Car Sales",
-         "technologies": ["React.js"],
-         "siteUrl": "#",
+         "technologies": ["react.js", "styled-component", "email.js"],
+         "siteUrl": "https://fastcarsale.ru/",
          "tags": ["showcase", "all-screen"]
       },
       {
@@ -35,8 +35,8 @@
             "/projects-images/perevodik/image3.webp"
          ],
          "category": "Translation Agency",
-         "technologies": ["Next.js", "SCSS"],
-         "siteUrl": "#",
+         "technologies": ["next.js", "scss", "email.js", "framer motion"],
+         "siteUrl": "https://translate-document.ru/",
          "tags": ["all-screen"]
       },
       {
@@ -48,8 +48,8 @@
             "/projects-images/ventimax/image3.webp"
          ],
          "category": "Animal Husbandry Equipments",
-         "technologies": ["Next.js", "GSAP", "SCSS", "next-intl"],
-         "siteUrl": "#",
+         "technologies": ["next.js", "GSAP", "scss", "next-intl", "email.js"],
+         "siteUrl": "https://ventimax.ru/",
          "tags": ["showcase", "all-screen"]
       },
       {
@@ -61,8 +61,8 @@
             "/projects-images/rabotnik/image3.webp"
          ],
          "category": "Hiring Agency",
-         "technologies": ["React.js", "GSAP", "React Router"],
-         "siteUrl": "#",
+         "technologies": ["react.js", "GSAP", "react-router"],
+         "siteUrl": "http://prvb.ru",
          "tags": ["showcase", "all-screen"]
       },
       {
@@ -74,7 +74,13 @@
             "/projects-images/re-market/image3.webp"
          ],
          "category": "Mini App",
-         "technologies": ["Next.js", "Express", "Redux", "SCSS"],
+         "technologies": [
+            "next.js",
+            "express",
+            "redux",
+            "scss",
+            "framer motion"
+         ],
          "siteUrl": "",
          "tags": ["mobile-only"]
       },
@@ -87,7 +93,7 @@
             "/projects-images/tap/image3.webp"
          ],
          "category": "Web3",
-         "technologies": ["React.js", "React Router", "SCSS", "i18n"],
+         "technologies": ["react.js", "react-router", "scss", "i18n"],
          "siteUrl": "",
          "tags": ["mobile-only"]
       }
