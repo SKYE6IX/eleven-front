@@ -31,9 +31,11 @@ function HeroBlock() {
          if (tl.current) {
             tl.current.kill();
          }
-         tl.current = gsap.timeline({ defaults: { duration: 1.2 } });
+         tl.current = gsap.timeline();
+
          tl.current
             ?.from(headingTextRef.current, {
+               duration: 0.8,
                yPercent: 130,
                opacity: 0,
                ease: "power2.out",
@@ -41,13 +43,13 @@ function HeroBlock() {
             .from(
                ".hero-block__showcase",
                {
+                  duration: 0.8,
                   yPercent: 100,
                   opacity: 0,
                },
                "<"
             )
             .to(headingTextRef.current, {
-               duration: 1,
                scale: 1,
             })
             .from(
@@ -62,6 +64,7 @@ function HeroBlock() {
       },
       { scope: containerRef }
    );
+
    return (
       <section className="hero-block" ref={containerRef}>
          <div className="hero-block__top">
