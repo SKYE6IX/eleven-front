@@ -256,18 +256,23 @@ function Services({ getMoveXAndStartScale }: Props) {
                            )}
                         </h5>
                         <ul className="about-us-page__service-list">
-                           {["item1", "item2", "item3", "item4", "item5"].map(
-                              (item) => (
-                                 <li
-                                    className="about-us-page__service-list-item"
-                                    key={item}
-                                 >
-                                    {t(
-                                       `ourOfferingBlock.serviceList.development.list.${item}`
-                                    )}
-                                 </li>
-                              )
-                           )}
+                           {[
+                              "item1",
+                              "item2",
+                              "item3",
+                              "item4",
+                              "item5",
+                              "item6",
+                           ].map((item) => (
+                              <li
+                                 className="about-us-page__service-list-item"
+                                 key={item}
+                              >
+                                 {t(
+                                    `ourOfferingBlock.serviceList.development.list.${item}`
+                                 )}
+                              </li>
+                           ))}
                         </ul>
                      </div>
                   </div>
