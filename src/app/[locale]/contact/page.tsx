@@ -9,8 +9,6 @@ import Logo from "@/components/logo/Logo";
 import Footer from "@/components/footer/Footer";
 import Button from "@/components/button/Button";
 import Form from "@/components/form/Form";
-
-import FormFeedBack from "@/components/form-feedback/FormFeedBack";
 import "./contact.scss";
 
 function Contact() {

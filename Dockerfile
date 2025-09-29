@@ -9,6 +9,16 @@ ARG MAIL_URL
 ARG EMAIL_FROM
 ARG EMAIL_TO
 
+ENV MAIL_URL=$MAIL_URL
+ENV EMAIL_FROM=$EMAIL_FROM
+ENV EMAIL_TO=$EMAIL_TO
+
+RUN echo "This is, MAIL_URL=$MAIL_URL"
+
+RUN --mount=type=secret,id=jwt_token \
+    export JWT_TOKEN=$(cat /run/secrets/jwt_token) && \
+    echo "JWT_TOKEN=$JWT_TOKEN"
+
 WORKDIR /app
 
 COPY package.json package-lock.json*  ./
@@ -25,13 +35,7 @@ COPY next.config.ts .
 
 COPY tsconfig.json .
 
-ENV MAIL_URL=$MAIL_URL
-ENV EMAIL_FROM=$EMAIL_FROM
-ENV EMAIL_TO=$EMAIL_TO
 
-RUN --mount=type=secret,id=jwt_token \
-    export JWT_TOKEN=$(cat /run/secrets/jwt_token) && \
-    echo "JWT_TOKEN=$JWT_TOKEN"
 
 RUN npm run build
 
