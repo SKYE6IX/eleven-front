@@ -81,4 +81,3 @@ jobs:
                  JWT_TOKEN=${{ secrets.JWT_TOKEN }}
                  EMAIL_FROM=${{ vars.EMAIL_FROM }}
                  EMAIL_TO=${{ vars.EMAIL_TO }}
-              revision-commands: node,server.js
