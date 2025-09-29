@@ -9,8 +9,6 @@ export async function sendMail(formFields: FormFields) {
       to: process.env.EMAIL_TO,
       ...formFields,
    };
-   const controller = new AbortController();
-   const timeoutId = setTimeout(() => controller.abort(), 30000);
    try {
       const result = await fetch(process.env.MAIL_URL, {
          headers: {
@@ -19,10 +17,9 @@ export async function sendMail(formFields: FormFields) {
          },
          method: "POST",
          body: JSON.stringify(bodyData),
-         signal: controller.signal,
       });
       const response = await result.json();
-      clearTimeout(timeoutId);
+
       return {
          status: response.status as string,
          message: response.message as string,

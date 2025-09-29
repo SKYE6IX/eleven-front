@@ -96,28 +96,28 @@
       "headingText": "Ответы на часто задаваемые вопросы о работе Eleven.",
       "faqList": {
          "q1": {
-            "question": "How long does a website project usually take to complete?",
-            "answer": "Timeline depends on the specifications of the website project, but  for example a basic landing page usually take up to three weeks."
+            "question": "Сколько времени обычно занимает создание сайта?",
+            "answer": "Сроки зависят от специфики проекта, но, например, простой лендинг обычно занимает до трёх недель."
          },
          "q2": {
-            "question": "How much does a website cost?",
-            "answer": "We don’t have a set project prices. Every project request we receive has different requirement which alter the specification of the job. So once we received your request, we can give you indication of cost and timescale."
+            "question": "Сколько стоит сайт?",
+            "answer": "У нас нет фиксированных цен на проекты. Каждый запрос имеет свои особенности, которые влияют на объём и сложность работы. После получения вашего запроса мы сможем дать ориентировочную стоимость и сроки."
          },
          "q3": {
-            "question": "We have a limited budget, will you still work with us?",
-            "answer": "We work with a range of clients, from individual, start-up to large organisation. Our mindset is to work with clients and help them reach their goal. In terms of budget, the easiest way to find out if a project is possible is to let us know what your budget is."
+            "question": "У нас ограниченный бюджет. Вы будете с нами работать?",
+            "answer": "Мы сотрудничаем с разными клиентами — от индивидуальных предпринимателей и стартапов до крупных компаний. Наша цель — помочь клиентам достичь результата. Чтобы понять, возможно ли реализовать проект в рамках вашего бюджета, просто сообщите его нам."
          },
          "q4": {
-            "question": "We’re not based in Moscow, does that matter ?",
-            "answer": "We work with clients all over the Russia and all over the world in fact. So location does not matter. We will guide you through the process and communicate clearly at certain stages via email and sometimes Zoom. If possible, we are happy to have face-to-face meetings."
+            "question": "Мы не находимся в Москве. Это проблема?",
+            "answer": "Мы работаем с клиентами по всей России и за её пределами. Локация не имеет значения. Мы сопровождаем проект и поддерживаем связь на каждом этапе по email, а при необходимости — через Zoom. Если возможно, мы открыты и к личным встречам."
          },
          "q5": {
-            "question": "What are your payment terms?",
-            "answer": "We usually do 25% upfront, 25% on design sign-off, and 50% on build. But these terms can be discussed if need be. We are flexible. We just want to work with the right partner."
+            "question": "Каковы условия оплаты?",
+            "answer": "Обычно мы работаем так: 25% предоплата, 25% после утверждения дизайна и 50% после завершения разработки. Но эти условия можно обсудить — мы гибкие. Для нас главное — правильное партнёрство."
          },
          "q6": {
-            "question": "Can we arrange a conference call to discuss?",
-            "answer": "Yes of course, we can schedule a zoom meeting into the diary that convenient for both parties."
+            "question": "Можно ли устроить созвон, чтобы обсудить детали?",
+            "answer": "Конечно! Мы можем назначить удобное время для встречи в Zoom."
          }
       }
    },

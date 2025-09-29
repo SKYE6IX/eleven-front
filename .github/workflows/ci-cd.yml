@@ -75,7 +75,8 @@ jobs:
               revision-memory: 512Mb
               revision-core-fraction: 100
               revision-image-url: cr.yandex/${{ vars.YC_REGISTRY_ID }}/${{ github.event.repository.name }}:latest
-              revision-execution-timeout: 10
+              revision-execution-timeout: 30
+              revision-network-id: ${{ vars.YC_NETWORK_ID }}
               revision-env: |
                  MAIL_URL=${{ vars.MAIL_URL }}
                  JWT_TOKEN=${{ secrets.JWT_TOKEN }}
