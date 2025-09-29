@@ -63,9 +63,8 @@ export async function generateMetadata({
       description: t("metaData.description"),
       metadataBase: new URL("https://madebyeleven.com"),
       alternates: {
-         canonical: "https://madebyeleven.com",
+         canonical: "https://madebyeleven.com/en",
          languages: {
-            en: "https://madebyeleven.com/en",
             ru: "https://madebyeleven.com/ru",
          },
       },

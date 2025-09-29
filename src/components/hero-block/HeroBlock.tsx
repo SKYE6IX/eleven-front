@@ -4,8 +4,8 @@ import Image from "next/image";
 import { useTranslations } from "next-intl";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
-import showcaseImage1 from "./assets/kasatkin.png";
-import showcaseImage2 from "./assets/fast-car.png";
+import showcaseImage1 from "./assets/kasatkin.webp";
+import showcaseImage2 from "./assets/fast-car.webp";
 import "./hero-block.scss";
 
 function HeroBlock() {
