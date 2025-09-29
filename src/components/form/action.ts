@@ -10,6 +10,7 @@ export async function sendMail(formFields: FormFields) {
       ...formFields,
    };
    try {
+      console.log("Here is the passed token: " + process.env.MAIL_URL);
       const result = await fetch(process.env.MAIL_URL, {
          headers: {
             "Content-Type": "application/json",
