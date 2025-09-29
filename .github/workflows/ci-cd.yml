@@ -40,7 +40,7 @@ jobs:
                  EMAIL_FROM=${{ env.EMAIL_FROM }}
                  EMAIL_TO=${{ env.EMAIL_TO }}
               secrets: |
-                 JWT_TOKEN=${{ env.JWT_TOKEN }}
+                 jwt_token=${{ env.JWT_TOKEN }}
 
    deploy:
       runs-on: ubuntu-latest

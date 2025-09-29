@@ -29,8 +29,8 @@ ENV MAIL_URL=$MAIL_URL
 ENV EMAIL_FROM=$EMAIL_FROM
 ENV EMAIL_TO=$EMAIL_TO
 
-RUN --mount=type=secret,id=JWT_TOKEN \
-    export JWT_TOKEN=$(cat /run/secrets/JWT_TOKEN) && \
+RUN --mount=type=secret,id=jwt_token \
+    export JWT_TOKEN=$(cat /run/secrets/jwt_token) && \
     echo "JWT_TOKEN=$JWT_TOKEN"
 
 RUN npm run build
