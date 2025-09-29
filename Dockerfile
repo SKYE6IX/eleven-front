@@ -5,6 +5,10 @@ FROM node:18-alpine AS base
 # Gather all files
 FROM base AS builder
 
+ARG MAIL_URL
+ARG EMAIL_FROM
+ARG EMAIL_TO
+
 WORKDIR /app
 
 COPY package.json package-lock.json*  ./
@@ -20,6 +24,14 @@ COPY public ./public
 COPY next.config.ts .
 
 COPY tsconfig.json .
+
+ENV MAIL_URL=$MAIL_URL
+ENV EMAIL_FROM=$EMAIL_FROM
+ENV EMAIL_TO=$EMAIL_TO
+
+RUN --mount=type=secret,id=JWT_TOKEN \
+    export JWT_TOKEN=$(cat /run/secrets/JWT_TOKEN) && \
+    echo "JWT_TOKEN=$JWT_TOKEN"
 
 RUN npm run build
 
