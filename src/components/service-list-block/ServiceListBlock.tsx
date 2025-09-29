@@ -112,7 +112,7 @@ function ServiceListBlock() {
                   <h5 className="service-list-block__heading-text">
                      {t("heading")}
                   </h5>
-                  <Button textKey="contact" href="#" type="link" />
+                  <Button textKey="contact" href="/contact" type="link" />
                </div>
                <div className="service-list-block__image-wrapper">
                   <Image
