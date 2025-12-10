@@ -28,6 +28,7 @@ function Navigation() {
    const menuBarTl = useRef<GSAPTimeline>(null);
    const openTl = useRef<GSAPTimeline>(null);
    const closeTl = useRef<GSAPTimeline>(null);
+
    //** INWARD ANIMATION FOR WHEN THE TRIGGER PASSED THE TOP */
    useGSAP(
       () => {
@@ -94,6 +95,7 @@ function Navigation() {
       },
       { scope: containerRef }
    );
+
    //** MOBILE MENU OPEN AND CLOSED ANIMATION */
    const { contextSafe } = useGSAP(
       () => {

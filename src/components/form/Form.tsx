@@ -15,6 +15,7 @@ type FormProps = {
    isFormOpen: boolean;
    handleOpenForm: () => void;
 };
+
 const leadSource = ["Google", "Yandex", "Linkendin", "Friend or Family"];
 const formInitialState = {
    name: "",
