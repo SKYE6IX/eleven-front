@@ -2,7 +2,16 @@
 
 FROM node:lts-alpine AS base
 
-# Gather all files
+# Stage 1: Install dependencies
+FROM base AS deps
+
+WORKDIR /app
+
+COPY package.json package-lock.json*  ./
+
+RUN npm ci
+
+# Stage 2: Build the application
 FROM base AS builder
 
 ARG MAIL_URL
@@ -19,34 +28,16 @@ RUN --mount=type=secret,id=jwt_token \
 
 WORKDIR /app
 
-COPY package.json package-lock.json*  ./
+COPY --from=deps /app/node_modules ./node_modules
 
-RUN npm ci
-
-COPY src ./src
-
-COPY messages ./messages
-
-COPY public ./public
-
-COPY next.config.ts .
-
-COPY env.d.ts .
-
-COPY tsconfig.json .
+COPY . .
 
 RUN npm run build
 
-# Production image, copy all the files
+# Stage 3: Production server
 FROM base AS runner
 
 WORKDIR /app
-
-RUN addgroup --system --gid 1001 nodejs
-
-RUN adduser --system --uid 1001 nextjs
-
-USER nextjs
 
 COPY --from=builder /app/public ./public
 

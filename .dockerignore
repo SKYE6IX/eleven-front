@@ -12,3 +12,11 @@
 **/build
 LICENSE
 README.md
+.github
+/.next/
+/out/
+/build
+*.tsbuildinfo
+next-env.d.ts
+/coverage
+.swc
