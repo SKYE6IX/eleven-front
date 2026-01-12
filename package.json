@@ -2,13 +2,10 @@
    "name": "eleven-front",
    "version": "0.1.0",
    "private": true,
-   "homepage": "https://skye6ix.github.io/eleven-front",
    "scripts": {
       "dev": "next dev --turbopack",
       "build": "next build",
       "start": "next start",
-      "predeploy": "npm run build",
-      "deploy": "gh-pages -d out",
       "lint": "next lint",
       "test": "jest",
       "test:watch": "jest --watch"

@@ -22,19 +22,17 @@ function Button({
    target,
 }: ButtonProps) {
    const t = useTranslations("Button");
+
    const submit = type === "submit" ? type : "button";
+
    return (
-      <button
-         className="button"
-         onClick={handleClick}
-         type={submit}
-         disabled={disabled}
-      >
+      <React.Fragment>
          {type === "link" && (
             <Link
                href={href ? href : ""}
                className="button__link"
                target={target ? "_blank" : ""}
+               onClick={handleClick}
             >
                <span className="button__text" data-testid="button-text">
                   {t(`text.${textKey}`)}
@@ -44,17 +42,25 @@ function Button({
                </span>
             </Link>
          )}
-         {(type === "submit" || type === "toggle") && (
-            <div className="button__content">
-               <span className="button__text" data-testid="button-text">
-                  {t(`text.${textKey}`)}
-               </span>
-               <span className="button__icon" data-testid="button-icon">
-                  <ArrowLeftIcon />
-               </span>
-            </div>
+
+         {type === "submit" && (
+            <button
+               className="button"
+               onClick={handleClick}
+               type={submit}
+               disabled={disabled}
+            >
+               <div className="button__content">
+                  <span className="button__text" data-testid="button-text">
+                     {t(`text.${textKey}`)}
+                  </span>
+                  <span className="button__icon" data-testid="button-icon">
+                     <ArrowLeftIcon />
+                  </span>
+               </div>
+            </button>
          )}
-      </button>
+      </React.Fragment>
    );
 }
 export default Button;
