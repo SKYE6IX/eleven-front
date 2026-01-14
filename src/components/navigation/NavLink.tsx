@@ -35,7 +35,6 @@ function NavLink({
          </ul>
 
          {/* MOBILE MENU WRAPPER*/}
-
          <ul className="navigation__menu-container small">
             {navigationList.map((nav) => (
                <li
@@ -56,14 +55,14 @@ function NavLink({
                </li>
             ))}
 
-            {/* <div className="header__button-wrapper small mobile-menu-item">
+            <div className="navigation__menu-button mobile-menu-item">
                <Button
                   type="link"
                   textKey="contact"
                   href="/contact"
                   handleClick={onNavigationChange}
                />
-            </div> */}
+            </div>
          </ul>
       </nav>
    );
