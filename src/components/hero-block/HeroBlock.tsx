@@ -1,66 +1,41 @@
 "use client";
 import React, { useRef } from "react";
-import Image from "next/image";
 import { useTranslations } from "next-intl";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
-import showcaseImage1 from "./assets/kasatkin.webp";
-import showcaseImage2 from "./assets/fast-car.webp";
 import "./hero-block.scss";
 
 function HeroBlock() {
    const t = useTranslations("HeroBlock");
    const containerRef = useRef<HTMLElement>(null);
    const headingTextRef = useRef<HTMLHeadingElement>(null);
-   const tl = useRef<GSAPTimeline>(null);
 
    useGSAP(
       () => {
-         const headingTextRect =
-            headingTextRef.current!.getBoundingClientRect();
-         const vw = window.innerWidth;
-         const vh = window.innerHeight;
-         const maxScaleX = vw / headingTextRect.width;
-         const maxScaleY = vh / headingTextRect.height;
-         const maxAllowedScale = Math.min(maxScaleX, maxScaleY);
-         const preferredScale = 1.4;
-         const startScale = Math.min(preferredScale, maxAllowedScale);
-         gsap.set(headingTextRef.current, {
-            scale: startScale,
-         });
-         if (tl.current) {
-            tl.current.kill();
-         }
-         tl.current = gsap.timeline();
-
-         tl.current
-            ?.from(headingTextRef.current, {
-               duration: 0.8,
-               yPercent: 130,
+         gsap.fromTo(
+            ".hero-block__text-wrapper.left",
+            {
+               x: -150,
                opacity: 0,
+            },
+            {
+               x: 0,
+               opacity: 1,
                ease: "power2.out",
-            })
-            .from(
-               ".hero-block__showcase",
-               {
-                  duration: 0.8,
-                  yPercent: 100,
-                  opacity: 0,
-               },
-               "<"
-            )
-            .to(headingTextRef.current, {
-               scale: 1,
-            })
-            .from(
-               ".hero-block__tagline-wrapper",
-               {
-                  scale: 0.7,
-                  opacity: 0,
-               },
-               ">-0.5"
-            );
-         tl.current = null;
+            }
+         );
+         gsap.fromTo(
+            ".hero-block__text-wrapper.right",
+            {
+               x: 150,
+               opacity: 0,
+            },
+            {
+               x: 0,
+               opacity: 1,
+               ease: "power2.out",
+            }
+         );
       },
       { scope: containerRef }
    );
@@ -81,35 +56,11 @@ function HeroBlock() {
          </div>
 
          <div className="hero-block__bottom">
-            <div className="hero-block__showcase">
-               <div className="hero-block__showcase-image-container">
-                  <Image
-                     src={showcaseImage1}
-                     alt="An image of a landing page for kasatkin web agency"
-                     fill={true}
-                     className="hero-block__showcase-image"
-                     data-testid="hero-block-image"
-                     priority={true}
-                  />
-               </div>
-               <h3 className="hero-block__showcase-text">
-                  {t("showcaseText1")}
-               </h3>
+            <div className="hero-block__text-wrapper left">
+               <h3 className="hero-block__text">{t("showcaseText1")}</h3>
             </div>
-            <div className="hero-block__showcase">
-               <h3 className="hero-block__showcase-text">
-                  {t("showcaseText2")}
-               </h3>
-               <div className="hero-block__showcase-image-container">
-                  <Image
-                     src={showcaseImage2}
-                     alt="An image of a landing page for fast car sales company"
-                     fill={true}
-                     className="hero-block__showcase-image"
-                     data-testid="hero-block-image"
-                     priority={true}
-                  />
-               </div>
+            <div className="hero-block__text-wrapper right">
+               <h3 className="hero-block__text">{t("showcaseText2")}</h3>
             </div>
          </div>
       </section>

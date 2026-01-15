@@ -7,6 +7,7 @@ import { GSDevTools } from "gsap/GSDevTools";
 import gsap from "gsap";
 
 gsap.registerPlugin(useGSAP, SplitText, ScrollTrigger, GSDevTools);
+
 function GsapWrapper({ children }: { children: React.ReactNode }) {
    return <>{children}</>;
 }

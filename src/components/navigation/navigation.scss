@@ -35,6 +35,19 @@
    }
 }
 
+.header__navigation-wrapper:lang("ru") {
+   --nav-width: 50rem;
+   @include max-breakpoint("md") {
+      --nav-width: 46rem;
+   }
+   @include max-breakpoint("sm") {
+      --nav-width: 30rem;
+   }
+   @include max-breakpoint("s") {
+      --nav-width: 17rem;
+   }
+}
+
 .header__navigation {
    height: 100%;
    width: var(--nav-width);

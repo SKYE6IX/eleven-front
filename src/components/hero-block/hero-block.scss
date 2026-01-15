@@ -3,20 +3,22 @@
 
 .hero-block {
    overflow: hidden;
-   padding-top: 100px;
-   padding-bottom: 50px;
    width: 100%;
-   @include max-breakpoint("md") {
-      padding-top: 80px;
+   @include flex-layout(column, center, center, none);
+   padding: 100px 0px;
+   @include max-breakpoint("sm") {
+      padding: 80px 0px;
    }
-   @include max-breakpoint("820px") {
-      padding-top: 40px;
+   @include max-breakpoint("s") {
+      padding: 40px 0px;
    }
 }
+
 .hero-block__top {
    width: 100%;
    @include flex-layout(column, center, none, none);
 }
+
 .hero-block__tagline-wrapper {
    overflow: hidden;
    width: 327px;
@@ -33,6 +35,7 @@
       height: 48px;
    }
 }
+
 .hero-block__tagline {
    width: calc(100% - 8px);
    position: absolute;
@@ -59,6 +62,7 @@
       padding: 10px 15px;
    }
 }
+
 .hero-block__title {
    position: relative;
    margin-top: 30px;
@@ -85,6 +89,7 @@
       letter-spacing: 0.654px;
    }
 }
+
 .hero-block__title:lang(ru) {
    max-width: 1200px;
    @include max-breakpoint("md") {
@@ -97,6 +102,7 @@
       width: calc(100% - 40px);
    }
 }
+
 .hero-block__title-city {
    background: url("./assets/moscow.jpg") center/cover no-repeat;
    background-clip: text;
@@ -104,81 +110,78 @@
    -webkit-background-clip: text;
    -webkit-text-fill-color: transparent;
 }
+
 .hero-block__bottom {
    width: 100%;
    margin-top: 60px;
-   @include flex-layout(row, none, center, 120px);
+   @include flex-layout(row, center, center, 120px);
    @include max-breakpoint("md") {
       gap: 60px;
    }
-   @include max-breakpoint("820px") {
-      flex-direction: column;
-   }
-   @include max-breakpoint("s") {
-      margin-top: 40px;
-      gap: 40px;
-   }
-}
-.hero-block__showcase {
-   @include flex-layout(column, center, none, 50px);
-   @include max-breakpoint("md") {
-      gap: 25px;
-   }
-   @include max-breakpoint("s") {
-      gap: 20px;
-   }
-}
-.hero-block__showcase:nth-child(2) {
-   margin-top: 100px;
-   @include max-breakpoint("md") {
-      margin-top: 60px;
-   }
-   @include max-breakpoint("820px") {
-      flex-direction: column-reverse;
-      margin-top: 0px;
-   }
-}
-.hero-block__showcase-image-container {
-   position: relative;
-   width: 520px;
-   height: auto;
-   aspect-ratio: 3 / 3.5;
-   border-radius: 30px;
-   @include max-breakpoint("md") {
-      width: 400px;
-   }
-   @include max-breakpoint("820px") {
+   @include max-breakpoint("sm") {
       width: calc(100% - 80px);
+      flex-direction: column;
+      gap: 30px;
    }
    @include max-breakpoint("s") {
       width: calc(100% - 40px);
+      margin-top: 40px;
    }
 }
-.hero-block__showcase-image {
-   object-fit: cover;
-   object-position: left top;
-   border-radius: inherit;
+
+.hero-block__text-wrapper {
+   position: relative;
 }
-.hero-block__showcase-text {
+
+.hero-block__text-wrapper:first-child {
+   @include max-breakpoint("sm") {
+      margin-left: 20px;
+      align-self: flex-start;
+   }
+}
+.hero-block__text-wrapper:last-child {
+   @include max-breakpoint("sm") {
+      align-self: flex-end;
+      margin-right: -20px;
+   }
+   @include max-breakpoint("s") {
+      align-self: flex-start;
+      margin-left: 20px;
+      margin-right: 0px;
+   }
+}
+
+.hero-block__text-wrapper::before {
+   content: " ";
+   height: 90%;
+   width: 5px;
+   position: absolute;
+   left: -15px;
+   top: 50%;
+   transform: translateY(-50%);
+   background-color: #5cff46;
+   border-radius: 5px;
+}
+
+.hero-block__text {
    max-width: 500px;
    font-family: $font-montreal, sans-serif;
    font-size: 2rem;
    font-weight: 530;
    line-height: 38.4px;
    color: $primary;
-   text-align: center;
    @include max-breakpoint("md") {
       max-width: 400px;
       font-size: 1.5rem;
       line-height: 28.8px;
    }
-   @include max-breakpoint("820px") {
+   @include max-breakpoint("sm") {
       max-width: 500px;
       font-size: 2rem;
       line-height: 38.4px;
    }
    @include max-breakpoint("s") {
-      width: calc(100% - 40px);
+      width: 100%;
       font-size: 1.5rem;
       line-height: 28.8px;
    }

@@ -40,24 +40,6 @@ describe("Hero block component", () => {
       expect(blockTagline).toHaveTextContent("Crafting unique brand Identites");
    });
 
-   it("render block images", () => {
-      // Arrange
-      render(
-         <NextIntlClientProvider locale="en" messages={messages}>
-            <HeroBlock />
-         </NextIntlClientProvider>
-      );
-
-      // Acts
-      const blockImages = screen.getAllByTestId("hero-block-image");
-
-      // Assert
-      expect(blockImages.length).toEqual(2);
-      for (const el of blockImages) {
-         expect(el).toBeInTheDocument();
-      }
-   });
-
    it("render block showcase text", () => {
       // Arrange
       render(
