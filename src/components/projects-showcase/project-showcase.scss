@@ -12,6 +12,7 @@
       margin-top: 80px;
    }
 }
+
 .project-showcase__inner-wrapper {
    width: 1240px;
    display: grid;
@@ -52,18 +53,21 @@
    font-weight: 530;
    color: $primary;
 }
+
 .projects-showcase__image-container {
+   overflow: hidden;
    position: relative;
    width: 100%;
    height: auto;
    border-radius: 30px;
-   box-shadow: 0 0 15.628px 0 rgba(0, 0, 0, 0.15);
+   box-shadow: 0 0 15.628px 0 rgba(0, 0, 0, 0.01);
    aspect-ratio: 16 / 9;
    cursor: none;
    @include max-breakpoint("sm") {
       border-radius: 20px;
    }
 }
+
 .projects-showcase__image-container:nth-child(1) {
    grid-area: 1 / 1 / 2 / 3;
 }

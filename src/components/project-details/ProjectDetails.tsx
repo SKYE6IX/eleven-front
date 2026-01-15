@@ -1,5 +1,5 @@
 "use client";
-import React, { useMemo } from "react";
+import { useMemo } from "react";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
 import Modal from "../modal/Modal";
@@ -86,7 +86,7 @@ function ProjectDetails({
                      <div className="project-details__top-image-container">
                         <Image
                            src={project.images[0]}
-                           alt="Kasatkin"
+                           alt={project.name}
                            fill={true}
                            priority={true}
                            className="project-details__image"
@@ -94,6 +94,7 @@ function ProjectDetails({
                         />
                      </div>
                   )}
+
                   {project.tags.includes("mobile-only") && (
                      <div
                         className="project-details__top-image-container blur"
@@ -104,7 +105,7 @@ function ProjectDetails({
                         <div className="project-details__project-image-container-blur" />
                         <Image
                            src={project.images[0]}
-                           alt="Kasatkin"
+                           alt={project.name}
                            fill={true}
                            priority={true}
                            className="project-details__image"
@@ -119,7 +120,7 @@ function ProjectDetails({
                            <div className="project-details__bottom-image-container">
                               <Image
                                  src={project.images[1]}
-                                 alt="Kasatkin"
+                                 alt={project.name}
                                  fill={true}
                                  priority={true}
                                  className="project-details__image"
@@ -129,7 +130,7 @@ function ProjectDetails({
                            <div className="project-details__bottom-image-container">
                               <Image
                                  src={project.images[2]}
-                                 alt="Kasatkin"
+                                 alt={project.name}
                                  fill={true}
                                  priority={true}
                                  className="project-details__image"
@@ -138,6 +139,7 @@ function ProjectDetails({
                            </div>
                         </>
                      )}
+
                      {project.tags.includes("mobile-only") && (
                         <>
                            <div
@@ -149,7 +151,7 @@ function ProjectDetails({
                               <div className="project-details__project-image-container-blur" />
                               <Image
                                  src={project.images[1]}
-                                 alt="Kasatkin"
+                                 alt={project.name}
                                  fill={true}
                                  priority={true}
                                  className="project-details__image"
@@ -165,7 +167,7 @@ function ProjectDetails({
                               <div className="project-details__project-image-container-blur" />
                               <Image
                                  src={project.images[2]}
-                                 alt="Kasatkin"
+                                 alt={project.name}
                                  fill={true}
                                  priority={true}
                                  className="project-details__image"

@@ -62,12 +62,6 @@ function Footer() {
                start: "clamp(top 90%)",
                end: "+=150",
                toggleActions: "play none none reverse",
-               onEnter: () => {
-                  console.log("I enter");
-               },
-               onLeaveBack: () => {
-                  console.log("I leave back");
-               },
             },
          });
          gsap.set(split2.current.chars, {

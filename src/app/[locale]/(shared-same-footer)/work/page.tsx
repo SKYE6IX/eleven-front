@@ -88,10 +88,12 @@ function WorkPage() {
             scale: 1,
             autoAlpha: 1,
          });
+
          gsap.set(".work-page__project-image-container", {
             y: 100,
             opacity: 0,
          });
+
          ScrollTrigger.batch(".work-page__project-image-container", {
             interval: 0.1,
             batchMax: 3,
@@ -113,6 +115,7 @@ function WorkPage() {
                }),
             start: "-100 90%",
          });
+
          ScrollTrigger.addEventListener("refreshInit", () => {
             gsap.set(".work-page__project-image-container", {
                y: 0,

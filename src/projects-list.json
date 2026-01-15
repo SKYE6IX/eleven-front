@@ -1,6 +1,19 @@
 {
    "project-list": [
       {
+         "name": "Ellcakes",
+         "key": "ellcakes",
+         "images": [
+            "/projects-images/ellcakes/image1.webp",
+            "/projects-images/ellcakes/image2.webp",
+            "/projects-images/ellcakes/image3.webp"
+         ],
+         "category": "Online Store",
+         "technologies": ["next.js", "motion", "Keystone.js(CMS)", "Apollo"],
+         "siteUrl": "https://ellcakes.ru",
+         "tags": ["showcase", "all-screen"]
+      },
+      {
          "name": "Kasatkin",
          "key": "kasatkin",
          "images": [
@@ -24,7 +37,7 @@
          "category": "Car Sales",
          "technologies": ["react.js", "styled-component", "email.js"],
          "siteUrl": "https://fastcarsale.ru/",
-         "tags": ["showcase", "all-screen"]
+         "tags": ["all-screen"]
       },
       {
          "name": "Perevodik",

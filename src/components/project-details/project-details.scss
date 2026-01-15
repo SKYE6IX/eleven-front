@@ -134,12 +134,15 @@
       margin: 0px;
    }
 }
+
 .project-details__top-image-container {
+   overflow: hidden;
    position: relative;
    width: 100%;
    height: auto;
    aspect-ratio: 16 / 8;
    border-radius: 30px;
+
    @include max-breakpoint("md") {
       width: calc(100% - 30px);
       border-radius: 30px;
@@ -148,6 +151,7 @@
       border-radius: 20px;
    }
 }
+
 .project-details__top-image-container.blur,
 .project-details__bottom-image-container.blur {
    background-size: cover;
@@ -161,15 +165,22 @@
    -moz-backdrop-filter: blur(15px);
    backdrop-filter: blur(15px);
 }
+
 .project-details__top-image-container.blur .project-details__image {
    object-fit: contain;
    object-position: center top;
 }
+
+.project-details__top-image-container .project-details__image {
+   transform: scale(1.01);
+}
+
 .project-details__image {
    border-radius: inherit;
    object-fit: cover;
    object-position: left top;
 }
+
 .project-details__bottom-image-wrapper {
    width: 100%;
    @include flex-layout(row, none, none, 30px);
