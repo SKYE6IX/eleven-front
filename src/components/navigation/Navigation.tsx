@@ -93,7 +93,7 @@ function Navigation() {
                            {
                               opacity: 1,
                            },
-                           "<40%"
+                           "<15%"
                         );
                   },
                   onLeaveBack: () => {
@@ -120,7 +120,8 @@ function Navigation() {
                         .to(
                            ".header__navigation-bg-layer",
                            {
-                              width: "var(--bg-layer-width)",
+                              width: () => window.innerWidth + "px",
+                              clearProps: "width",
                            },
                            "<"
                         )
@@ -180,12 +181,14 @@ function Navigation() {
 
          mobileMenuTl.current = gsap
             .timeline({ defaults: { ease: "power1.out", duration: 0.3 } })
+
             .to(".header__title-wrapper", {
                ...(isNavInward.current && {
                   transform:
                      "translateX(calc((100vw - var(--nav-width)) / -2 + var(--offset-space)))",
                }),
             })
+
             .to(
                ".header__menu-bar-wrapper",
                {
@@ -196,6 +199,7 @@ function Navigation() {
                },
                "<"
             )
+
             .to(
                ".header__navigation-bg-layer",
                {
