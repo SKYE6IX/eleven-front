@@ -1,5 +1,5 @@
 "use client";
-import React, { useRef } from "react";
+import { useRef } from "react";
 import { useTranslations } from "next-intl";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
@@ -19,6 +19,7 @@ function WhyUsBlock() {
             if (!titleWrapperRef.current || !innerWrapperRef.current) {
                return;
             }
+
             if (tl.current) {
                tl.current.scrollTrigger?.kill();
                tl.current.kill();
@@ -49,7 +50,7 @@ function WhyUsBlock() {
 
             tl.current = gsap.timeline({
                defaults: {
-                  duration: 0.8,
+                  duration: 0.6,
                   ease: "power2.out",
                },
                scrollTrigger: {
@@ -59,12 +60,15 @@ function WhyUsBlock() {
                   end: () => "+=750",
                },
             });
+
             tl.current.from(".why-us-block__title-wrapper", {
                yPercent: 150,
             });
+
             tl.current.to(".why-us-block__title-wrapper", {
                scale: 1,
             });
+
             tl.current
                .to(
                   ".why-us-block__title-wrapper",
@@ -100,15 +104,20 @@ function WhyUsBlock() {
                   ">-0.5"
                );
          };
+
          runAnimation();
+
          let width = 0;
+
          const handleResize = () => {
             if (width !== window.innerWidth) {
                runAnimation();
                width = window.innerWidth;
             }
          };
+
          window.addEventListener("resize", handleResize);
+
          return () => window.removeEventListener("resize", handleResize);
       },
       { scope: containerRef }
@@ -122,6 +131,7 @@ function WhyUsBlock() {
                   <HyphenIcon />
                </span>
             </div>
+
             <div className="why-us-block__list">
                {["item1", "item2", "item3"].map((item, idx) => (
                   <div className="why-us-block__list-item" key={item}>
