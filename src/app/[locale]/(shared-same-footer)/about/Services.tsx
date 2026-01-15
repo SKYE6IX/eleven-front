@@ -1,5 +1,5 @@
 "use client";
-import React, { useRef } from "react";
+import { useRef } from "react";
 import { useTranslations } from "next-intl";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
@@ -24,11 +24,13 @@ function Services({ getMoveXAndStartScale }: Props) {
    useGSAP(
       () => {
          const mm = gsap.matchMedia();
+
          const getClipPathValue = (radius: string) => {
             const innerWrapperLeft = innerWrapperRef.current!.offsetLeft;
             const moveX = innerWrapperLeft / 2;
             return `inset(0px ${moveX}px 0px ${moveX}px round 0px 0px ${radius}px ${radius}px)`;
          };
+
          const getEndValue = () => {
             const innerWrapperLeft = innerWrapperRef.current!.offsetLeft;
             return "+=" + innerWrapperLeft * 2;
@@ -37,6 +39,7 @@ function Services({ getMoveXAndStartScale }: Props) {
          const split = SplitText.create(".about-us-page__service-text", {
             type: "words",
          });
+
          //** DESKTOP ANINAMTIONS */
          mm.add("(min-width: 1200px)", () => {
             if (!headingTextRef.current) return;
@@ -51,6 +54,7 @@ function Services({ getMoveXAndStartScale }: Props) {
             if (tl.current) {
                tl.current.kill();
             }
+
             tl.current = gsap.timeline({
                scrollTrigger: {
                   trigger: containerRef.current,
@@ -63,7 +67,7 @@ function Services({ getMoveXAndStartScale }: Props) {
 
             tl.current.to(headingTextRef.current, {
                scale: 1,
-               duration: 1,
+               duration: 0.6,
                ease: "none",
             });
 
@@ -86,21 +90,23 @@ function Services({ getMoveXAndStartScale }: Props) {
                   split.words,
                   {
                      ease: "none",
-                     duration: 0.8,
+                     duration: 0.7,
                      opacity: 0.5,
                      stagger: 0.5,
                   },
                   "<"
                );
+
             tl.current.from(".about-us-page__service-item-container", {
-               duration: 0.7,
+               duration: 1,
                y: 150,
                opacity: 0,
                stagger: 0.2,
             });
+
             //** LAYER INWARD ANIMATION */
             gsap.to(".about-us-page__service-block-layer", {
-               duration: 1.5,
+               duration: 0.8,
                clipPath: () => getClipPathValue("60"),
                ease: "power1.out",
                scrollTrigger: {
@@ -124,7 +130,7 @@ function Services({ getMoveXAndStartScale }: Props) {
                   },
                })
                .from(headingTextRef.current, {
-                  duration: 1,
+                  duration: 0.6,
                   x: 150,
                   opacity: 0,
                })
@@ -139,7 +145,7 @@ function Services({ getMoveXAndStartScale }: Props) {
                );
             gsap.from(split.words, {
                ease: "none",
-               duration: 0.8,
+               duration: 0.6,
                opacity: 0.5,
                stagger: 0.5,
                scrollTrigger: {
@@ -154,7 +160,7 @@ function Services({ getMoveXAndStartScale }: Props) {
             );
             serviceList.forEach((el) => {
                gsap.from(el, {
-                  duration: 1,
+                  duration: 0.6,
                   y: 150,
                   opacity: 0,
                   ease: "power2.out",
@@ -166,10 +172,11 @@ function Services({ getMoveXAndStartScale }: Props) {
                });
             });
          });
+
          //** MOBILE ANINAMTIONS FOR INWARD LAYER */
          mm.add("(max-width: 912px)", () => {
             gsap.to(".about-us-page__service-block-layer", {
-               duration: 1.5,
+               duration: 0.8,
                clipPath: () => getClipPathValue("30"),
                ease: "power1.out",
                scrollTrigger: {

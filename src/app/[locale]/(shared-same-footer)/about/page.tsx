@@ -1,14 +1,15 @@
 "use client";
-import React from "react";
 import WhoWeAre from "./WhoWeAre";
 import WhoBelieve from "./WhoBelieve";
 import Services from "./Services";
 import "./about-us.scss";
+
 function AboutUs() {
    const getMoveXAndStartScale = (headingText: HTMLDivElement) => {
       const wrapper = document.querySelector<HTMLDivElement>(
          ".about-us-page__inner-wrapper"
       )!;
+
       const headingTextRect = headingText.getBoundingClientRect();
       const wrapperWidth = wrapper.offsetWidth;
       const wrapperHeight = wrapper.offsetHeight;

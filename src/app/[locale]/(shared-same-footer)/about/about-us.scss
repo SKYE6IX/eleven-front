@@ -5,6 +5,7 @@
    overflow-x: clip;
    width: 100%;
 }
+
 // BACKGROUND IMAGE AND BACKDROP EFFECT STYLES START//
 .about-us-page__who-we-are-effect-wrapper {
    width: 100%;
@@ -82,13 +83,13 @@
 .about-us-page__who-we-are-content-wrapper,
 .about-us-page__who-believe-content-wrapper,
 .about-us-page__service-content-wrapper {
-   padding-top: 100px;
+   padding-top: 50px;
    @include flex-layout(column, none, none, 50px);
    @include max-breakpoint("md") {
-      padding-top: 50px;
       gap: 20px;
    }
 }
+
 .about-us-page__who-we-are-heading-wrapper,
 .about-us-page__who-believe-heading-wrapper,
 .about-us-page__service-heading-wrapper {
@@ -119,6 +120,7 @@
       line-height: 44.25px;
    }
 }
+
 .about-us-page__who-we-are-heading-icon,
 .about-us-page__who-believe-heading-icon,
 .about-us-page__service-heading-icon {
@@ -137,6 +139,7 @@
       bottom: 5px;
    }
 }
+
 .about-us-page__who-we-are-text-wrapper,
 .about-us-page__who-believe-text-wrapper {
    align-self: flex-end;
@@ -152,6 +155,7 @@
       gap: 20px;
    }
 }
+
 .about-us-page__who-we-are-text,
 .about-us-page__who-believe-text,
 .about-us-page__service-list-item {
@@ -172,6 +176,7 @@
       letter-spacing: 1px;
    }
 }
+
 .about-us-page__who-believe {
    z-index: 20;
    position: relative;
@@ -181,6 +186,7 @@
       height: 100%;
    }
 }
+
 .about-us-page__service-block {
    position: relative;
    min-height: 100vh;
@@ -194,6 +200,7 @@
       padding-bottom: 50px;
    }
 }
+
 .about-us-page__service-block-layer {
    position: absolute;
    inset: 0;
@@ -204,6 +211,7 @@
       border-radius: 0px 0px 60px 60px;
    }
 }
+
 .about-us-page__service {
    position: relative;
    z-index: 1;
@@ -211,6 +219,7 @@
       padding-left: 10px;
    }
 }
+
 .about-us-page__service-wrapper {
    @include flex-layout(row, none, space-between, none);
    @include max-breakpoint("sm") {
@@ -221,6 +230,7 @@
       gap: 20px;
    }
 }
+
 .about-us-page__service-text {
    margin-top: 50px;
    max-width: 650px;

@@ -1,5 +1,5 @@
 "use client";
-import React, { useRef } from "react";
+import { useRef } from "react";
 import Button from "../button/Button";
 import Link from "next/link";
 import { useTranslations } from "next-intl";
@@ -39,7 +39,7 @@ function Footer() {
                   y: 50,
                   autoAlpha: 0,
                   ease: "power2.out",
-                  duration: 0.9,
+                  duration: 0.6,
                   stagger: 0.15,
                   scrollTrigger: {
                      trigger: ".footer__heading-text",
@@ -82,7 +82,7 @@ function Footer() {
             .to(split2.current.chars, {
                x: 0,
                opacity: 1,
-               duration: 0.7,
+               duration: 0.6,
                stagger: 0.1,
                ease: "power2.out",
             })
@@ -100,7 +100,9 @@ function Footer() {
          <div className="footer__inner-wrapper">
             <div className="footer__top-container">
                <h3 className="footer__heading-text">{t("headingText")}</h3>
+
                <Button textKey="contact" href="/contact" type="link" />
+
                <div className="footer__top-inner-wrapper">
                   <div className="footer__contact-wrapper">
                      <div className="footer__contact-text-wrapper">
@@ -117,6 +119,7 @@ function Footer() {
                            Moscow
                         </h5>
                      </div>
+
                      <div className="footer__contact-info">
                         <h5 className="footer__contact-heading">
                            {t("getInTouch")}
@@ -125,10 +128,10 @@ function Footer() {
                            <li className="footer__contact-item">
                               <TelephoneIcon />
                               <Link
-                                 href="tel:+79932707338"
+                                 href="tel:+79951580214"
                                  data-testid="footer-contact-item"
                               >
-                                 +7 993 270 7338
+                                 +7 995 158-02-14
                               </Link>
                            </li>
                            <li className="footer__contact-item">
@@ -143,6 +146,7 @@ function Footer() {
                         </ul>
                      </div>
                   </div>
+
                   <div className="footer__site-title-wrapper">
                      <h1 className="footer__site-title">ELEVEN</h1>
                      <span className="footer__site-title-icon">
@@ -151,7 +155,9 @@ function Footer() {
                   </div>
                </div>
             </div>
+
             <div className="footer__divider" />
+
             <div className="footer__bottom">
                <div className="footer__all-right-reserved">
                   <h4 className="footer__all-right-reserved-heading">ELEVEN</h4>
@@ -161,7 +167,10 @@ function Footer() {
                </div>
                <ul className="footer__social-wrapper">
                   <li className="footer__social">
-                     <Link href="https://t.me/Skye6ix" target="_target">
+                     <Link
+                        href="https://t.me/eleven_webagency"
+                        target="_target"
+                     >
                         Telegram
                      </Link>
                   </li>

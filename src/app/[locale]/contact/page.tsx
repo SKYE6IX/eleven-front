@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useRef } from "react";
+import { useState, useRef } from "react";
 import { useTranslations, useLocale } from "next-intl";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
@@ -19,6 +19,7 @@ function Contact() {
    const handleOpenForm = () => {
       setOpenForm(!openForm);
    };
+
    useGSAP(
       () => {
          gsap.from(".top", {
@@ -43,7 +44,6 @@ function Contact() {
    return (
       <>
          <div className="contact-page" ref={containerRef}>
-            {/* <FormFeedBack /> */}
             <div className="contact-page__inner-wrapper">
                <div className="contact-page__content-wrapper">
                   <div className="contact-page__text-wrapper">
@@ -61,6 +61,7 @@ function Contact() {
                            textKey="submitRequest"
                            handleClick={handleOpenForm}
                         />
+
                         <Link
                            href={googleLinkWithLocale}
                            hrefLang={locale}

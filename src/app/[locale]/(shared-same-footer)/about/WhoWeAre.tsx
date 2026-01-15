@@ -1,5 +1,5 @@
 "use client";
-import React, { useRef } from "react";
+import { useRef } from "react";
 import { useTranslations } from "next-intl";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
@@ -14,12 +14,14 @@ type Props = {
       startScale: number;
    };
 };
+
 function WhoWeAre({ getMoveXAndStartScale }: Props) {
    const containerRef = useRef<HTMLDivElement>(null);
    const headingTextRef = useRef<HTMLHeadingElement>(null);
    const tl = useRef<GSAPTimeline>(null);
    const tl2 = useRef<GSAPTimeline>(null);
    const t = useTranslations("AboutUsPage");
+
    useGSAP(
       () => {
          const mm = gsap.matchMedia();
@@ -33,8 +35,9 @@ function WhoWeAre({ getMoveXAndStartScale }: Props) {
                scale: startScale,
                x: moveX,
             });
+
             gsap.from(headingTextRef.current, {
-               duration: 1.5,
+               duration: 0.6,
                opacity: 0,
                yPercent: 300,
             });
@@ -42,6 +45,7 @@ function WhoWeAre({ getMoveXAndStartScale }: Props) {
             if (tl.current) {
                tl.current.kill();
             }
+
             tl.current = gsap.timeline({
                scrollTrigger: {
                   trigger: containerRef.current,
@@ -84,7 +88,7 @@ function WhoWeAre({ getMoveXAndStartScale }: Props) {
             tl2.current = gsap.timeline();
             tl2.current
                .from(headingTextRef.current, {
-                  duration: 1,
+                  duration: 0.6,
                   x: 150,
                   opacity: 0,
                })

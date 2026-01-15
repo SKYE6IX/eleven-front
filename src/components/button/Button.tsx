@@ -43,7 +43,7 @@ function Button({
             </Link>
          )}
 
-         {type === "submit" && (
+         {(type === "submit" || type === "toggle") && (
             <button
                className="button"
                onClick={handleClick}

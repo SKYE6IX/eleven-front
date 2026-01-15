@@ -1,5 +1,5 @@
 "use client";
-import React, { useRef } from "react";
+import { useRef } from "react";
 import { useTranslations } from "next-intl";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
@@ -12,6 +12,7 @@ type Props = {
       startScale: number;
    };
 };
+
 function WhoBelieve({ getMoveXAndStartScale }: Props) {
    const containerRef = useRef<HTMLDivElement>(null);
    const headingTextRef = useRef<HTMLHeadingElement>(null);
@@ -45,7 +46,7 @@ function WhoBelieve({ getMoveXAndStartScale }: Props) {
             tl.current.to(headingTextRef.current, { scale: 1, duration: 1 });
             tl.current.to(
                headingTextRef.current,
-               { x: 0, duration: 1 },
+               { x: 0, duration: 0.6 },
                "-=0.9"
             );
             tl.current.from(
@@ -69,14 +70,14 @@ function WhoBelieve({ getMoveXAndStartScale }: Props) {
             tl2.current = gsap.timeline();
             tl2.current
                .from(headingTextRef.current, {
-                  duration: 1,
+                  duration: 0.6,
                   x: 150,
                   opacity: 0,
                })
                .from(
                   ".about-us-page__who-believe-heading-icon",
                   {
-                     duration: 1,
+                     duration: 0.6,
                      x: 50,
                      opacity: 0,
                   },
