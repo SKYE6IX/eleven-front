@@ -62,7 +62,7 @@ jobs:
                 --username "${{ vars.DOCKER_USERNAME }}" \
                 --password-stdin
 
-              docker compose -f eleven-compose.yaml pull client
+              docker compose -f eleven-compose.yaml pull eleven-client
 
               env \
                   MAIL_URL="${{ vars.MAIL_URL }}" \
