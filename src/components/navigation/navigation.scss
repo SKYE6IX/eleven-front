@@ -165,7 +165,6 @@
       position: fixed;
       top: 100px;
       left: 0px;
-      pointer-events: none;
    }
 }
 
@@ -182,7 +181,6 @@
 
 .navigation__menu-container.small {
    display: none;
-
    @include max-breakpoint("sm") {
       display: flex;
       flex-direction: column;

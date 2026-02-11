@@ -35,9 +35,9 @@ function Navigation() {
    const isMenuTlCreated = useRef(true);
    const mobileMenuTl = useRef<GSAPTimeline>(null);
 
-   //** INWARD ANIMATION FOR WHEN THE TRIGGER PASSED THE TOP */
    const { contextSafe } = useGSAP(
       () => {
+         //** INWARD ANIMATION FOR WHEN THE TRIGGER PASSED THE TOP */
          const trigger = document.getElementById("navigation-trigger");
          const mm = gsap.matchMedia();
          const breakpoint = 950;
@@ -47,6 +47,7 @@ function Navigation() {
                clearProps: "height",
             });
          });
+
          mm.add("(max-width: 767px)", () => {
             gsap.set(".header__navigation-bg-layer", {
                clearProps: "height",
@@ -178,17 +179,14 @@ function Navigation() {
          if (mobileMenuTl.current) {
             mobileMenuTl.current.kill();
          }
-
          mobileMenuTl.current = gsap
             .timeline({ defaults: { ease: "power1.out", duration: 0.3 } })
-
             .to(".header__title-wrapper", {
                ...(isNavInward.current && {
                   transform:
                      "translateX(calc((100vw - var(--nav-width)) / -2 + var(--offset-space)))",
                }),
             })
-
             .to(
                ".header__menu-bar-wrapper",
                {
@@ -199,7 +197,6 @@ function Navigation() {
                },
                "<"
             )
-
             .to(
                ".header__navigation-bg-layer",
                {
@@ -227,7 +224,6 @@ function Navigation() {
                "<"
             );
       }
-
       if (isMenuOpen) {
          // Disable the recreation for the mobile menu tl
          isMenuTlCreated.current = false;
@@ -242,8 +238,15 @@ function Navigation() {
 
          mobileMenuTl.current?.reverse();
       }
-      setIsOpen(!isOpen);
+      setIsOpen(isMenuOpen);
    });
+
+   const onNavigationChange = () => {
+      setIsOpen(false);
+      menuBarTl.current?.revert();
+      mobileMenuTl.current?.revert();
+      isMenuTlCreated.current = true;
+   };
 
    return (
       <Fragment>
@@ -266,7 +269,7 @@ function Navigation() {
                   </div>
 
                   <NavLink
-                     onNavigationChange={() => {}}
+                     onNavigationChange={onNavigationChange}
                      navigationList={navigationList}
                   />
 

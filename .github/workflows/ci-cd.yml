@@ -69,7 +69,6 @@ jobs:
                   EMAIL_FROM="${{ vars.EMAIL_FROM }}" \
                   EMAIL_TO="${{ vars.EMAIL_TO }}" \
                   JWT_TOKEN="${{ secrets.JWT_TOKEN }}" \
-                  docker compose -f eleven-compose.yaml up client --force-recreate -d
-
+                  docker compose -f eleven-compose.yaml up eleven-client --force-recreate -d
               docker image prune -f
               EOF
