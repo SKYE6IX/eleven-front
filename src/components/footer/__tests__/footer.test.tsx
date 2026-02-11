@@ -44,7 +44,7 @@ describe("Footer component", () => {
             <Footer />
          </NextIntlClientProvider>
       );
-      const mockNumber = "+7 993 270 7338";
+      const mockNumber = "+7 995 158-02-14";
       const mockEmail = "hello@eleven.io";
 
       // Acts

@@ -53,10 +53,10 @@
       }
    },
    "HeroBlock": {
-      "title": "We Are Web Developer Company In <important>Moscow</important>, Building Extraordinary Digital Experience.",
+      "title": "<span>Design & development</span> of digital resources for business.",
       "tagline": "Crafting unique brand Identites",
-      "showcaseText1": "We design and produce world-class digital products for forward-thinking brands.",
-      "showcaseText2": "We are independent and young team. We care, build relationships and have industry experience."
+      "subTitle1": "We provide design for all online services like mobile application, e-commerce and landing pages.",
+      "subTitle2": "We chose the technologies that are best suit for your project to ensure the product is fast, convenient and reliable."
    },
    "WhyUsBlock": {
       "title": "Why us ?",
@@ -203,8 +203,8 @@
          "description": "The landing page was to showcase their previous projects, given clear process about how they work, and expressing the advantage the web 3 enthusiastic user will get by working with them. An elegant UI production techniques mirrored the quality and craftsmanship of the company, supported by clear technical information and CTA’s to drive consumer consideration and in-bound enquiry. Seamless animation with framer motion to create a sophisticated looks and providing best user experience(UX)."
       },
       "ellcakes": {
-         "heading": "KASATKIN is an outsource web3 agency that provides web3 products for B2B.",
-         "description": "The landing page was to showcase their previous projects, given clear process about how they work, and expressing the advantage the web 3 enthusiastic user will get by working with them. An elegant UI production techniques mirrored the quality and craftsmanship of the company, supported by clear technical information and CTA’s to drive consumer consideration and in-bound enquiry. Seamless animation with framer motion to create a sophisticated looks and providing best user experience(UX)."
+         "heading": "Ellcakes is an online store where you can order for all different kind of cakes.",
+         "description": "We help Ellcakes redesign their online presence by developing a well structured full-stack e-commerce web application. Our team created an elegant user-friendly UI, making it easier for user to navigate from adding to cart to checkout page. We allowed multiple payment system to give user opportunity to choose a convenient way to pay, by Integrated with YooMoney payment gateway to add extra security layers. With the focus on best user experience, users can easily track the status of their orders on the dashboard page."
       },
       "rabotnik": {
          "heading": "Rabotnik is a leading marketing and recruitment agency, specializing in connecting top-tier creative talent with innovative brands seeking impactful marketing solutions.",

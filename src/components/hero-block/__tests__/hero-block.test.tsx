@@ -20,7 +20,7 @@ describe("Hero block component", () => {
       // Assert
       expect(blockTitle).toBeInTheDocument();
       expect(blockTitle).toHaveTextContent(
-         "We Are Web Developer Company In Moscow, Building Extraordinary Digital Experience."
+         "Design & development of digital resources for business."
       );
    });
 

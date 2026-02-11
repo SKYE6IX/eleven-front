@@ -103,20 +103,16 @@
    }
 }
 
-.hero-block__title-city {
-   background: url("./assets/moscow.jpg") center/cover no-repeat;
-   background-clip: text;
-   text-fill-color: transparent;
-   -webkit-background-clip: text;
-   -webkit-text-fill-color: transparent;
+.hero-block__title .highlight {
+   color: $support-mint;
 }
 
 .hero-block__bottom {
    width: 100%;
    margin-top: 60px;
-   @include flex-layout(row, center, center, 120px);
+   @include flex-layout(row, center, center, 80px);
    @include max-breakpoint("md") {
-      gap: 60px;
+      gap: 40px;
    }
    @include max-breakpoint("sm") {
       width: calc(100% - 80px);
@@ -139,6 +135,7 @@
       align-self: flex-start;
    }
 }
+
 .hero-block__text-wrapper:last-child {
    @include max-breakpoint("sm") {
       align-self: flex-end;
@@ -164,14 +161,14 @@
 }
 
 .hero-block__text {
-   max-width: 500px;
+   max-width: 550px;
    font-family: $font-montreal, sans-serif;
    font-size: 2rem;
    font-weight: 530;
    line-height: 38.4px;
    color: $primary;
    @include max-breakpoint("md") {
-      max-width: 400px;
+      max-width: 450px;
       font-size: 1.5rem;
       line-height: 28.8px;
    }

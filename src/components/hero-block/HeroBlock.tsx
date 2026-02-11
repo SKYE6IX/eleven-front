@@ -1,5 +1,5 @@
 "use client";
-import React, { useRef } from "react";
+import { useRef } from "react";
 import { useTranslations } from "next-intl";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
@@ -48,19 +48,17 @@ function HeroBlock() {
             </div>
             <h1 className="hero-block__title" ref={headingTextRef}>
                {t.rich("title", {
-                  important: (chucks) => (
-                     <span className="hero-block__title-city">{chucks}</span>
-                  ),
+                  span: (chucks) => <span className="highlight">{chucks}</span>,
                })}
             </h1>
          </div>
 
          <div className="hero-block__bottom">
             <div className="hero-block__text-wrapper left">
-               <h3 className="hero-block__text">{t("showcaseText1")}</h3>
+               <h3 className="hero-block__text">{t("subTitle1")}</h3>
             </div>
             <div className="hero-block__text-wrapper right">
-               <h3 className="hero-block__text">{t("showcaseText2")}</h3>
+               <h3 className="hero-block__text">{t("subTitle2")}</h3>
             </div>
          </div>
       </section>

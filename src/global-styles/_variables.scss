@@ -22,6 +22,7 @@ $breakpoints: (
    "lg": 1280px,
    "xxl": 1920px,
 );
+
 // Mixins
 @mixin between-breakpoints($start, $end) {
    @media only screen and (min-width: map.get($breakpoints, $start)) and (max-width: map.get($breakpoints, $end)) {
