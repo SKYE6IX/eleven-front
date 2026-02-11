@@ -1,5 +1,4 @@
 "use server";
-
 import type { FormFields } from "./validateFormIFields";
 
 export async function sendMail(formFields: FormFields) {
@@ -9,6 +8,7 @@ export async function sendMail(formFields: FormFields) {
       to: process.env.EMAIL_TO,
       ...formFields,
    };
+
    try {
       const result = await fetch(process.env.MAIL_URL, {
          headers: {
@@ -18,6 +18,7 @@ export async function sendMail(formFields: FormFields) {
          method: "POST",
          body: JSON.stringify(bodyData),
       });
+
       const response = await result.json();
 
       return {
