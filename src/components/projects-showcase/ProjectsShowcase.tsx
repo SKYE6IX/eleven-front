@@ -78,7 +78,6 @@ function ProjectsShowcase() {
    };
 
    const toggleModal = (key: string) => {
-      console.log("RUnning");
       setProjectKey(key);
       setIsModalOpen(!isModalOpen);
    };
@@ -96,9 +95,9 @@ function ProjectsShowcase() {
                   <div
                      className="projects-showcase__image-container"
                      key={project.key}
-                     // onMouseEnter={handleMouseEnter}
-                     // onMouseLeave={handleMouseLeave}
-                     // onMouseMove={handleMouseMove}
+                     onMouseEnter={handleMouseEnter}
+                     onMouseLeave={handleMouseLeave}
+                     onMouseMove={handleMouseMove}
                      onClick={() => toggleModal(project.key)}
                   >
                      <Image
