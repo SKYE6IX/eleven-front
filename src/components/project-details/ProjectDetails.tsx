@@ -19,6 +19,7 @@ function ProjectDetails({
    toggleModal,
 }: ProjectDetailsProps) {
    const t = useTranslations("ProjectDetails");
+
    const project = useMemo(() => {
       const project = projects["project-list"].find(
          (project) => project.key === projectKey
@@ -29,6 +30,7 @@ function ProjectDetails({
    const handleOnModalClose = () => {
       toggleModal(projectKey);
    };
+
    return (
       <Modal
          isOpen={isModalOpen}
