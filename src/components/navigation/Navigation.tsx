@@ -46,6 +46,9 @@ function Navigation() {
             gsap.set(".header__navigation-bg-layer", {
                clearProps: "height",
             });
+            gsap.set(".navigation", {
+               clearProps: "visibility,opacity",
+            });
          });
 
          mm.add("(max-width: 767px)", () => {
@@ -211,6 +214,7 @@ function Navigation() {
                opacity: 1,
                height: "var(--bg-layer-height)",
             })
+            .fromTo(".navigation ", { autoAlpha: 0 }, { autoAlpha: 1 })
             .fromTo(
                ".navigation__menu-container.small",
                { autoAlpha: 0 },
