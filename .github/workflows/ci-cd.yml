@@ -6,10 +6,6 @@ on:
 jobs:
    build:
       runs-on: ubuntu-latest
-      env:
-         SERVICE_ID: ${{ vars.SERVICE_ID }}
-         TEMPLATE_ID: ${{ vars.TEMPLATE_ID }}
-         PUBLIC_KEY: ${{ vars.PUBLIC_KEY }}
       steps:
          - name: Login to Docker Hub
            uses: docker/login-action@v3
@@ -35,9 +31,9 @@ jobs:
               file: Dockerfile
               tags: ${{ vars.DOCKER_USERNAME }}/${{ github.event.repository.name }}:latest
               build-args: |
-                 SERVICE_ID=${{ env.SERVICE_ID }}
-                 TEMPLATE_ID${{ env.TEMPLATE_ID }}
-                 PUBLIC_KEY=${{ env.PUBLIC_KEY}}
+                 SERVICE_ID=${{ vars.SERVICE_ID }}
+                 TEMPLATE_ID${{ vars.TEMPLATE_ID }}
+                 PUBLIC_KEY=${{ vars.PUBLIC_KEY }}
 
    deploy:
       runs-on: ubuntu-latest
