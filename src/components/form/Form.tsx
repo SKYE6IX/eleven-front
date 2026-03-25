@@ -3,12 +3,12 @@ import React, { useState, useRef } from "react";
 import { useTranslations } from "next-intl";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
+import emailjs from "@emailjs/browser";
 import Modal from "../modal/Modal";
 import Button from "../button/Button";
 import FormFeedBack from "../form-feedback/FormFeedBack";
 import ArrowUpIcon from "../icons/ArrowUpIcon";
-import { sendMail } from "./action";
-import { validate, FormFields } from "./validateFormIFields";
+import { validate } from "./validateFormIFields";
 import "./form.scss";
 
 type FormProps = {
@@ -35,6 +35,7 @@ function Form({ isFormOpen, handleOpenForm }: FormProps) {
    const t = useTranslations("ContactPage");
    const [selectedLeadSource, setSelectedLeadSource] = useState(leadSource[0]);
    const dropDownSelectionRef = useRef<HTMLUListElement>(null);
+   const formRef = useRef<HTMLFormElement>(null);
    const arrowRef = useRef<HTMLDivElement>(null);
    const dropDownTl = useRef<GSAPTimeline>(null);
    const [isDropDown, setIsDropDown] = useState(false);
@@ -98,34 +99,17 @@ function Form({ isFormOpen, handleOpenForm }: FormProps) {
          );
       }
    };
-   const formAction = async (formFields: FormFields) => {
-      await sendMail(formFields)
-         .then((res) => {
-            setFormStatus((prvState) => ({
-               ...prvState,
-               isSending: false,
-               isSuccess: res.status === "ok",
-               isError: res.status === "error",
-            }));
-         })
-         .catch((err) => {
-            console.error(err);
-            setFormStatus((prvState) => ({
-               ...prvState,
-               isSending: false,
-               isError: true,
-            }));
-         });
-   };
 
    const handleSumbit = (e: React.FormEvent<HTMLFormElement>) => {
       e.preventDefault();
-      const formData = new FormData();
-      Object.entries(formState).forEach(([key, value]) => {
-         formData.append(key, value);
-      });
+
+      if (!formRef.current) return;
+
+      const formData = new FormData(formRef.current);
       formData.set("leadSource", selectedLeadSource);
+
       const validatedFields = validate(formData);
+
       if (validatedFields.error) {
          validatedFields.error.issues.forEach((issue) => {
             setErrorFeilds((prevState) => [
@@ -135,13 +119,40 @@ function Form({ isFormOpen, handleOpenForm }: FormProps) {
          });
          return;
       }
+
       setFormStatus((prvState) => ({
          ...prvState,
          openFeedBack: true,
          isSending: true,
       }));
-      formAction(validatedFields.data);
+
+      emailjs
+         .sendForm(
+            process.env.NEXT_PUBLIC_SERVICE_ID,
+            process.env.NEXT_PUBLIC_TEMPLATE_ID,
+            formRef.current,
+            {
+               publicKey: process.env.NEXT_PUBLIC_PUBLIC_KEY,
+            }
+         )
+         .then(() => {
+            setFormStatus((prvState) => ({
+               ...prvState,
+               isSending: false,
+               isSuccess: true,
+               isError: false,
+            }));
+         })
+         .catch((error) => {
+            console.error("An error occur when sending mail -> ", error.text);
+            setFormStatus((prvState) => ({
+               ...prvState,
+               isSending: false,
+               isError: true,
+            }));
+         });
    };
+
    const handleCloseFeedBack = () => {
       setFormStatus(initialFormStatus);
       if (!formStatus.isError) {
@@ -173,7 +184,7 @@ function Form({ isFormOpen, handleOpenForm }: FormProps) {
             <h4 className="form-block__sub-heading-text">
                {t("form.subHeadingText")}
             </h4>
-            <form onSubmit={handleSumbit}>
+            <form onSubmit={handleSumbit} ref={formRef}>
                <div className="form-block__input-wrapper">
                   <div className="form-block__input-contaner">
                      <label
@@ -284,6 +295,13 @@ function Form({ isFormOpen, handleOpenForm }: FormProps) {
                            </li>
                         ))}
                      </ul>
+                     <input
+                        type="text"
+                        readOnly
+                        name="leadSource"
+                        value={selectedLeadSource}
+                        className="hide-select-option"
+                     />
                   </div>
                   <div className="form-block__input-contaner text-area">
                      <label

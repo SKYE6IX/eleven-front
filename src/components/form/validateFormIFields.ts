@@ -30,6 +30,7 @@ export const validate = (formData: FormData) => {
       message: formData.get("message"),
       leadSource: formData.get("leadSource"),
    });
+
    return validatedFields;
 };
 
