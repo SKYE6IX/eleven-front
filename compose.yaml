@@ -4,8 +4,10 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    env_file: 
-     - .env
+      args: 
+       - SERVICE_ID=${SERVICE_ID}
+       - TEMPLATE_ID=${TEMPLATE_ID}
+       - PUBLIC_KEY=${PUBLIC_KEY}
     restart: always
     ports:
         - 3001:3001
