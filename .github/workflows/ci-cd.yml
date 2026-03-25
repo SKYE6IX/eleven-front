@@ -32,7 +32,7 @@ jobs:
               tags: ${{ vars.DOCKER_USERNAME }}/${{ github.event.repository.name }}:latest
               build-args: |
                  SERVICE_ID=${{ vars.SERVICE_ID }}
-                 TEMPLATE_ID${{ vars.TEMPLATE_ID }}
+                 TEMPLATE_ID=${{ vars.TEMPLATE_ID }} 
                  PUBLIC_KEY=${{ vars.PUBLIC_KEY }}
 
    deploy:
