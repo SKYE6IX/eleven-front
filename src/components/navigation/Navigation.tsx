@@ -255,7 +255,6 @@ function Navigation() {
    return (
       <Fragment>
          <div id="navigation-trigger" style={{ height: "80px" }} />
-
          <header
             className={["header", isOpen ? "menu-active" : ""].join(" ")}
             ref={containerRef}
