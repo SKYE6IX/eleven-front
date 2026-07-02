@@ -62,7 +62,7 @@
          ],
          "category": "Animal Husbandry Equipments",
          "technologies": ["next.js", "GSAP", "scss", "next-intl", "email.js"],
-         "siteUrl": "https://ventimax.ru/",
+         "siteUrl": "",
          "tags": ["showcase", "all-screen"]
       },
       {
