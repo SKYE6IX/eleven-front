@@ -234,8 +234,8 @@
          "description": "With the goal of making gaming both rewarding and accessible, we collaborated closely with the other development team to strategise how a Telegram-based platform could bridge entertainment with tangible incentives, encouraging sustained user participation. Tap integrates gamification and user-centric features to deliver a vibrant mobile experience, incorporating seamless gameplay mechanics, coin-earning challenges, and clear reward redemption pathways, all while providing feedback loops to enhance user motivation and engagement."
       },
       "medremindr": {
-         "heading": "Tap is a dynamic Telegram mini app designed to engage users through online games, enabling them to earn coins and redeem rewards in TON.",
-         "description": "With the goal of making gaming both rewarding and accessible, we collaborated closely with the other development team to strategise how a Telegram-based platform could bridge entertainment with tangible incentives, encouraging sustained user participation. Tap integrates gamification and user-centric features to deliver a vibrant mobile experience, incorporating seamless gameplay mechanics, coin-earning challenges, and clear reward redemption pathways, all while providing feedback loops to enhance user motivation and engagement."
+         "heading": "MedRemindR is a medication management app designed to help users to manage their medication intake.",
+         "description": "Most medication apps are either over-engineered or don't do enough. We analyzed these issues and came up with a much simpler approach that focuses only on helping users take their medications on time. With timely notifications set up and the ability to log their dosage, users can manage not only their own medication but also that of family members through simple profile creation."
       }
    }
 }
