@@ -1,4 +1,7 @@
 {
+   "Common": {
+      "cursorLabel": "Explore"
+   },
    "Navigations": {
       "home": "Home",
       "about": "About",
@@ -227,6 +230,10 @@
          "description": "The aim of this app was to convey a sense of trust and user experience while ensuring critical platform features, such as product listings and transaction processes, were highly intuitive and accessible. With a streamlined interface that balanced form and function effortlessly. A sophisticated user experience, crafted with elegant UI design and efficient techniques, reflected the platform’s reliability and ease of use, supported by clear navigational flows."
       },
       "tap": {
+         "heading": "Tap is a dynamic Telegram mini app designed to engage users through online games, enabling them to earn coins and redeem rewards in TON.",
+         "description": "With the goal of making gaming both rewarding and accessible, we collaborated closely with the other development team to strategise how a Telegram-based platform could bridge entertainment with tangible incentives, encouraging sustained user participation. Tap integrates gamification and user-centric features to deliver a vibrant mobile experience, incorporating seamless gameplay mechanics, coin-earning challenges, and clear reward redemption pathways, all while providing feedback loops to enhance user motivation and engagement."
+      },
+      "medremindr": {
          "heading": "Tap is a dynamic Telegram mini app designed to engage users through online games, enabling them to earn coins and redeem rewards in TON.",
          "description": "With the goal of making gaming both rewarding and accessible, we collaborated closely with the other development team to strategise how a Telegram-based platform could bridge entertainment with tangible incentives, encouraging sustained user participation. Tap integrates gamification and user-centric features to deliver a vibrant mobile experience, incorporating seamless gameplay mechanics, coin-earning challenges, and clear reward redemption pathways, all while providing feedback loops to enhance user motivation and engagement."
       }

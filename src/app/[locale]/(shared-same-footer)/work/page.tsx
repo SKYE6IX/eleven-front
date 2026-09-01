@@ -11,7 +11,8 @@ import ProjectDetails from "@/components/project-details/ProjectDetails";
 import "./work-page.scss";
 
 function WorkPage() {
-   const t = useTranslations("WorkPage");
+   const t1 = useTranslations("WorkPage");
+   const t2 = useTranslations("Common");
    const containerRef = useRef<HTMLDivElement>(null);
    const innerWrapperRef = useRef<HTMLDivElement>(null);
    const customCursor = useRef<HTMLDivElement>(null);
@@ -139,6 +140,7 @@ function WorkPage() {
       customCursor.current.style.left = e.clientX + "px";
       customCursor.current.style.top = e.clientY + "px";
    };
+
    const toggleModal = (key: string) => {
       setProjectKey(key);
       setIsModalOpen(!isModalOpen);
@@ -150,9 +152,11 @@ function WorkPage() {
             <div className="work-page__layer" />
             <div className="work-page__inner-wrapper" ref={innerWrapperRef}>
                <div className="work-page__custom-cursor" ref={customCursor}>
-                  <span className="work-page__custom-cursor-text">Explore</span>
+                  <span className="work-page__custom-cursor-text">
+                     {t2("cursorLabel")}
+                  </span>
                </div>
-               <h3 className="work-page__heading-text">{t("headingText")}</h3>
+               <h3 className="work-page__heading-text">{t1("headingText")}</h3>
                <section className="work-page__project-list">
                   {projects["project-list"].map((project) => (
                      <React.Fragment key={project.key}>
@@ -174,6 +178,7 @@ function WorkPage() {
                               />
                            </div>
                         )}
+
                         {project.tags.includes("mobile-only") && (
                            <div
                               className="work-page__project-image-container blur"

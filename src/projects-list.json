@@ -23,7 +23,7 @@
          ],
          "category": "Web Agency",
          "technologies": ["next.js", "framer motion", "next-intl"],
-         "siteUrl": "https://kasatkin.io/ru",
+         "siteUrl": null,
          "tags": ["showcase", "all-screen"]
       },
       {
@@ -49,7 +49,7 @@
          ],
          "category": "Translation Agency",
          "technologies": ["next.js", "scss", "email.js", "framer motion"],
-         "siteUrl": "",
+         "siteUrl": null,
          "tags": ["all-screen"]
       },
       {
@@ -62,8 +62,8 @@
          ],
          "category": "Animal Husbandry Equipments",
          "technologies": ["next.js", "GSAP", "scss", "next-intl", "email.js"],
-         "siteUrl": "",
-         "tags": ["showcase", "all-screen"]
+         "siteUrl": null,
+         "tags": ["all-screen"]
       },
       {
          "name": "Rabotnik",
@@ -94,7 +94,7 @@
             "scss",
             "framer motion"
          ],
-         "siteUrl": "",
+         "siteUrl": null,
          "tags": ["mobile-only"]
       },
       {
@@ -107,8 +107,21 @@
          ],
          "category": "Web3",
          "technologies": ["react.js", "react-router", "scss", "i18n"],
-         "siteUrl": "",
+         "siteUrl": null,
          "tags": ["mobile-only"]
+      },
+      {
+         "name": "MedRemindR",
+         "key": "medremindr",
+         "images": [
+            "/projects-images/medremindr/image1.webp",
+            "/projects-images/medremindr/image2.webp",
+            "/projects-images/medremindr/image3.webp"
+         ],
+         "category": "Mobile App",
+         "technologies": ["react-native", "expo", "i18n", "spring-boot"],
+         "siteUrl": "https://madebyeleven.com/smart-link.html",
+         "tags": ["mobile-only", "showcase"]
       }
    ]
 }

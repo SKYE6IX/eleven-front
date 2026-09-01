@@ -3,8 +3,6 @@ import { useState, useRef } from "react";
 import { useTranslations, useLocale } from "next-intl";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
-import Link from "next/link";
-import Image from "next/image";
 import Logo from "@/components/logo/Logo";
 import Footer from "@/components/footer/Footer";
 import Button from "@/components/button/Button";
@@ -36,10 +34,10 @@ function Contact() {
       { scope: containerRef }
    );
 
-   const googleLinkWithLocale =
-      locale === "ru"
-         ? "https://docs.google.com/forms/d/1tYSBRHk-4U9HSECqBgDj9vS9Y0vI5l2lJrqB4b-SpkE/edit"
-         : "https://docs.google.com/forms/d/17U-z6ZGJ55Wr3BoBg5sDwty201z7Rhb8-6WPXG3oSI8/edit";
+   // const googleLinkWithLocale =
+   //    locale === "ru"
+   //       ? "https://docs.google.com/forms/d/1tYSBRHk-4U9HSECqBgDj9vS9Y0vI5l2lJrqB4b-SpkE/edit"
+   //       : "https://docs.google.com/forms/d/17U-z6ZGJ55Wr3BoBg5sDwty201z7Rhb8-6WPXG3oSI8/edit";
 
    return (
       <>
@@ -61,8 +59,7 @@ function Contact() {
                            textKey="submitRequest"
                            handleClick={handleOpenForm}
                         />
-
-                        <Link
+                        {/* <Link
                            href={googleLinkWithLocale}
                            hrefLang={locale}
                            className="contact-page__google-link"
@@ -75,7 +72,7 @@ function Contact() {
                               height={40}
                               width={40}
                            />
-                        </Link>
+                        </Link> */}
                      </div>
                   </div>
                   <div className="contact-page__logo-container">

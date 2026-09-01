@@ -109,6 +109,7 @@
       border-radius: 20px;
    }
 }
+
 .work-page__project-image-container:nth-child(1) {
    grid-area: 1 / 1 / 2 / 3;
 }
@@ -118,6 +119,7 @@
 .work-page__project-image-container:nth-child(4) {
    grid-area: 5 / 1 / 6 / 3;
 }
+
 .work-page__project-image-container.blur {
    background-size: cover;
    background-position: center;

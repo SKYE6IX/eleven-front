@@ -74,6 +74,23 @@
 .projects-showcase__image-container:nth-child(4) {
    grid-area: 3 / 1 / 4 / 3;
 }
+
+.projects-showcase__image-container.blur {
+   background-size: cover;
+   background-position: center;
+}
+
+.projects-showcase__image-container-blur {
+   border-radius: inherit;
+   position: absolute;
+   inset: 0;
+   backdrop-filter: blur(15px);
+}
+.projects-showcase__image-container.blur .projects-showcase__project-image {
+   object-fit: contain;
+   object-position: center top;
+}
+
 .projects-showcase__image {
    object-fit: cover;
    border-radius: inherit;

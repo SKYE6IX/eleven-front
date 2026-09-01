@@ -7,15 +7,19 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import projects from "../../projects-list.json";
 import ProjectDetails from "../project-details/ProjectDetails";
 import "./project-showcase.scss";
+import { useTranslations } from "next-intl";
 
 function ProjectsShowcase() {
+   const t = useTranslations("Common");
    const containerRef = useRef<HTMLElement>(null);
    const customCursor = useRef<HTMLDivElement>(null);
    const customCursorTween = useRef<GSAPTween>(null);
    const [projectKey, setProjectKey] = useState("");
+
    const showcaseProjects = projects["project-list"].filter((project) =>
       project.tags.includes("showcase")
    );
+
    const [isModalOpen, setIsModalOpen] = useState(false);
    const { contextSafe } = useGSAP(
       () => {
@@ -87,30 +91,56 @@ function ProjectsShowcase() {
          <section className="projects-showcase" ref={containerRef}>
             <div className="project-showcase__custom-cursor" ref={customCursor}>
                <span className="project-showcase__custom-cursor-text">
-                  Explore
+                  {t("cursorLabel")}
                </span>
             </div>
             <div className="project-showcase__inner-wrapper">
                {showcaseProjects.map((project) => (
-                  <div
-                     className="projects-showcase__image-container"
-                     key={project.key}
-                     onMouseEnter={handleMouseEnter}
-                     onMouseLeave={handleMouseLeave}
-                     onMouseMove={handleMouseMove}
-                     onClick={() => toggleModal(project.key)}
-                  >
-                     <Image
-                        src={project.images[0]}
-                        alt={project.name}
-                        fill={true}
-                        className="projects-showcase__image"
-                        priority
-                     />
-                  </div>
+                  <React.Fragment key={project.key}>
+                     {project.tags.includes("all-screen") && (
+                        <div
+                           className="projects-showcase__image-container"
+                           onMouseEnter={handleMouseEnter}
+                           onMouseLeave={handleMouseLeave}
+                           onMouseMove={handleMouseMove}
+                           onClick={() => toggleModal(project.key)}
+                        >
+                           <Image
+                              src={project.images[0]}
+                              alt={project.name}
+                              fill={true}
+                              className="projects-showcase__image"
+                              priority
+                           />
+                        </div>
+                     )}
+
+                     {project.tags.includes("mobile-only") && (
+                        <div
+                           className="projects-showcase__image-container blur"
+                           style={{
+                              backgroundImage: `url(${project.images[0]})`,
+                           }}
+                           onMouseEnter={handleMouseEnter}
+                           onMouseLeave={handleMouseLeave}
+                           onMouseMove={handleMouseMove}
+                           onClick={() => toggleModal(project.key)}
+                        >
+                           <div className="projects-showcase__image-container-blur" />
+                           <Image
+                              src={project.images[0]}
+                              alt={project.name}
+                              fill
+                              className="projects-showcase__project-image"
+                              priority
+                           />
+                        </div>
+                     )}
+                  </React.Fragment>
                ))}
             </div>
          </section>
+
          <ProjectDetails
             isModalOpen={isModalOpen}
             toggleModal={toggleModal}

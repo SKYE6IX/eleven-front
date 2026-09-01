@@ -58,6 +58,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
    const { locale } = await params;
    const t = await getTranslations({ locale, namespace: "SEO" });
+
    return {
       title: `${t("metaData.title")}`,
       description: t("metaData.description"),
@@ -97,6 +98,7 @@ export async function generateMetadata({
          type: "website",
          locale: locale,
       },
+
       twitter: {
          title: `${t("metaData.title")}`,
          description: t("metaData.description"),
@@ -109,6 +111,7 @@ export async function generateMetadata({
             },
          ],
       },
+
       verification: {
          yandex: "baad47f133889d85",
          google: "Md3pJr-_1FEuP5-nCIrtDOFVdN49RxqWjbxdG_9bVTM",
@@ -158,11 +161,13 @@ export default async function RootLayout({
         for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
         k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
     })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=104241852', 'ym');
+
     ym(104241852, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", accurateTrackBounce:true, trackLinks:true});
 <!-- /Yandex.Metrika counter -->
             `,
                }}
             />
+
             <script
                type="application/ld+json"
                dangerouslySetInnerHTML={{

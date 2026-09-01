@@ -131,10 +131,10 @@ function Footer() {
                            <li className="footer__contact-item">
                               <MailIcon />
                               <Link
-                                 href="mailTo:azeezabiola@gmail.com"
+                                 href="mailTo:hello@madebyeleven.com"
                                  data-testid="footer-contact-item"
                               >
-                                 hello@eleven.io
+                                 hello@madebyeleven.com
                               </Link>
                            </li>
                         </ul>
