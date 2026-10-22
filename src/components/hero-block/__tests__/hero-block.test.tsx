@@ -20,7 +20,7 @@ describe("Hero block component", () => {
       // Assert
       expect(blockTitle).toBeInTheDocument();
       expect(blockTitle).toHaveTextContent(
-         "Design & development of digital resources for business."
+         "a Moscow web studio building websites that bring in clients"
       );
    });
 
@@ -37,7 +37,7 @@ describe("Hero block component", () => {
 
       // Assert
       expect(blockTagline).toBeInTheDocument();
-      expect(blockTagline).toHaveTextContent("Crafting unique brand Identites");
+      expect(blockTagline).toHaveTextContent("Hi, we’re Eleven —");
    });
 
    it("render block showcase text", () => {

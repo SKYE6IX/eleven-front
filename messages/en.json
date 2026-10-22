@@ -1,6 +1,8 @@
 {
    "Common": {
-      "cursorLabel": "Explore"
+      "cursorLabel": "View",
+      "featuredWork": "Selected work",
+      "allWork": "All projects"
    },
    "Navigations": {
       "home": "Home",
@@ -9,17 +11,18 @@
       "contact": "Contact"
    },
    "Footer": {
-      "headingText": "Do you like what you see ? Let’s make something together.",
-      "briefHeading": "We work globally",
+      "headingText": "Got a project? Let’s talk",
+      "briefHeading": "We work with clients worldwide",
       "submitBrief": "Submit a brief",
       "getInTouch": "Get in touch",
-      "reserveText": "ALL RIGHT RESERVED"
+      "reserveText": "ALL RIGHTS RESERVED",
+      "location": "Moscow"
    },
    "Button": {
       "text": {
-         "contact": "Start A Project",
+         "contact": "Discuss a project",
          "submit": "Send",
-         "visitWebsite": "Visit Website",
+         "visitWebsite": "Visit website",
          "submitRequest": "Submit your request"
       }
    },
@@ -56,72 +59,99 @@
       }
    },
    "HeroBlock": {
-      "title": "<span>Design & development</span> of digital resources for business.",
-      "tagline": "Crafting unique brand Identites",
-      "subTitle1": "We provide design for all online services like mobile application, e-commerce and landing pages.",
-      "subTitle2": "We choose the technologies that are best suit for your project to ensure the product is fast, convenient and reliable."
+      "title": "a Moscow web studio building websites <span>that bring in clients</span>",
+      "tagline": "Hi, we’re Eleven —",
+      "subTitle1": "Design and development from start to finish: websites, online stores, landing pages and Telegram mini apps.",
+      "subTitle2": "We pick the technology to fit the project, not the other way round — so your site is fast, easy to use and reliable.",
+      "viewWork": "View our work"
    },
    "WhyUsBlock": {
-      "title": "Why us ?",
+      "title": "Why Eleven?",
       "whyUsItems": {
-         "item1": "We create fast-loading, fully responsive websites that perform flawlessly across all devices, reducing bounce rates and keeping visitors engaged.",
-         "item2": "We prioritise long-term partnerships, offering personalised solutions, regular check-ins, to ensure your vision is realised and your business thrives.",
-         "item3": "From initial consultation to ongoing maintenance, we offer timely, comprehensive support to keep your website running smoothly."
+         "item1": "Your site loads fast and works just as well on a phone, tablet or laptop. Visitors stay longer and get in touch more often.",
+         "item2": "We check in regularly and show progress along the way, so you always know where the project stands.",
+         "item3": "We don’t disappear after handover: we make changes, update the site and keep it running smoothly."
+      },
+      "whyUsHeadings": {
+         "item1": "Works on every screen",
+         "item2": "Always in touch",
+         "item3": "Support after launch"
       }
    },
    "ServiceListBlock": {
       "title": "Services",
-      "heading": "We are here to help your business standout with brand identity that captivates and converts effectively.",
+      "heading": "We handle everything — from design to launch and promotion.",
       "serviceList": {
          "design": {
             "title": "Design",
-            "briefText": "We provide designs by crafting visuals to match your brand."
+            "briefText": "We plan the structure and design a site that fits your brand.",
+            "items": {
+               "item1": "Web design",
+               "item2": "Online stores",
+               "item3": "Landing pages"
+            }
          },
          "develop": {
-            "title": "Develop",
-            "briefText": "We provide web development to the highest standards, and matching industrial requirements."
+            "title": "Development",
+            "briefText": "Sites of any size — from a single page to an online store or web service.",
+            "items": {
+               "item1": "Turnkey websites",
+               "item2": "Online stores",
+               "item3": "Technical SEO"
+            }
          },
          "support": {
-            "title": "Support",
-            "briefText": "We provide support and maintain your products through it’s life cycle."
+            "title": "Promotion & support",
+            "briefText": "We help your site bring in leads and keep it running without issues.",
+            "items": {
+               "item1": "SEO",
+               "item2": "Hosting",
+               "item3": "Paid ads"
+            }
          },
          "technologies": {
             "title": "Technologies",
-            "briefText": "We build with cutting edge technologies, to bring your idea to life."
+            "briefText": "We build with modern, reliable tools.",
+            "items": {
+               "item1": "React",
+               "item2": "Next.js",
+               "item3": "Spring Boot",
+               "item4": "Express"
+            }
          }
       }
    },
    "AboutUsBlock": {
-      "headingText": "Good design for great people, make life better!",
-      "text": "Eleven's experience is at the core of our work. We are a young team with over <important>five years</important> of industry experience, who value customers, interaction, and attention to detail. We create world-class websites and applications, providing a full development cycle. We’re 100% in-house and ensuring high results."
+      "headingText": "A small team that cares about every project",
+      "text": "We’ve been building websites for over <important>five years</important>. We do the design and development ourselves, with no subcontractors, so we own the result — from the first meeting to launch and beyond."
    },
    "FAQBlock": {
       "title": "Answers",
-      "headingText": "Find answers to common questions about how Eleven works.",
+      "headingText": "Quick answers about timelines, pricing and how we work.",
       "faqList": {
          "q1": {
-            "question": "How long does a website project usually take to complete?",
-            "answer": "Timeline depends on the specifications of the website project, but  for example a basic landing page usually take up to three weeks."
+            "question": "How long does a website take?",
+            "answer": "It depends on the project. A landing page takes from three weeks."
          },
          "q2": {
             "question": "How much does a website cost?",
-            "answer": "We don’t have a set project prices. Every project request we receive has different requirement which alter the specification of the job. So once we received your request, we can give you indication of cost and timescale."
+            "answer": "There are no fixed prices — every project is different. Tell us what you need and we’ll give you a cost and timeline."
          },
          "q3": {
-            "question": "We have a limited budget, will you still work with us?",
-            "answer": "We work with a range of clients, from individual, start-up to large organisation. Our mindset is to work with clients and help them reach their goal. In terms of budget, the easiest way to find out if a project is possible is to let us know what your budget is."
+            "question": "We have a limited budget. Will you still work with us?",
+            "answer": "We work with everyone from sole traders to large companies. Tell us your budget and we’ll suggest what’s possible."
          },
          "q4": {
-            "question": "We’re not based in Moscow, does that matter ?",
-            "answer": "We work with clients all over the Russia and all over the world in fact. So location does not matter. We will guide you through the process and communicate clearly at certain stages via email and sometimes Zoom. If possible, we are happy to have face-to-face meetings."
+            "question": "We’re not based in Moscow. Does that matter?",
+            "answer": "Not at all. We work across Russia and abroad — by email and Zoom, and in person when we can."
          },
          "q5": {
             "question": "What are your payment terms?",
-            "answer": "We usually do 25% upfront, 25% on design sign-off, and 50% on build. But these terms can be discussed if need be. We are flexible. We just want to work with the right partner."
+            "answer": "30% upfront, 30% on design sign-off and 40% on build. Terms can be discussed."
          },
          "q6": {
-            "question": "Can we arrange a conference call to discuss?",
-            "answer": "Yes of course, we can schedule a zoom meeting into the diary that convenient for both parties."
+            "question": "Can we jump on a call to discuss?",
+            "answer": "Of course! We’ll set up a Zoom call at a time that suits you."
          }
       }
    },
@@ -133,109 +163,235 @@
       "googleLinkText": "Fill on Google",
       "form": {
          "headingText": "Let’s get started",
-         "subHeadingText": "For general enquiries, please fill out the form to get in touch.",
+         "subHeadingText": "Fill in the form and we’ll come back with a rough timeline and cost.",
          "label": {
             "name": "Name",
             "email": "Email",
             "phone": "Phone",
-            "hearAboutUs": "How do you hear about Eleven?",
+            "hearAboutUs": "How did you hear about Eleven?",
             "message": "Message"
          },
          "placeholder": {
             "name": "Your name",
             "email": "Your email",
-            "phone": "Phone(optional)",
+            "phone": "Phone (optional)",
             "message": "Tell us about your project"
-         }
+         },
+         "leadSource": {
+            "google": "Google",
+            "yandex": "Yandex",
+            "linkedin": "LinkedIn",
+            "friends": "Friends or family"
+         },
+         "errorMessage": "Something went wrong. Please try again"
       }
    },
    "AboutUsPage": {
-      "whoWeAreBlock": {
-         "headingText": "Who we are",
-         "text1": "We are a creative collective with a killer instinct for design, dev and digital products.",
-         "text2": "We create innovative products and experiences, we maintain long term relationships.",
-         "text3": "We drive growth and productivity for all ambitious companies around the world."
+      "hero": {
+         "eyebrow": "About us",
+         "title": "A small team building websites <span>from start to finish</span>",
+         "text": "We plan, design and build everything ourselves — no middlemen. So we own the result, from the first meeting to launch and beyond.",
+         "viewWork": "View our work"
       },
-      "whoBelieveBlock": {
-         "headingText": "Who believe",
-         "text1": "Well structured online presence will help brands growth rapidly.",
-         "text2": "The future will be defined by intelligent interactions between brands and users."
+      "stats": {
+         "years": {
+            "value": "5+",
+            "label": "years in web development"
+         },
+         "inHouse": {
+            "value": "100%",
+            "label": "of the work done in-house, no subcontractors"
+         },
+         "global": {
+            "value": "Worldwide",
+            "label": "we work with clients in Russia and abroad"
+         },
+         "launch": {
+            "value": "3 weeks",
+            "label": "to launch a landing page from scratch"
+         }
+      },
+      "beliefs": {
+         "title": "What we believe",
+         "items": {
+            "item1": {
+               "title": "A website should work for you",
+               "text": "A good site doesn’t just describe your company — it brings in clients and helps you keep them."
+            },
+            "item2": {
+               "title": "Long-term partnerships",
+               "text": "We stay in touch after launch and grow the project with you."
+            },
+            "item3": {
+               "title": "Built around your goal and budget",
+               "text": "We work with start-ups and large companies alike, and offer what actually fits you."
+            }
+         }
+      },
+      "process": {
+         "title": "How we work",
+         "text": "A clear process with no surprises: at every stage you know what’s happening and what comes next.",
+         "payment": {
+            "title": "Pay in stages",
+            "text": "30% upfront, 30% on design sign-off and 40% on build. Terms can be discussed."
+         },
+         "steps": {
+            "step1": {
+               "title": "Intro",
+               "text": "We get on a call, talk through your goals and give you a timeline and cost."
+            },
+            "step2": {
+               "title": "Structure & design",
+               "text": "We plan how the site will work and design it to match your brand."
+            },
+            "step3": {
+               "title": "Development",
+               "text": "We build a site that’s fast, looks great on any screen and is ready for search engines."
+            },
+            "step4": {
+               "title": "Launch",
+               "text": "We test it on different devices, connect the domain and hosting, and go live."
+            },
+            "step5": {
+               "title": "Support",
+               "text": "We make changes, update the site and keep everything running."
+            }
+         }
       },
       "ourOfferingBlock": {
-         "headingText": "Our offering",
-         "text": "We design experiences and build tech behind them.",
+         "headingText": "What we do",
+         "text": "Everything your website needs — in one team.",
          "serviceList": {
             "strategy": {
-               "headingText": "Strategy & UX",
+               "headingText": "Research & structure",
                "list": {
-                  "item1": "User Research",
-                  "item2": "Information Architecture",
-                  "item3": "User Journey Mapping",
-                  "item4": "Wireframing"
+                  "item1": "Audience research",
+                  "item2": "Site structure",
+                  "item3": "Customer journey to enquiry",
+                  "item4": "Prototyping"
                }
             },
             "design": {
                "headingText": "Design",
                "list": {
-                  "item1": "Interaction Design",
-                  "item2": "User Interface Design",
-                  "item3": "Prototyping & Animation"
+                  "item1": "Concept & style",
+                  "item2": "Interface design",
+                  "item3": "Animation & interaction"
                }
             },
             "development": {
                "headingText": "Development",
                "list": {
-                  "item1": "Product Architecture",
-                  "item2": "Front + Backend Development",
-                  "item3": "Dev Infrastructure",
-                  "item4": "CI / CD Pipeline",
-                  "item5": "eCommerce",
-                  "item6": "Telegram Mini Apps"
+                  "item1": "Websites & web services",
+                  "item2": "Online stores",
+                  "item3": "Telegram mini apps",
+                  "item4": "Payments & CRM integration",
+                  "item5": "Back end & databases",
+                  "item6": "Hosting & updates"
                }
+            }
+         }
+      },
+      "tech": {
+         "title": "Technologies",
+         "text": "We pick the stack to fit the job, not the other way round. Here’s what we use most."
+      },
+      "team": {
+         "title": "Our team",
+         "members": {
+            "azeez": {
+               "name": "Azeez Abiola",
+               "role": "Co-founder · Full-stack developer",
+               "initial": "A",
+               "text": "Hi, I’m Azeez — co-founder of Eleven and a full-stack developer. For over 5 years I’ve helped small and large businesses launch websites and services. I write Java and JavaScript and make sure everything runs fast and reliably. I’d be glad to help bring your idea to life."
+            },
+            "anna": {
+               "name": "Anna Afanaseva",
+               "role": "Co-founder · UX/UI designer & frontend developer",
+               "initial": "A",
+               "text": "Hi, I’m Anna, co-founder of Eleven. I’ve been creating interfaces for over 5 years: I worked in Sber’s frontend team and built services and landing pages. At Eleven I lead design and frontend — I design sites in Figma and build them myself, so everything looks exactly as intended. I’ll help you create a site people enjoy using."
             }
          }
       }
    },
    "WorkPage": {
-      "headingText": "Let’s create distinctive website and digital experience."
+      "headingText": "Projects we’re proud of"
    },
    "ProjectDetails": {
-      "technologiesUsed": "Technologies Used:",
+      "technologiesUsed": "Technologies:",
       "kasatkin": {
-         "heading": "KASATKIN is an outsource web3 agency that provides web3 products for B2B.",
-         "description": "The landing page was to showcase their previous projects, given clear process about how they work, and expressing the advantage the web 3 enthusiastic user will get by working with them. An elegant UI production techniques mirrored the quality and craftsmanship of the company, supported by clear technical information and CTA’s to drive consumer consideration and in-bound enquiry. Seamless animation with framer motion to create a sophisticated looks and providing best user experience(UX)."
+         "heading": "KASATKIN is an agency that builds web3 products for businesses.",
+         "description": "We built a landing page that showcases the agency’s work and clearly explains how to work with them. A dark style and smooth animations underline the tech focus, while clear contact buttons make it easy to get in touch."
       },
       "ellcakes": {
-         "heading": "Ellcakes is an online store where you can order for all different kind of cakes.",
-         "description": "We help Ellcakes redesign their online presence by developing a well structured full-stack e-commerce web application. Our team created an elegant user-friendly UI, making it easier for user to navigate from adding to cart to checkout page. We allowed multiple payment system to give user opportunity to choose a convenient way to pay, by Integrated with YooMoney payment gateway to add extra security layers. With the focus on best user experience, users can easily track the status of their orders on the dashboard page."
+         "heading": "Ellcakes is an online store for handmade cakes and desserts.",
+         "description": "We built the store from scratch: catalogue, cart, checkout and personal account, with online payments via YooMoney. Customers pick a cake, pay and track their order in a couple of minutes."
       },
       "rabotnik": {
-         "heading": "Rabotnik is a leading marketing and recruitment agency, specializing in connecting top-tier creative talent with innovative brands seeking impactful marketing solutions.",
-         "description": "This website was a pivotal element in Rabotnik’s brand repositioning campaign, designed to reflect the agency’s premium expertise while making critical service details, such as recruitment processes and marketing campaign offerings, highly accessible. The solution was a dynamic, content-rich digital platform that harmonized form and function. A polished browsing experience, crafted with elegant UI design and cutting-edge production techniques, echoed the agency’s commitment to creativity and precision, supported by clear service breakdowns and strategic CTAs to drive client engagement and candidate applications."
+         "heading": "Rabotnik is a recruitment and marketing agency.",
+         "description": "The site was part of the agency’s rebrand. We explained its services — hiring and marketing — in plain terms and made it easy for both clients and candidates to find what they need and get in touch."
       },
       "fast-car-sale": {
-         "heading": "Fast Car Sale company specialising in selling high-performance luxury vehicles tailored for discerning drivers seeking unparalleled style and engineering.",
-         "description": "The website was a cornerstone of Fast Car Sale brand relaunch, designed to convey the brand’s premium identity while ensuring critical product details, such as vehicle specifications and customisation options, were easily accessible. It was a content-rich digital experience that seamlessly blended form and function. A refined browsing experience, featuring sleek UI design, complemented by clear technical information and strategic CTAs to drive customer engagement and inquiries."
+         "heading": "Fast Car Sale sells premium cars.",
+         "description": "We built a site that reflects the company’s premium level. Car specs and purchase terms are easy to find, and enquiries take a single click."
       },
       "ventimax": {
-         "heading": "Venitmax is a leading development and provider of advanced animal husbandry equipment, they produce and sell reliable solutions for livestock management.",
-         "description": "This is a Chinese based company, they decided to expand into Russia market and this website was a critical component to showcase the company’s quality products, while ensuring essential product details, such as equipment specifications and operational features, were easily accessible.  With a sophisticated browsing interface, built with elegant UI design and modern production techniques, reflected the durability and precision of Ventimax equipment range, complemented by clear technical information and strategic CTAs to drive customer engagement and inquiries."
+         "heading": "Ventimax makes livestock equipment.",
+         "description": "The Chinese company was entering the Russian market, and the site became its main showcase. We built a clear catalogue with equipment specs and easy enquiry forms."
       },
       "perevodik": {
-         "heading": "Perevodik is an agency specialising in official document translation, delivering precise and certified translations to foreigner living in Russia.",
-         "description": "We designed to convey the agency’s expertise while ensuring critical service information, such as translation processes and certification details. A refined browsing experience, crafted with elegant UI design that mirrored the accuracy and professionalism of Perevodik services, supported by clear service descriptions and strategic CTAs to drive client engagement and inquiries."
+         "heading": "Perevodik is a certified document translation agency for foreigners in Russia.",
+         "description": "We built a site that makes it easy to understand how translation and certification work. Services and prices are explained simply, and an enquiry takes a minute."
       },
       "re-market": {
-         "heading": "ReMarket is a Telegram mini app designed as a seamless platform for buying and selling goods for Russian diaspora living abroad.",
-         "description": "The aim of this app was to convey a sense of trust and user experience while ensuring critical platform features, such as product listings and transaction processes, were highly intuitive and accessible. With a streamlined interface that balanced form and function effortlessly. A sophisticated user experience, crafted with elegant UI design and efficient techniques, reflected the platform’s reliability and ease of use, supported by clear navigational flows."
+         "heading": "ReMarket is a Telegram mini app for buying and selling among Russian speakers abroad.",
+         "description": "The goal was to build trust and make buying simple. Listings are easy to post and find, and contacting a seller takes just a couple of taps."
       },
       "tap": {
-         "heading": "Tap is a dynamic Telegram mini app designed to engage users through online games, enabling them to earn coins and redeem rewards in TON.",
-         "description": "With the goal of making gaming both rewarding and accessible, we collaborated closely with the other development team to strategise how a Telegram-based platform could bridge entertainment with tangible incentives, encouraging sustained user participation. Tap integrates gamification and user-centric features to deliver a vibrant mobile experience, incorporating seamless gameplay mechanics, coin-earning challenges, and clear reward redemption pathways, all while providing feedback loops to enhance user motivation and engagement."
+         "heading": "Tap is a Telegram game app with rewards in TON.",
+         "description": "Together with a partner team we combined games with real rewards. Users complete tasks, earn coins and exchange them for TON, and a clear interface keeps them playing."
       },
       "medremindr": {
-         "heading": "MedRemindR is a medication management app designed to help users to manage their medication intake.",
-         "description": "Most medication apps are either over-engineered or don't do enough. We analyzed these issues and came up with a much simpler approach that focuses only on helping users take their medications on time. With timely notifications set up and the ability to log their dosage, users can manage not only their own medication but also that of family members through simple profile creation."
+         "heading": "MedRemindR helps people take their medication on time.",
+         "description": "Many medication apps are too complicated. We made a simple one: reminders arrive on time, doses are easy to log, and profiles let you keep track of the whole family’s medication."
+      }
+   },
+   "Projects": {
+      "ellcakes": {
+         "category": "Online store",
+         "tagline": "Handmade cake shop with online payment and order tracking"
+      },
+      "kasatkin": {
+         "category": "Landing page",
+         "tagline": "Landing page for a web3 agency with smooth animations"
+      },
+      "fast-car-sale": {
+         "category": "Website",
+         "tagline": "Website for a luxury car dealer"
+      },
+      "perevodik": {
+         "category": "Website",
+         "tagline": "Website for a certified translation agency"
+      },
+      "ventimax": {
+         "category": "Catalogue",
+         "tagline": "Catalogue for a livestock equipment maker"
+      },
+      "rabotnik": {
+         "category": "Company website",
+         "tagline": "Website for a recruitment and marketing agency"
+      },
+      "re-market": {
+         "category": "Telegram Mini App",
+         "tagline": "Marketplace for the Russian-speaking community abroad"
+      },
+      "tap": {
+         "category": "Telegram Mini App",
+         "tagline": "Game app with rewards in TON"
+      },
+      "medremindr": {
+         "category": "Mobile app",
+         "tagline": "Medication reminder app for the whole family"
       }
    }
 }

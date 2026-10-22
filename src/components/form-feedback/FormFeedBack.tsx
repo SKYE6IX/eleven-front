@@ -1,5 +1,6 @@
 "use client";
 import React, { useRef } from "react";
+import { useTranslations } from "next-intl";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import "./form-feedback.scss";
@@ -19,6 +20,7 @@ const FormFeedBack = React.memo(function FormFeedback({
    handleCloseFeedBack,
    isError,
 }: FormFeedBackProps) {
+   const t = useTranslations("ContactPage");
    const containerRef = useRef<HTMLDivElement>(null);
    useGSAP(
       () => {
@@ -47,7 +49,7 @@ const FormFeedBack = React.memo(function FormFeedback({
                   isError ? "show" : "",
                ].join(" ")}
             >
-               Something went wrong! Please try again
+               {t("form.errorMessage")}
             </p>
             <button
                className={[

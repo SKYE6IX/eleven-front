@@ -43,15 +43,13 @@
 }
 .project-details__title {
    font-family: $font-montreal, sans-serif;
-   font-size: 2.25rem;
-   line-height: 43.2px;
-   font-weight: 530;
-   text-transform: uppercase;
+   font-size: 3rem;
+   line-height: 1;
+   font-weight: 800;
+   letter-spacing: -0.03em;
    color: $primary;
    @include max-breakpoint("s") {
-      font-size: 1.5rem;
-      line-height: 28.8px;
-      margin-left: 10px;
+      font-size: 2rem;
    }
 }
 .project-details__action-wrapper {
@@ -66,45 +64,44 @@
    }
 }
 .project-details__category {
+   padding: 8px 16px;
+   border-radius: $radius-pill;
+   background-color: $sun;
    font-family: $font-montreal, sans-serif;
-   font-size: 1.25rem;
-   line-height: 28px;
+   font-size: 1rem;
+   line-height: 1.2;
    font-weight: 530;
    color: $primary;
-   @include max-breakpoint("s") {
-      font-size: 1.2rem;
-      line-height: 23.04px;
-   }
 }
 .project-details__heading {
    margin-top: 30px;
    max-width: 500px;
    font-family: $font-montreal, sans-serif;
    font-size: 1.5rem;
-   line-height: 28.8px;
+   line-height: 1.3;
    font-weight: 530;
+   letter-spacing: -0.01em;
    color: $primary;
    @include max-breakpoint("md") {
       max-width: 100%;
-      font-size: 1.4rem;
-      line-height: 26.88px;
+      font-size: 1.375rem;
    }
 }
 .project-details__text {
    margin-top: 20px;
    max-width: 500px;
    font-family: $font-montreal, sans-serif;
-   font-size: clamp(1rem, 2vw, 1.3rem);
-   line-height: 26.2px;
+   font-size: clamp(1rem, 2vw, 1.125rem);
+   line-height: 1.55;
    font-weight: 400;
-   color: $primary;
+   color: $primary-mute;
    @include max-breakpoint("md") {
       max-width: 100%;
    }
 }
 .project-details__tech-wrapper {
-   margin-top: 20px;
-   @include flex-layout(column, none, none, 15px);
+   margin-top: 28px;
+   @include flex-layout(column, none, none, 12px);
 }
 .project-details__tech-title {
    font-family: $font-montreal, sans-serif;
@@ -114,15 +111,20 @@
    color: $primary;
 }
 .project-details__tech-list {
+   max-width: 500px;
    list-style: none;
-   @include flex-layout(column, none, none, 10px);
+   @include flex-layout(row, none, none, 8px);
+   flex-wrap: wrap;
 }
 .project-details__tech-list-item {
+   padding: 7px 14px;
+   border-radius: $radius-pill;
+   background-color: $neutral;
    font-family: $font-montreal, sans-serif;
-   font-size: 1rem;
-   line-height: 19.2px;
+   font-size: 0.9375rem;
+   line-height: 1.2;
    font-weight: 530;
-   color: $primary-mute;
+   color: $primary;
 }
 
 .project-details__content-right {
@@ -141,34 +143,14 @@
    width: 100%;
    height: auto;
    aspect-ratio: 16 / 8;
-   border-radius: 30px;
+   border-radius: $radius-md;
 
    @include max-breakpoint("md") {
       width: calc(100% - 30px);
-      border-radius: 30px;
    }
    @include max-breakpoint("s") {
-      border-radius: 20px;
+      border-radius: $radius-sm;
    }
-}
-
-.project-details__top-image-container.blur,
-.project-details__bottom-image-container.blur {
-   background-size: cover;
-   background-position: center;
-}
-.project-details__project-image-container-blur {
-   border-radius: inherit;
-   position: absolute;
-   inset: 0;
-   -webkit-backdrop-filter: blur(15px);
-   -moz-backdrop-filter: blur(15px);
-   backdrop-filter: blur(15px);
-}
-
-.project-details__top-image-container.blur .project-details__image {
-   object-fit: contain;
-   object-position: center top;
 }
 
 .project-details__top-image-container .project-details__image {
@@ -178,7 +160,7 @@
 .project-details__image {
    border-radius: inherit;
    object-fit: cover;
-   object-position: left top;
+   object-position: center;
 }
 
 .project-details__bottom-image-wrapper {
@@ -196,13 +178,10 @@
    position: relative;
    width: 100%;
    height: auto;
+   overflow: hidden;
    aspect-ratio: 3 / 4;
-   border-radius: 30px;
+   border-radius: $radius-md;
    @include max-breakpoint("s") {
-      border-radius: 20px;
+      border-radius: $radius-sm;
    }
-}
-.project-details__bottom-image-container.blur .project-details__image {
-   object-position: center top;
-   object-fit: contain;
 }

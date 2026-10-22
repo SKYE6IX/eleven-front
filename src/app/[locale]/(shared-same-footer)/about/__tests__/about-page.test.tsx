@@ -7,12 +7,31 @@ jest.mock("@gsap/react");
 jest.mock("gsap");
 
 describe("About us page", () => {
-   it("render all heading text on page correctly", () => {
+   it("render page title", () => {
       // Arrange
-      const pageHeadingMockTexts = [
-         "Who we are",
-         "Who believe",
-         "Our offering",
+      render(
+         <NextIntlClientProvider messages={messages} locale="en">
+            <AboutUs />
+         </NextIntlClientProvider>
+      );
+
+      // Act
+      const pageTitle = screen.getByRole("heading", { level: 1 });
+
+      // Assert
+      expect(pageTitle).toHaveTextContent(
+         "A small team building websites from start to finish"
+      );
+   });
+
+   it("render all section headings on page correctly", () => {
+      // Arrange
+      const sectionHeadingMockTexts = [
+         "What we believe",
+         "Our team",
+         "How we work",
+         "What we do",
+         "Technologies",
       ];
       render(
          <NextIntlClientProvider messages={messages} locale="en">
@@ -21,31 +40,13 @@ describe("About us page", () => {
       );
 
       // Act
-      const pageHeadingTexts = screen.getAllByRole("heading", { level: 3 });
+      const sectionHeadings = screen.getAllByRole("heading", { level: 2 });
 
       // Assert
-      expect(pageHeadingTexts.length).toEqual(3);
-      let idx = 0;
-      for (const el of pageHeadingTexts) {
-         expect(el).toBeInTheDocument();
-         expect(el).toHaveTextContent(pageHeadingMockTexts[idx]);
-         idx++;
-      }
-   });
-
-   it("render page logo background", () => {
-      // Arrange
-      render(
-         <NextIntlClientProvider messages={messages} locale="en">
-            <AboutUs />
-         </NextIntlClientProvider>
-      );
-
-      // Act
-      const pageLogoBg = screen.getByTestId("about-us-page-image");
-
-      // Assert
-      expect(pageLogoBg).toBeInTheDocument();
+      expect(sectionHeadings.length).toEqual(5);
+      sectionHeadings.forEach((el, idx) => {
+         expect(el).toHaveTextContent(sectionHeadingMockTexts[idx]);
+      });
    });
 
    it("render page text descriptions", () => {

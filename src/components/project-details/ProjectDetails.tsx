@@ -19,6 +19,7 @@ function ProjectDetails({
    toggleModal,
 }: ProjectDetailsProps) {
    const t = useTranslations("ProjectDetails");
+   const tProjects = useTranslations("Projects");
 
    const project = useMemo(() => {
       const project = projects["project-list"].find(
@@ -54,7 +55,7 @@ function ProjectDetails({
                         className="project-details__category"
                         data-testid="project-details-category"
                      >
-                        {project.category}
+                        {tProjects(`${project.key}.category`)}
                      </span>
                   </div>
                   <h5 className="project-details__heading">
@@ -99,12 +100,8 @@ function ProjectDetails({
 
                   {project.tags.includes("mobile-only") && (
                      <div
-                        className="project-details__top-image-container blur"
-                        style={{
-                           backgroundImage: `url(${project.images[0]})`,
-                        }}
+                        className="project-details__top-image-container mobile"
                      >
-                        <div className="project-details__project-image-container-blur" />
                         <Image
                            src={project.images[0]}
                            alt={project.name}
@@ -145,12 +142,8 @@ function ProjectDetails({
                      {project.tags.includes("mobile-only") && (
                         <>
                            <div
-                              className="project-details__bottom-image-container blur"
-                              style={{
-                                 backgroundImage: `url(${project.images[1]})`,
-                              }}
+                              className="project-details__bottom-image-container mobile"
                            >
-                              <div className="project-details__project-image-container-blur" />
                               <Image
                                  src={project.images[1]}
                                  alt={project.name}
@@ -161,12 +154,8 @@ function ProjectDetails({
                               />
                            </div>
                            <div
-                              className="project-details__bottom-image-container blur"
-                              style={{
-                                 backgroundImage: `url(${project.images[2]})`,
-                              }}
+                              className="project-details__bottom-image-container mobile"
                            >
-                              <div className="project-details__project-image-container-blur" />
                               <Image
                                  src={project.images[2]}
                                  alt={project.name}

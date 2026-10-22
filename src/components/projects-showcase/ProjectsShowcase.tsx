@@ -6,11 +6,14 @@ import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import projects from "../../projects-list.json";
 import ProjectDetails from "../project-details/ProjectDetails";
+import ArrowLeftIcon from "../icons/ArrowLeftIcon";
+import { Link } from "@/i18n/navigation";
 import "./project-showcase.scss";
 import { useTranslations } from "next-intl";
 
 function ProjectsShowcase() {
    const t = useTranslations("Common");
+   const tProjects = useTranslations("Projects");
    const containerRef = useRef<HTMLElement>(null);
    const customCursor = useRef<HTMLDivElement>(null);
    const customCursorTween = useRef<GSAPTween>(null);
@@ -94,49 +97,48 @@ function ProjectsShowcase() {
                   {t("cursorLabel")}
                </span>
             </div>
+            <div className="project-showcase__header">
+               <h2 className="project-showcase__title">{t("featuredWork")}</h2>
+               <Link href="/work" className="project-showcase__all-link">
+                  <span>{t("allWork")}</span>
+                  <ArrowLeftIcon />
+               </Link>
+            </div>
             <div className="project-showcase__inner-wrapper">
                {showcaseProjects.map((project) => (
-                  <React.Fragment key={project.key}>
-                     {project.tags.includes("all-screen") && (
-                        <div
-                           className="projects-showcase__image-container"
-                           onMouseEnter={handleMouseEnter}
-                           onMouseLeave={handleMouseLeave}
-                           onMouseMove={handleMouseMove}
-                           onClick={() => toggleModal(project.key)}
-                        >
-                           <Image
-                              src={project.images[0]}
-                              alt={project.name}
-                              fill={true}
-                              className="projects-showcase__image"
-                              priority
-                           />
-                        </div>
-                     )}
-
-                     {project.tags.includes("mobile-only") && (
-                        <div
-                           className="projects-showcase__image-container blur"
-                           style={{
-                              backgroundImage: `url(${project.images[0]})`,
-                           }}
-                           onMouseEnter={handleMouseEnter}
-                           onMouseLeave={handleMouseLeave}
-                           onMouseMove={handleMouseMove}
-                           onClick={() => toggleModal(project.key)}
-                        >
-                           <div className="projects-showcase__image-container-blur" />
-                           <Image
-                              src={project.images[0]}
-                              alt={project.name}
-                              fill
-                              className="projects-showcase__project-image"
-                              priority
-                           />
-                        </div>
-                     )}
-                  </React.Fragment>
+                  <div
+                     key={project.key}
+                     className={[
+                        "projects-showcase__image-container",
+                        project.tags.includes("mobile-only") ? "mobile" : "",
+                     ].join(" ")}
+                     onMouseEnter={handleMouseEnter}
+                     onMouseLeave={handleMouseLeave}
+                     onMouseMove={handleMouseMove}
+                     onClick={() => toggleModal(project.key)}
+                  >
+                     <div className="projects-showcase__media">
+                        <Image
+                           src={project.images[0]}
+                           alt={project.name}
+                           fill={true}
+                           sizes="(max-width: 912px) 100vw, 1240px"
+                           className="projects-showcase__image"
+                           priority
+                        />
+                     </div>
+                     <div className="projects-showcase__caption">
+                        <h3 className="projects-showcase__name">
+                           {project.name}
+                        </h3>
+                        <span className="projects-showcase__category">
+                           {tProjects(`${project.key}.category`)}
+                        </span>
+                        <p className="projects-showcase__tagline">
+                           {tProjects(`${project.key}.tagline`)}
+                        </p>
+                     </div>
+                  </div>
                ))}
             </div>
          </section>

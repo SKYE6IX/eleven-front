@@ -6,7 +6,7 @@ import Button from "../Button";
 describe("cta button components", () => {
    it("render the right text title", () => {
       // Arrange
-      const mockText = "Start A Project";
+      const mockText = "Discuss a project";
       render(
          <NextIntlClientProvider locale="en" messages={messages}>
             <Button type="link" textKey="contact" href="/contact" />

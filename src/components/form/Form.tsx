@@ -16,7 +16,8 @@ type FormProps = {
    handleOpenForm: () => void;
 };
 
-const leadSource = ["Google", "Yandex", "Linkendin", "Friend or Family"];
+// Keys for the "How did you hear about us" options; labels live in messages
+const leadSource = ["google", "yandex", "linkedin", "friends"];
 const formInitialState = {
    name: "",
    email: "",
@@ -106,7 +107,7 @@ function Form({ isFormOpen, handleOpenForm }: FormProps) {
       if (!formRef.current) return;
 
       const formData = new FormData(formRef.current);
-      formData.set("leadSource", selectedLeadSource);
+      formData.set("leadSource", t(`form.leadSource.${selectedLeadSource}`));
 
       const validatedFields = validate(formData);
 
@@ -269,7 +270,7 @@ function Form({ isFormOpen, handleOpenForm }: FormProps) {
                         onClick={handleDropDown}
                      >
                         <span className="selected-option">
-                           {selectedLeadSource}
+                           {t(`form.leadSource.${selectedLeadSource}`)}
                         </span>
                         <div className="arrow-icon" ref={arrowRef}>
                            <ArrowUpIcon />
@@ -291,7 +292,7 @@ function Form({ isFormOpen, handleOpenForm }: FormProps) {
                               tabIndex={-1}
                               onClick={() => handleSelectedSource(source)}
                            >
-                              {source}
+                              {t(`form.leadSource.${source}`)}
                            </li>
                         ))}
                      </ul>
@@ -299,7 +300,7 @@ function Form({ isFormOpen, handleOpenForm }: FormProps) {
                         type="text"
                         readOnly
                         name="leadSource"
-                        value={selectedLeadSource}
+                        value={t(`form.leadSource.${selectedLeadSource}`)}
                         className="hide-select-option"
                      />
                   </div>

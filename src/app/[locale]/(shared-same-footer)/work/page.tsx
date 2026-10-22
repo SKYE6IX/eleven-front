@@ -13,6 +13,7 @@ import "./work-page.scss";
 function WorkPage() {
    const t1 = useTranslations("WorkPage");
    const t2 = useTranslations("Common");
+   const t3 = useTranslations("Projects");
    const containerRef = useRef<HTMLDivElement>(null);
    const innerWrapperRef = useRef<HTMLDivElement>(null);
    const customCursor = useRef<HTMLDivElement>(null);
@@ -156,52 +157,43 @@ function WorkPage() {
                      {t2("cursorLabel")}
                   </span>
                </div>
-               <h3 className="work-page__heading-text">{t1("headingText")}</h3>
+               <h1 className="work-page__heading-text">{t1("headingText")}</h1>
                <section className="work-page__project-list">
                   {projects["project-list"].map((project) => (
-                     <React.Fragment key={project.key}>
-                        {project.tags.includes("all-screen") && (
-                           <div
-                              className="work-page__project-image-container"
-                              onMouseEnter={handleMouseEnter}
-                              onMouseLeave={handleMouseLeave}
-                              onMouseMove={handleMouseMove}
-                              onClick={() => toggleModal(project.key)}
-                           >
-                              <Image
-                                 src={project.images[0]}
-                                 alt={project.name}
-                                 fill={true}
-                                 className="work-page__project-image"
-                                 data-testid="work-page-project-image"
-                                 priority={true}
-                              />
-                           </div>
-                        )}
-
-                        {project.tags.includes("mobile-only") && (
-                           <div
-                              className="work-page__project-image-container blur"
-                              style={{
-                                 backgroundImage: `url(${project.images[0]})`,
-                              }}
-                              onMouseEnter={handleMouseEnter}
-                              onMouseLeave={handleMouseLeave}
-                              onMouseMove={handleMouseMove}
-                              onClick={() => toggleModal(project.key)}
-                           >
-                              <div className="work-page__project-image-container-blur" />
-                              <Image
-                                 src={project.images[0]}
-                                 alt={project.name}
-                                 fill={true}
-                                 className="work-page__project-image"
-                                 data-testid="work-page-project-image"
-                                 priority={true}
-                              />
-                           </div>
-                        )}
-                     </React.Fragment>
+                     <div
+                        key={project.key}
+                        className={[
+                           "work-page__project-image-container",
+                           project.tags.includes("mobile-only") ? "mobile" : "",
+                        ].join(" ")}
+                        onMouseEnter={handleMouseEnter}
+                        onMouseLeave={handleMouseLeave}
+                        onMouseMove={handleMouseMove}
+                        onClick={() => toggleModal(project.key)}
+                     >
+                        <div className="work-page__project-media">
+                           <Image
+                              src={project.images[0]}
+                              alt={project.name}
+                              fill={true}
+                              sizes="(max-width: 912px) 100vw, 1240px"
+                              className="work-page__project-image"
+                              data-testid="work-page-project-image"
+                              priority={true}
+                           />
+                        </div>
+                        <div className="work-page__project-caption">
+                           <h2 className="work-page__project-name">
+                              {project.name}
+                           </h2>
+                           <span className="work-page__project-category">
+                              {t3(`${project.key}.category`)}
+                           </span>
+                           <p className="work-page__project-tagline">
+                              {t3(`${project.key}.tagline`)}
+                           </p>
+                        </div>
+                     </div>
                   ))}
                </section>
             </div>

@@ -43,7 +43,7 @@ describe("Project details component", () => {
 
       // Assert
       expect(projectCategory).toBeInTheDocument();
-      expect(projectCategory).toHaveTextContent("Web Agency");
+      expect(projectCategory).toHaveTextContent("Landing page");
    });
 
    it("render project detail heading", () => {

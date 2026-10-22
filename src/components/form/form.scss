@@ -21,29 +21,28 @@
 }
 .form-block__heading-text {
    font-family: $font-montreal, sans-serif;
-   font-size: 4rem;
-   font-weight: 530;
-   line-height: 76.8px;
-   color: #6969a8;
+   font-size: 4.5rem;
+   font-weight: 800;
+   line-height: 1;
+   letter-spacing: -0.04em;
+   color: $primary;
    @include max-breakpoint("md") {
-      font-size: 2.8125rem;
-      line-height: 55.021px;
+      font-size: 3rem;
       margin-left: 50px;
    }
    @include max-breakpoint("s") {
       margin-left: 15px;
-      font-size: 2rem;
-      line-height: 39.325px;
+      font-size: 2.25rem;
    }
 }
 .form-block__sub-heading-text {
-   max-width: 317px;
+   max-width: 420px;
    margin-top: 20px;
    font-family: $font-montreal, sans-serif;
    font-size: 1.25rem;
-   line-height: 26px;
-   font-weight: 530;
-   color: $primary;
+   line-height: 1.4;
+   font-weight: 400;
+   color: $primary-mute;
    @include max-breakpoint("md") {
       font-size: 1.125rem;
       line-height: 21.6px;
@@ -94,7 +93,7 @@
    height: 100%;
    cursor: pointer;
    & .selected-option {
-      color: #595976;
+      color: $primary;
    }
    & .arrow-icon {
       position: absolute;
@@ -102,8 +101,10 @@
       bottom: 50%;
       transform: translateY(50%) rotate(180deg);
       svg {
+         width: 16px;
+         height: 16px;
          path {
-            fill: #6969a8;
+            fill: $accent-deep;
          }
       }
    }
@@ -116,21 +117,22 @@
    list-style: none;
    padding: 20px;
    z-index: 10;
-   border-radius: 15px;
+   border-radius: $radius-sm;
    background-color: $secondary-tint;
+   box-shadow: 0 16px 40px -16px rgba(27, 26, 23, 0.3);
    display: inline-flex;
    flex-direction: column;
    gap: 10px;
 }
 .form-block__input-contaner.select .select-option {
    max-width: max-content;
-   padding: 5px;
-   border-radius: 10px;
+   padding: 6px 12px;
+   border-radius: $radius-pill;
    transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
    cursor: pointer;
 }
 .form-block__input-contaner.select .select-option:hover {
-   color: $neutral;
+   color: $secondary;
    background-color: $primary;
 }
 .form-block__input-label,
@@ -146,18 +148,28 @@
       line-height: 19.2px;
    }
 }
+.form-block__input-label {
+   font-size: 1rem;
+   color: $primary-mute;
+}
 .form-block__input {
-   padding: 20px;
-   border-radius: 15px;
-   border: 1px solid #6969a8;
-   background: rgba(217, 217, 217, 0);
-   transition: border-color 0.3s ease-in-out;
+   padding: 18px 20px;
+   border-radius: $radius-sm;
+   border: 1.5px solid $secodary-accent;
+   background: $secondary-tint;
+   transition: border-color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+.form-block__input:hover,
+.form-block__input:focus {
+   border-color: $primary;
+   background: $neutral;
 }
 .form-block__input.error {
-   border: 1px solid red;
+   border-color: #c8261b;
+   background: #fdf0ee;
 }
 .form-block__input::placeholder {
-   color: #595976;
+   color: #736d62;
 }
 .form-block__input-contaner.text-area .form-block__input {
    resize: none;

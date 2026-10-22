@@ -1,6 +1,8 @@
 {
    "Common": {
-      "cursorLabel": "Узнать"
+      "cursorLabel": "Смотреть",
+      "featuredWork": "Избранные проекты",
+      "allWork": "Все проекты"
    },
    "Navigations": {
       "home": "Главная",
@@ -9,27 +11,28 @@
       "contact": "Контакты"
    },
    "Footer": {
-      "headingText": "Заинтересовало? Воплотим вашу идею вместе!",
-      "briefHeading": "Мы работаем по всему миру",
+      "headingText": "Есть задача? Давайте обсудим",
+      "briefHeading": "Работаем с клиентами по всему миру",
       "getInTouch": "Связаться с нами",
-      "reserveText": "ВСЕ ПРАВА ЗАЩИЩЕНЫ"
+      "reserveText": "ВСЕ ПРАВА ЗАЩИЩЕНЫ",
+      "location": "Москва"
    },
    "Button": {
       "text": {
-         "contact": "Начать проект",
+         "contact": "Обсудить проект",
          "submit": "Отправить",
-         "visitWebsite": "Посетить Сайт",
-         "submitRequest": "оставить заявку"
+         "visitWebsite": "Открыть сайт",
+         "submitRequest": "Оставить заявку"
       }
    },
    "SEO": {
       "metaData": {
-         "title": "Eleven Веб-разработческое агентство в Москве | Кастомные сайты и SEO-услуги",
-         "description": "Мы веб-разработческое агентство создает кастомные, SEO-оптимизированные сайты. От адаптивного дизайна до e-commerce—поднимите свой бренд. Получите бесплатную консультацию!"
+         "title": "Eleven — веб-студия в Москве: разработка сайтов, дизайн и SEO",
+         "description": "Делаем сайты, интернет-магазины и лендинги под ключ: дизайн, разработка, SEO и поддержка. Лендинг — от трёх недель. Бесплатная консультация."
       },
       "jsonLd": {
-         "name": "Eleven Веб-разработческое агентство в Москве",
-         "description": "Мы веб-разработческое агентство создает кастомные, SEO-оптимизированные сайты. От адаптивного дизайна до e-commerce—поднимите свой бренд. Получите бесплатную консультацию!",
+         "name": "Eleven — веб-студия в Москве",
+         "description": "Создаём быстрые сайты, интернет-магазины и лендинги под ключ: дизайн, разработка, SEO и поддержка. Лендинг — от трёх недель. Бесплатная консультация.",
          "services": {
             "webDesign": {
                "name": "Услуги кастомного веб-дизайна",
@@ -55,186 +58,339 @@
       }
    },
    "HeroBlock": {
-      "title": "<span>Дизайн & разработка</span> цифровых ресурсов для бизнеса.",
-      "tagline": "Создание фирменного стиля",
-      "subTitle1": "Разработаем дизайн сервиса, мобильного приложения, интернет-магазина или сайта.",
-      "subTitle2": "Подбираем технологии под проект, а не наоборот — чтобы продукт был быстрым, удобным и надежным."
+      "title": "веб-студия из Москвы. Делаем сайты, <span>которые приводят клиентов</span>",
+      "tagline": "Привет, мы Eleven —",
+      "subTitle1": "Дизайн и разработка под ключ: сайты, интернет-магазины, лендинги и приложения в Telegram.",
+      "subTitle2": "Подбираем технологии под задачу, поэтому сайт получается быстрым, удобным и надёжным.",
+      "viewWork": "Смотреть работы"
    },
    "WhyUsBlock": {
-      "title": "Преимущества ?",
+      "title": "Почему Eleven?",
       "whyUsItems": {
-         "item1": "Мы создаём быстрые, полностью адаптивные сайты, которые безупречно работают на всех устройствах, уменьшая показатель отказов и удерживая внимание посетителей.",
-         "item2": "Мы делаем ставку на долгосрочные партнёрства, предлагая персонализированные решения и регулярные встречи, чтобы ваша идея была реализована, а бизнес развивался.",
-         "item3": "От первой консультации до постоянного сопровождения мы обеспечиваем своевременную и комплексную поддержку, чтобы ваш сайт работал бесперебойно."
+         "item1": "Сайт быстро загружается и одинаково хорошо работает на телефоне, планшете и компьютере. Посетители не уходят и чаще оставляют заявки.",
+         "item2": "Регулярно созваниваемся и показываем промежуточные результаты. Вы всегда знаете, на каком этапе проект.",
+         "item3": "Не исчезаем после сдачи: вносим правки, обновляем сайт и следим, чтобы всё работало."
+      },
+      "whyUsHeadings": {
+         "item1": "Удобно на любом экране",
+         "item2": "Всегда на связи",
+         "item3": "Поддержка после запуска"
       }
    },
    "ServiceListBlock": {
       "title": "Услуги",
-      "heading": "Мы помогаем бизнесу выделяться за счёт яркой бренд-идентичности, которая привлекает внимание и продаёт.",
+      "heading": "Берём на себя всё: от дизайна до запуска и продвижения.",
       "serviceList": {
          "design": {
             "title": "Дизайн",
-            "briefText": "Создаем дизайн, который отражает ценности и стиль вашего бренда."
+            "briefText": "Продумываем структуру и рисуем сайт в стиле вашего бренда.",
+            "items": {
+               "item1": "Дизайн сайтов",
+               "item2": "Интернет-магазины",
+               "item3": "Лендинги"
+            }
          },
          "develop": {
             "title": "Разработка",
-            "briefText": "Веб-разработка на уровне: качество, надежность и соответствие требованиям рынка."
+            "briefText": "Делаем сайты любой сложности — от одной страницы до интернет-магазина и сервиса.",
+            "items": {
+               "item1": "Сайты под ключ",
+               "item2": "Интернет-магазины",
+               "item3": "Техническое SEO"
+            }
          },
          "support": {
-            "title": "Поддержка",
-            "briefText": "Мы заботимся о бесперебойной работе ваших продуктов."
+            "title": "Продвижение и поддержка",
+            "briefText": "Помогаем сайту приносить заявки и следим, чтобы он работал без сбоев.",
+            "items": {
+               "item1": "SEO",
+               "item2": "Хостинг",
+               "item3": "Контекстная реклама"
+            }
          },
          "technologies": {
             "title": "Технологии",
-            "briefText": "Мы воплощаем ваши идеи с помощью современных технологий."
+            "briefText": "Работаем на современных и надёжных инструментах.",
+            "items": {
+               "item1": "React",
+               "item2": "Next.js",
+               "item3": "Spring Boot",
+               "item4": "Express"
+            }
          }
       }
    },
    "AboutUsBlock": {
-      "headingText": "Отличный дизайн для лучшей жизни",
-      "text": " Опыт Eleven — это основа нашей работы. Мы молодая команда с более чем <important>5-летним</important> опытом в отрасли, которая ценит клиентов, взаимодействие и внимание к деталям. Создаём сайты и приложения мирового уровня, обеспечивая полный цикл разработки внутри компании и гарантируя высокий результат."
+      "headingText": "Небольшая команда — внимание к каждому проекту",
+      "text": "Мы работаем в веб-разработке больше <important>5 лет</important>. Дизайн и программирование делаем сами, без подрядчиков, поэтому полностью отвечаем за результат — от первой встречи до запуска и поддержки."
    },
    "FAQBlock": {
-      "title": "Ответы",
-      "headingText": "Ответы на часто задаваемые вопросы о работе Eleven.",
+      "title": "Частые вопросы",
+      "headingText": "Коротко о сроках, стоимости и работе с нами.",
       "faqList": {
          "q1": {
-            "question": "Сколько времени обычно занимает создание сайта?",
-            "answer": "Сроки зависят от специфики проекта, но, например, простой лендинг обычно занимает до трёх недель."
+            "question": "Сколько времени занимает создание сайта?",
+            "answer": "Зависит от задачи. Лендинг — от трёх недель."
          },
          "q2": {
             "question": "Сколько стоит сайт?",
-            "answer": "У нас нет фиксированных цен на проекты. Каждый запрос имеет свои особенности, которые влияют на объём и сложность работы. После получения вашего запроса мы сможем дать ориентировочную стоимость и сроки."
+            "answer": "Фиксированных цен нет — каждый проект разный. Опишите задачу, и мы назовём стоимость и сроки."
          },
          "q3": {
-            "question": "У нас ограниченный бюджет. Вы будете с нами работать?",
-            "answer": "Мы сотрудничаем с разными клиентами — от индивидуальных предпринимателей и стартапов до крупных компаний. Наша цель — помочь клиентам достичь результата. Чтобы понять, возможно ли реализовать проект в рамках вашего бюджета, просто сообщите его нам."
+            "question": "У нас ограниченный бюджет. Вы возьмётесь?",
+            "answer": "Работаем и с небольшими, и с крупными компаниями. Назовите бюджет — подскажем, что можно сделать."
          },
          "q4": {
-            "question": "Мы не находимся в Москве. Это проблема?",
-            "answer": "Мы работаем с клиентами по всей России и за её пределами. Локация не имеет значения. Мы сопровождаем проект и поддерживаем связь на каждом этапе по email, а при необходимости — через Zoom. Если возможно, мы открыты и к личным встречам."
+            "question": "Мы не в Москве. Это проблема?",
+            "answer": "Нет. Работаем с клиентами по всей России и за рубежом: на связи по почте и в Zoom, а если получится — встретимся лично."
          },
          "q5": {
-            "question": "Каковы условия оплаты?",
-            "answer": "Обычно мы работаем так: 25% предоплата, 25% после утверждения дизайна и 50% после завершения разработки. Но эти условия можно обсудить — мы гибкие. Для нас главное — правильное партнёрство."
+            "question": "Как устроена оплата?",
+            "answer": "30% — предоплата, 30% — после утверждения дизайна, 40% — после разработки. Условия можно обсудить."
          },
          "q6": {
-            "question": "Можно ли устроить созвон, чтобы обсудить детали?",
-            "answer": "Конечно! Мы можем назначить удобное время для встречи в Zoom."
+            "question": "Можно созвониться и всё обсудить?",
+            "answer": "Конечно! Назначим встречу в Zoom в удобное время."
          }
       }
    },
    "ContactPage": {
       "headingText": {
-         "span1": "Рады",
-         "span2": "Знакомству!"
+         "span1": "Давайте",
+         "span2": "знакомиться!"
       },
       "googleLinkText": "Заполнить в Google",
       "form": {
-         "headingText": "Давайте сотрудничать!",
-         "subHeadingText": "Хотите задать вопрос? Просто заполните форму ниже.",
+         "headingText": "Расскажите о проекте",
+         "subHeadingText": "Заполните форму — мы свяжемся с вами, уточним детали и назовём сроки и стоимость.",
          "label": {
             "name": "Имя",
-            "email": "Почта",
+            "email": "Email",
             "phone": "Телефон",
-            "hearAboutUs": "Как вы узнали о Eleven?",
+            "hearAboutUs": "Откуда вы о нас узнали?",
             "message": "Сообщение"
          },
          "placeholder": {
             "name": "Ваше имя",
-            "email": "Ваш почты",
+            "email": "Ваша почта",
             "phone": "Телефон (необязательно)",
-            "message": "Расскажите нам о вашем проекте"
-         }
+            "message": "Коротко опишите задачу: что нужно сделать и к какому сроку"
+         },
+         "leadSource": {
+            "google": "Google",
+            "yandex": "Яндекс",
+            "linkedin": "LinkedIn",
+            "friends": "Друзья или знакомые"
+         },
+         "errorMessage": "Что-то пошло не так. Попробуйте ещё раз"
       }
    },
    "AboutUsPage": {
-      "whoWeAreBlock": {
-         "headingText": "Кто мы",
-         "text1": "Мы — креативная команда с тонким чувством дизайна, разработки и цифровых продуктов.",
-         "text2": "Мы создаём инновационные решения и опыт, строим долгосрочные отношения.",
-         "text3": "Мы помогаем компаниям по всему миру расти и привлекать клиентов."
+      "hero": {
+         "eyebrow": "О нас",
+         "title": "Небольшая команда, которая делает сайты <span>под ключ</span>",
+         "text": "Дизайн и разработку делаем сами, без посредников. Поэтому полностью отвечаем за результат: от первой встречи до запуска и поддержки.",
+         "viewWork": "Смотреть работы"
       },
-      "whoBelieveBlock": {
-         "headingText": "Мы верим",
-         "text1": "Мы верим, что каждый бизнес заслуживает сильное онлайн-присутствие.",
-         "text2": "Красивый и удобный сайт способен не только рассказать о продукте, но и стать точкой роста, привлекать новых клиентов и удерживать старых."
+      "stats": {
+         "years": {
+            "value": "5+",
+            "label": "лет в веб-разработке"
+         },
+         "inHouse": {
+            "value": "100%",
+            "label": "работы делаем сами, без подрядчиков"
+         },
+         "global": {
+            "value": "Весь мир",
+            "label": "клиенты из России и других стран"
+         },
+         "launch": {
+            "value": "3 недели",
+            "label": "на запуск лендинга под ключ"
+         }
+      },
+      "beliefs": {
+         "title": "Во что мы верим",
+         "items": {
+            "item1": {
+               "title": "Сайт должен приносить пользу",
+               "text": "Хороший сайт не просто рассказывает о компании — он приводит клиентов и помогает их удерживать."
+            },
+            "item2": {
+               "title": "Долгое сотрудничество",
+               "text": "Остаёмся на связи после запуска и развиваем проект вместе с вами."
+            },
+            "item3": {
+               "title": "Решение под задачу и бюджет",
+               "text": "Работаем и со стартапами, и с крупными компаниями. Предлагаем то, что подходит именно вам."
+            }
+         }
+      },
+      "process": {
+         "title": "Как мы работаем",
+         "text": "Простой и понятный процесс: на каждом этапе вы знаете, что происходит и что будет дальше.",
+         "payment": {
+            "title": "Оплата по этапам",
+            "text": "30% — предоплата, 30% — после утверждения дизайна, 40% — после разработки. Условия можно обсудить."
+         },
+         "steps": {
+            "step1": {
+               "title": "Знакомство",
+               "text": "Созваниваемся, обсуждаем задачу и цели. Называем сроки и стоимость."
+            },
+            "step2": {
+               "title": "Структура и дизайн",
+               "text": "Продумываем, как будет устроен сайт, и рисуем дизайн в стиле вашего бренда."
+            },
+            "step3": {
+               "title": "Разработка",
+               "text": "Программируем сайт: он быстро работает, хорошо выглядит на любом экране и готов к продвижению в поиске."
+            },
+            "step4": {
+               "title": "Запуск",
+               "text": "Проверяем сайт на разных устройствах, подключаем домен и хостинг и публикуем."
+            },
+            "step5": {
+               "title": "Поддержка",
+               "text": "Вносим правки, обновляем сайт и следим, чтобы всё работало."
+            }
+         }
       },
       "ourOfferingBlock": {
-         "headingText": "Мы предлагаем",
-         "text": "Технологии, за которыми стоит будущее",
+         "headingText": "Что мы делаем",
+         "text": "Всё, что нужно для сайта, — в одной команде.",
          "serviceList": {
             "strategy": {
-               "headingText": "Стратегия и UX",
+               "headingText": "Аналитика и структура",
                "list": {
-                  "item1": "Анализ аудитории",
-                  "item2": "Создаём структуру сайта",
-                  "item3": "Проектируем путь клиента ",
-                  "item4": "Прототипирование"
+                  "item1": "Изучаем вашу аудиторию",
+                  "item2": "Продумываем структуру сайта",
+                  "item3": "Проектируем путь клиента к заявке",
+                  "item4": "Делаем прототип"
                }
             },
             "design": {
                "headingText": "Дизайн",
                "list": {
-                  "item1": "Концепция взаимодействия",
-                  "item2": "Пользовательский интерфейс",
-                  "item3": "Анимацию и микроэффекты"
+                  "item1": "Концепция и стиль",
+                  "item2": "Интерфейс сайта",
+                  "item3": "Анимации и интерактив"
                }
             },
             "development": {
                "headingText": "Разработка",
                "list": {
-                  "item1": "Архитектура",
-                  "item2": "Frontend и Backend разработка",
-                  "item3": "Техническая инфраструктура",
-                  "item4": "CI/CD процессы",
-                  "item5": "E-commerce проекты",
-                  "item6": "Мини-приложения Telegram"
+                  "item1": "Сайты и веб-сервисы",
+                  "item2": "Интернет-магазины",
+                  "item3": "Приложения в Telegram",
+                  "item4": "Подключение оплаты и CRM",
+                  "item5": "Серверная часть и базы данных",
+                  "item6": "Хостинг и обновления"
                }
+            }
+         }
+      },
+      "tech": {
+         "title": "Технологии",
+         "text": "Выбираем инструменты под задачу. Вот с чем работаем чаще всего."
+      },
+      "team": {
+         "title": "Команда",
+         "members": {
+            "azeez": {
+               "name": "Азиз Абиола",
+               "role": "Сооснователь · Full-stack разработчик",
+               "initial": "А",
+               "text": "Привет! Я Азиз, сооснователь Eleven и full-stack разработчик. Больше 5 лет помогаю малому и крупному бизнесу запускать сайты и сервисы. Пишу на Java и JavaScript и отвечаю за то, чтобы всё работало быстро и надёжно. Буду рад помочь воплотить вашу идею."
+            },
+            "anna": {
+               "name": "Анна Афанасьева",
+               "role": "Сооснователь · UX/UI-дизайнер и frontend-разработчик",
+               "initial": "А",
+               "text": "Привет! Я Аня, сооснователь Eleven. Больше 5 лет создаю интерфейсы: работала во frontend-команде Сбера, делала сервисы и лендинги. В Eleven отвечаю за дизайн и frontend — сама рисую сайты в Figma и сама их верстаю, поэтому всё выглядит именно так, как задумано. Помогу сделать сайт, которым приятно пользоваться."
             }
          }
       }
    },
    "WorkPage": {
-      "headingText": "Создадим сайт, который выделяется."
+      "headingText": "Проекты, которыми мы гордимся"
    },
    "ProjectDetails": {
-      "technologiesUsed": "Technologies Used:",
+      "technologiesUsed": "Технологии:",
       "kasatkin": {
-         "heading": "KASATKIN is an outsource web3 agency that provides web3 products for B2B.",
-         "description": "The landing page was to showcase their previous projects, given clear process about how they work, and expressing the advantage the web 3 enthusiastic user will get by working with them. An elegant UI production techniques mirrored the quality and craftsmanship of the company, supported by clear technical information and CTA’s to drive consumer consideration and in-bound enquiry. Seamless animation with framer motion to create a sophisticated looks and providing best user experience(UX)."
+         "heading": "KASATKIN — агентство, которое разрабатывает web3-продукты для бизнеса.",
+         "description": "Сделали лендинг, который показывает проекты агентства и понятно объясняет, как с ним работать. Тёмный стиль и плавные анимации подчёркивают технологичность компании, а удобные кнопки связи помогают посетителю быстро оставить заявку."
       },
       "ellcakes": {
-         "heading": "Ellcakes is an online store where you can order for all diffrent kind of cakes.",
-         "description": "We help Ellcakes redesign their online presence by developing a well structured full-stack e-commerce web application. Our team created an elegant user-friendly UI, making it easier for user to navigate from adding to cart to checkout page. We allowed multiple payment system to give user opportunity to choose a convenient way to pay, by Integrated with YooMoney payment gateway to add extra security layers. With the focus on best user experience, users can easily track the status of their orders on the dashboard page."
+         "heading": "Ellcakes — интернет-магазин домашних тортов и десертов.",
+         "description": "Разработали магазин с нуля: каталог, корзина, оформление заказа и личный кабинет. Подключили онлайн-оплату через ЮMoney. Покупатель за пару минут выбирает торт, оплачивает и следит за статусом заказа."
       },
       "rabotnik": {
-         "heading": "Rabotnik is a leading marketing and recruitment agency, specializing in connecting top-tier creative talent with innovative brands seeking impactful marketing solutions.",
-         "description": "This website was a pivotal element in Rabotnik’s brand repositioning campaign, designed to reflect the agency’s premium expertise while making critical service details, such as recruitment processes and marketing campaign offerings, highly accessible. The solution was a dynamic, content-rich digital platform that harmonized form and function. A polished browsing experience, crafted with elegant UI design and cutting-edge production techniques, echoed the agency’s commitment to creativity and precision, supported by clear service breakdowns and strategic CTAs to drive client engagement and candidate applications."
+         "heading": "Работник — кадровое и маркетинговое агентство.",
+         "description": "Сайт стал частью ребрендинга агентства. Мы понятно рассказали об услугах — подборе персонала и маркетинге — и сделали так, чтобы и клиенты, и кандидаты быстро находили нужное и оставляли заявки."
       },
       "fast-car-sale": {
-         "heading": "Fast Car Sale company specialising in selling high-performance luxury vehicles tailored for discerning drivers seeking unparalleled style and engineering.",
-         "description": "The website was a cornerstone of Fast Car Sale brand relaunch, designed to convey the brand’s premium identity while ensuring critical product details, such as vehicle specifications and customisation options, were easily accessible. It was a content-rich digital experience that seamlessly blended form and function. A refined browsing experience, featuring sleek UI design, complemented by clear technical information and strategic CTAs to drive customer engagement and inquiries."
+         "heading": "Fast Car Sale — компания по продаже премиальных автомобилей.",
+         "description": "Сделали сайт, который подчёркивает премиальный уровень компании. Характеристики машин и условия покупки легко найти, а заявку можно оставить в один клик."
       },
       "ventimax": {
-         "heading": "Venitmax is a leading development and provider of advanced animal husbandry equipment, they produce and sell reliable solutions for livestock management.",
-         "description": "This is a Chinese based company, they decided to expand into Russia market and this website was a critical component to showcase the company’s quality products, while ensuring essential product details, such as equipment specifications and operational features, were easily accessible.  With a sophisticated browsing interface, built with elegant UI design and modern production techniques, reflected the durability and precision of Ventimax equipment range, complemented by clear technical information and strategic CTAs to drive customer engagement and inquiries."
+         "heading": "Ventimax — производитель оборудования для животноводства.",
+         "description": "Китайская компания выходила на российский рынок, и сайт стал её главной витриной. Мы собрали понятный каталог с характеристиками оборудования и удобными формами для заявок."
       },
       "perevodik": {
-         "heading": "Perevodik is an agency specialising in official document translation, delivering precise and certified translations to foreigner living in Russia.",
-         "description": "We designed to convey the agency’s expertise while ensuring critical service information, such as translation processes and certification details. A refined browsing experience, crafted with elegant UI design that mirrored the accuracy and professionalism of Perevodik services, supported by clear service descriptions and strategic CTAs to drive client engagement and inquiries."
+         "heading": "Переводчик — бюро официальных переводов документов для иностранцев в России.",
+         "description": "Сделали сайт, на котором легко понять, как проходит перевод и заверение документов. Услуги и цены описаны просто, а заявку можно оставить за минуту."
       },
       "re-market": {
-         "heading": "ReMarket is a Telegram mini app designed as a seamless platform for buying and selling goods for Russian diaspora living abroad.",
-         "description": "The aim of this app was to convey a sense of trust and user experience while ensuring critical platform features, such as product listings and transaction processes, were highly intuitive and accessible. With a streamlined interface that balanced form and function effortlessly. A sophisticated user experience, crafted with elegant UI design and efficient techniques, reflected the platform’s reliability and ease of use, supported by clear navigational flows."
+         "heading": "ReMarket — приложение в Telegram для покупки и продажи вещей среди русскоязычных за рубежом.",
+         "description": "Главная задача — вызвать доверие и сделать покупку простой. Мы сделали понятный интерфейс: объявления легко размещать и находить, а связаться с продавцом можно в пару касаний."
       },
       "tap": {
-         "heading": "Tap is a dynamic Telegram mini app designed to engage users through online games, enabling them to earn coins and redeem rewards in TON.",
-         "description": "With the goal of making gaming both rewarding and accessible, we collaborated closely with the other development team to strategise how a Telegram-based platform could bridge entertainment with tangible incentives, encouraging sustained user participation. Tap integrates gamification and user-centric features to deliver a vibrant mobile experience, incorporating seamless gameplay mechanics, coin-earning challenges, and clear reward redemption pathways, all while providing feedback loops to enhance user motivation and engagement."
+         "heading": "Tap — игровое приложение в Telegram с наградами в TON.",
+         "description": "Вместе с командой партнёров придумали, как совместить игру и реальные награды. Пользователи выполняют задания, зарабатывают монеты и обменивают их на TON, а понятный интерфейс удерживает их в игре."
       },
       "medremindr": {
-         "heading": "MedRemindR is a medication management app designed to help users to manage their medication intake.",
-         "description": "Most medication apps are either over-engineered or don't do enough. We analyzed these issues and came up with a much simpler approach that focuses only on helping users take their medications on time. With timely notifications set up and the ability to log their dosage, users can manage not only their own medication but also that of family members through simple profile creation."
+         "heading": "MedRemindR — приложение, которое помогает вовремя принимать лекарства.",
+         "description": "Многие приложения для приёма лекарств слишком сложные. Мы сделали простое: напоминания приходят вовремя, приём легко отметить, а через профили можно следить за лекарствами всей семьи."
+      }
+   },
+   "Projects": {
+      "ellcakes": {
+         "category": "Интернет-магазин",
+         "tagline": "Магазин домашних тортов с онлайн-оплатой и личным кабинетом"
+      },
+      "kasatkin": {
+         "category": "Лендинг",
+         "tagline": "Лендинг для web3-агентства с плавными анимациями"
+      },
+      "fast-car-sale": {
+         "category": "Сайт",
+         "tagline": "Сайт для продажи премиальных автомобилей"
+      },
+      "perevodik": {
+         "category": "Сайт",
+         "tagline": "Сайт бюро официальных переводов документов"
+      },
+      "ventimax": {
+         "category": "Каталог",
+         "tagline": "Каталог оборудования для животноводства"
+      },
+      "rabotnik": {
+         "category": "Корпоративный сайт",
+         "tagline": "Сайт кадрового и маркетингового агентства"
+      },
+      "re-market": {
+         "category": "Telegram Mini App",
+         "tagline": "Маркетплейс для русскоязычных, живущих за рубежом"
+      },
+      "tap": {
+         "category": "Telegram Mini App",
+         "tagline": "Игровое приложение с наградами в TON"
+      },
+      "medremindr": {
+         "category": "Мобильное приложение",
+         "tagline": "Напоминания о приёме лекарств для всей семьи"
       }
    }
 }

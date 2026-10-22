@@ -45,7 +45,7 @@ describe("Footer component", () => {
          </NextIntlClientProvider>
       );
       const mockNumber = "+7 995 158-02-14";
-      const mockEmail = "hello@eleven.io";
+      const mockEmail = "hello@madebyeleven.com";
 
       // Acts
       const footerContactItems = screen.getAllByTestId("footer-contact-item");
