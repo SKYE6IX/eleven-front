@@ -20,7 +20,7 @@ describe("About us block component", () => {
       // Assert
       expect(blockHeadingText).toBeInTheDocument();
       expect(blockHeadingText).toHaveTextContent(
-         "A small team that cares about every project"
+         "A team that owns the result"
       );
    });
 

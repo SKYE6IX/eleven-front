@@ -20,7 +20,7 @@ describe("About us page", () => {
 
       // Assert
       expect(pageTitle).toHaveTextContent(
-         "A small team building websites from start to finish"
+         "Website design and development, start to finish"
       );
    });
 

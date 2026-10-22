@@ -12,7 +12,7 @@
    },
    "Footer": {
       "headingText": "Got a project? Let’s talk",
-      "briefHeading": "We work with clients worldwide",
+      "briefHeading": "We work worldwide",
       "submitBrief": "Submit a brief",
       "getInTouch": "Get in touch",
       "reserveText": "ALL RIGHTS RESERVED",
@@ -122,7 +122,7 @@
       }
    },
    "AboutUsBlock": {
-      "headingText": "A small team that cares about every project",
+      "headingText": "A team that owns the result",
       "text": "We’ve been building websites for over <important>five years</important>. We do the design and development ourselves, with no subcontractors, so we own the result — from the first meeting to launch and beyond."
    },
    "FAQBlock": {
@@ -189,7 +189,7 @@
    "AboutUsPage": {
       "hero": {
          "eyebrow": "About us",
-         "title": "A small team building websites <span>from start to finish</span>",
+         "title": "Website design and development, <span>start to finish</span>",
          "text": "We plan, design and build everything ourselves — no middlemen. So we own the result, from the first meeting to launch and beyond.",
          "viewWork": "View our work"
       },
@@ -321,10 +321,10 @@
       "technologiesUsed": "Technologies:",
       "kasatkin": {
          "heading": "KASATKIN is an agency that builds web3 products for businesses.",
-         "description": "We built a landing page that showcases the agency’s work and clearly explains how to work with them. A dark style and smooth animations underline the tech focus, while clear contact buttons make it easy to get in touch."
+         "description": "We built a landing page that showcases the agency’s work and clearly explains how to work with them. A dark style underlines the tech focus, while clear contact buttons make it easy to get in touch."
       },
       "ellcakes": {
-         "heading": "Ellcakes is an online store for handmade cakes and desserts.",
+         "heading": "Ellcakes is an online store for signature cakes and desserts.",
          "description": "We built the store from scratch: catalogue, cart, checkout and personal account, with online payments via YooMoney. Customers pick a cake, pay and track their order in a couple of minutes."
       },
       "rabotnik": {
@@ -340,7 +340,7 @@
          "description": "The Chinese company was entering the Russian market, and the site became its main showcase. We built a clear catalogue with equipment specs and easy enquiry forms."
       },
       "perevodik": {
-         "heading": "Perevodik is a certified document translation agency for foreigners in Russia.",
+         "heading": "Perevodchik is a certified document translation agency for foreigners in Russia.",
          "description": "We built a site that makes it easy to understand how translation and certification work. Services and prices are explained simply, and an enquiry takes a minute."
       },
       "re-market": {
@@ -359,11 +359,11 @@
    "Projects": {
       "ellcakes": {
          "category": "Online store",
-         "tagline": "Handmade cake shop with online payment and order tracking"
+         "tagline": "Online store for signature cakes and desserts"
       },
       "kasatkin": {
          "category": "Landing page",
-         "tagline": "Landing page for a web3 agency with smooth animations"
+         "tagline": "Landing page for a web3 agency"
       },
       "fast-car-sale": {
          "category": "Website",
