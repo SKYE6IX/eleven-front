@@ -22,7 +22,7 @@ const serviceList = [
    },
    {
       key: "technologies",
-      items: ["item1", "item2", "item3", "item4"],
+      items: ["item1", "item2", "item3", "item4", "item5"],
    },
 ];
 

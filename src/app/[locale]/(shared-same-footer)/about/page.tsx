@@ -21,7 +21,7 @@ const services = [
    { key: "design", items: ["item1", "item2", "item3"] },
    {
       key: "development",
-      items: ["item1", "item2", "item3", "item4", "item5", "item6"],
+      items: ["item1", "item2", "item3", "item4", "item5", "item6", "item7"],
    },
 ];
 const technologies = [

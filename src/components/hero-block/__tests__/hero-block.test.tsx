@@ -20,7 +20,7 @@ describe("Hero block component", () => {
       // Assert
       expect(blockTitle).toBeInTheDocument();
       expect(blockTitle).toHaveTextContent(
-         "a Moscow web studio building websites that bring in clients"
+         "a web studio from Moscow building products that bring in clients"
       );
    });
 

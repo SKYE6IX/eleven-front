@@ -28,8 +28,8 @@
    },
    "SEO": {
       "metaData": {
-         "title": "Eleven Web Development Agency in Moscow | Custom Sites & SEO Services",
-         "description": "We are web development agency crafting custom, SEO-optimized websites. From responsive design to e-commerce builds—elevate your brand. Get a free quote today!"
+         "title": "Eleven — web studio in Moscow: websites, apps and AI integration",
+         "description": "We design and build websites, online stores, landing pages and mobile apps — with AI integration, SEO and ongoing support. Landing pages from 1.5 weeks. Free consultation."
       },
       "jsonLd": {
          "name": "Eleven Web Development Agency in Moscow",
@@ -59,9 +59,9 @@
       }
    },
    "HeroBlock": {
-      "title": "a Moscow web studio building websites <span>that bring in clients</span>",
+      "title": "a web studio from Moscow building products <span>that bring in clients</span>",
       "tagline": "Hi, we’re Eleven —",
-      "subTitle1": "Design and development from start to finish: websites, online stores, landing pages and Telegram mini apps.",
+      "subTitle1": "Design and development from start to finish: websites, online stores, landing pages, mobile apps and Telegram mini apps — with AI integration.",
       "subTitle2": "We pick the technology to fit the project, not the other way round — so your site is fast, easy to use and reliable.",
       "viewWork": "View our work"
    },
@@ -111,19 +111,20 @@
          },
          "technologies": {
             "title": "Technologies",
-            "briefText": "We build with modern, reliable tools.",
+            "briefText": "We build with modern, reliable tools and integrate AI into your workflows.",
             "items": {
                "item1": "React",
                "item2": "Next.js",
                "item3": "Spring Boot",
-               "item4": "Express"
+               "item4": "Express",
+               "item5": "AI integration"
             }
          }
       }
    },
    "AboutUsBlock": {
       "headingText": "A team that owns the result",
-      "text": "We’ve been building websites for over <important>five years</important>. We do the design and development ourselves, with no subcontractors, so we own the result — from the first meeting to launch and beyond."
+      "text": "We’ve been building websites for over <important>six years</important>. We do the design and development ourselves, with no subcontractors, so we own the result — from the first meeting to launch and beyond."
    },
    "FAQBlock": {
       "title": "Answers",
@@ -131,7 +132,7 @@
       "faqList": {
          "q1": {
             "question": "How long does a website take?",
-            "answer": "It depends on the project. A landing page takes from three weeks."
+            "answer": "It depends on the project. A landing page takes from 1.5 weeks."
          },
          "q2": {
             "question": "How much does a website cost?",
@@ -195,7 +196,7 @@
       },
       "stats": {
          "years": {
-            "value": "5+",
+            "value": "6+",
             "label": "years in web development"
          },
          "inHouse": {
@@ -207,7 +208,7 @@
             "label": "we work with clients in Russia and abroad"
          },
          "launch": {
-            "value": "3 weeks",
+            "value": "1.5 weeks",
             "label": "to launch a landing page from scratch"
          }
       },
@@ -287,7 +288,8 @@
                   "item3": "Telegram mini apps",
                   "item4": "Payments & CRM integration",
                   "item5": "Back end & databases",
-                  "item6": "Hosting & updates"
+                  "item6": "Hosting & updates",
+                  "item7": "AI integration: chatbots & automation"
                }
             }
          }

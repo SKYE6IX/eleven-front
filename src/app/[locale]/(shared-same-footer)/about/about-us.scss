@@ -214,6 +214,8 @@
 }
 
 .about-page__belief-text {
+   // pinned to the bottom so descriptions line up when titles wrap differently
+   margin-top: auto;
    font-family: $font-montreal, sans-serif;
    font-size: 1.0625rem;
    line-height: 1.5;
