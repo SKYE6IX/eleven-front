@@ -1,13 +1,27 @@
 @use "sass:map";
 // Colors
-$primary: #0f1d07;
-$primary-mute: rgba(21, 7, 29, 0.6);
-$secondary: #fffff0;
-$neutral: #fcfdff;
-$support: #5cff46;
-$secondary-tint: #f3f3e9;
-$secodary-accent: #e9e9f3;
-$support-mint: #43a636;
+$primary: #1b1a17;
+$primary-mute: #57524a;
+$secondary: #fbf6ee;
+$neutral: #fffdf9;
+$secondary-tint: #fbf6ee;
+$secodary-accent: #f3ece0;
+
+// Accent (coral) — $accent-deep is for text on light backgrounds
+$accent: #ff5a36;
+$accent-deep: #d13a17;
+
+// Pastel tiles
+$sun: #ffd66b;
+$mint: #bfe3d0;
+$rose: #f6c9d8;
+
+// Shared shapes
+$radius-lg: 40px;
+$radius-md: 28px;
+$radius-sm: 20px;
+$radius-pill: 999px;
+$border: 1.5px solid $primary;
 
 // Fonts
 $font-montreal: var(--font-montreal);

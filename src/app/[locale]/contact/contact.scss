@@ -6,14 +6,10 @@
    min-height: 100dvh;
    margin-top: -80px;
    @include flex-layout(column, none, none, none);
-   background: linear-gradient(
-      180deg,
-      #c0c0d7 0%,
-      rgba(230, 230, 236, 0.9) 69.23%,
-      #c0c0d7 100%
-   );
+   background: $secondary-tint;
    & .footer {
       margin-top: auto;
+      padding-top: 60px;
       background: transparent;
    }
    & .footer__top-container .button__link {
@@ -30,8 +26,10 @@
          max-width: 100%;
       }
    }
-   & .footer__divider {
-      background: #6969a8;
+   & .footer__contact-wrapper .footer__contact-info {
+      @include max-breakpoint("s") {
+         margin-top: 10px;
+      }
    }
 }
 
@@ -49,8 +47,11 @@
    position: relative;
    left: 50%;
    transform: translateX(-50%);
-   width: clamp(1200px, calc(100% - 200px), 1500px);
+   width: 1240px;
    @include flex-layout(row, center, none, none);
+   @include max-breakpoint("lg") {
+      width: calc(100% - 100px);
+   }
    @include max-breakpoint("md") {
       width: calc(100% - 100px);
       flex-direction: column;
@@ -66,7 +67,7 @@
    flex-shrink: 0;
    svg {
       path {
-         fill: #6969a8;
+         fill: $accent;
       }
    }
    @include max-breakpoint("s") {
@@ -75,30 +76,27 @@
 }
 
 .contact-page__heading-text {
-   width: 500px;
-   margin-bottom: 50px;
+   width: 640px;
+   margin-bottom: 44px;
    font-family: $font-montreal;
-   font-size: 6rem;
-   font-weight: 530;
-   line-height: 81px;
-   color: $neutral;
+   font-size: 7rem;
+   font-weight: 800;
+   line-height: 0.95;
+   letter-spacing: -0.045em;
+   color: $primary;
    @include flex-layout(column, none, none, none);
+   @include max-breakpoint("md") {
+      font-size: 5.5rem;
+   }
    @include max-breakpoint("s") {
       width: 100%;
-      font-size: 4.6753125rem;
-      line-height: 63.117px;
+      margin-bottom: 32px;
+      font-size: 3.5rem;
    }
 }
 
-.contact-page__heading-text:lang(ru) {
-   @include max-breakpoint("s") {
-      font-size: 4rem;
-      line-height: 70.4px;
-   }
-}
-
-.contact-page__heading-text-span:nth-child(1) {
-   margin-left: auto;
+.contact-page__heading-text-span:nth-child(2) {
+   color: $accent-deep;
 }
 
 .contact-page__logo-container {
@@ -122,7 +120,7 @@
 }
 .contact-page__google-link {
    width: max-content;
-   border-radius: 20px;
+   border-radius: $radius-pill;
    padding: 5px 15px;
    @include flex-layout(row, center, none, 15px);
    background-color: $primary;

@@ -5,9 +5,9 @@
    position: absolute;
    width: 400px;
    height: 180px;
-   border-radius: 16px;
-   background: #fff;
-   box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.15);
+   border-radius: $radius-md;
+   background: $neutral;
+   box-shadow: 0 16px 48px -12px rgba(27, 26, 23, 0.35);
    top: 50%;
    left: 50%;
    transform: translate(-50%, -50%);
@@ -64,12 +64,15 @@
 .form-feedback__success-icon.show {
    opacity: 1;
 }
+.form-feedback__success-icon svg path:first-child {
+   fill: $accent;
+}
 .loader {
    width: 50px;
    padding: 8px;
    aspect-ratio: 1;
    border-radius: 50%;
-   background: #25b09b;
+   background: $accent;
    --_m: conic-gradient(#0000 10%, #000), linear-gradient(#000 0 0) content-box;
    -webkit-mask: var(--_m);
    mask: var(--_m);

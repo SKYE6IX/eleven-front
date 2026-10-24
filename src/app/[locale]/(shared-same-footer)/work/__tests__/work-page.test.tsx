@@ -23,12 +23,12 @@ describe("Work page", () => {
       );
 
       // Act
-      const pageHeadingText = screen.getByRole("heading", { level: 3 });
+      const pageHeadingText = screen.getByRole("heading", { level: 1 });
 
       // Assert
       expect(pageHeadingText).toBeInTheDocument();
       expect(pageHeadingText).toHaveTextContent(
-         "Let’s create distinctive website and digital experience."
+         "Projects we’re proud of"
       );
    });
 

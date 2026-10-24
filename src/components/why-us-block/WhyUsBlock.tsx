@@ -138,6 +138,9 @@ function WhyUsBlock() {
                      <h5 className="why-us-block__list-item-index">
                         0{idx + 1}
                      </h5>
+                     <h3 className="why-us-block__list-item-heading">
+                        {t(`whyUsHeadings.${item}`)}
+                     </h3>
                      <p
                         className="why-us-block__list-item-text"
                         data-testid="why-us-block-list-item-text"

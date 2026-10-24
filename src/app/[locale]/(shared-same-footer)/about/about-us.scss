@@ -1,283 +1,488 @@
 @use "@/global-styles/variables.scss" as *;
 @use "@/global-styles/shared-styles.scss" as *;
 
-.about-us-page {
-   overflow-x: clip;
-   width: 100%;
-}
-
-// BACKGROUND IMAGE AND BACKDROP EFFECT STYLES START//
-.about-us-page__who-we-are-effect-wrapper {
-   width: 100%;
-   position: relative;
-   z-index: 5;
-}
-.about-us-page__layer-effect,
-.about-us-page__logo-bg {
-   position: absolute;
-   height: 100vh;
-   width: 100%;
-   @include max-breakpoint("md") {
-      height: 800px;
-   }
-   @include max-breakpoint("s") {
-      height: 600px;
-   }
-}
-.about-us-page__layer-effect {
-   width: 100vw;
-   right: 50%;
-   transform: translateX(50%);
-   z-index: 10;
-   top: -80px;
-   opacity: 0.5;
-   background: linear-gradient(0deg, #eaebdd 0%, #a3a790 55.5%, #a6ae87 100%);
-}
-.about-us-page__logo-bg {
-   top: 40px;
-   z-index: 5;
-   @include flex-layout(row, none, center, none);
-}
-.about-us-page__image-container {
-   position: relative;
-   width: 712px;
-   height: 700px;
-   @include max-breakpoint("md") {
-      width: 500px;
-      height: 650px;
-   }
-   @include max-breakpoint("s") {
-      width: 194.317px;
-      height: 345.75px;
-   }
-}
-.about-us-page__image {
-   width: 100%;
-   height: 100%;
-   object-fit: contain;
-}
-// BACKGROUND IMAGE AND BACKDROP EFFECT STYLES END //
-
-.about-us-page__inner-wrapper,
-.about-us-page__service {
-   width: clamp(1200px, calc(100% - 200px), 1500px);
+.about-page {
+   width: 1240px;
    margin: 0px auto;
-   @include max-breakpoint("md") {
+   padding-bottom: 120px;
+   @include flex-layout(column, none, none, 120px);
+   @include max-breakpoint("lg") {
       width: calc(100% - 100px);
+   }
+   @include max-breakpoint("md") {
+      gap: 90px;
+      padding-bottom: 90px;
    }
    @include max-breakpoint("s") {
       width: calc(100% - 40px);
+      gap: 64px;
+      padding-bottom: 64px;
    }
 }
-.about-us-page__who-we-are {
-   width: 100%;
-   height: 100vh;
-   @include max-breakpoint("md") {
-      height: 100%;
+
+//* HERO *//
+.about-page__hero {
+   padding-top: 100px;
+   @include flex-layout(column, flex-start, none, 28px);
+   @include max-breakpoint("sm") {
+      padding-top: 60px;
    }
-}
-.about-us-page__who-we-are-content-wrapper {
-   position: relative;
-   z-index: 20;
-}
-.about-us-page__who-we-are-content-wrapper,
-.about-us-page__who-believe-content-wrapper,
-.about-us-page__service-content-wrapper {
-   padding-top: 50px;
-   @include flex-layout(column, none, none, 50px);
-   @include max-breakpoint("md") {
+   @include max-breakpoint("s") {
+      padding-top: 30px;
       gap: 20px;
    }
 }
 
-.about-us-page__who-we-are-heading-wrapper,
-.about-us-page__who-believe-heading-wrapper,
-.about-us-page__service-heading-wrapper {
-   width: max-content;
-   position: relative;
-}
-
-.about-us-page__who-we-are-heading-text,
-.about-us-page__who-believe-heading-text,
-.about-us-page__service-heading-text {
+.about-page__eyebrow {
+   padding: 8px 16px;
+   border-radius: $radius-pill;
+   background-color: $sun;
    font-family: $font-montreal, sans-serif;
-   font-size: 6.8125rem;
-   line-height: 131px;
+   font-size: 1rem;
    font-weight: 530;
    color: $primary;
-   letter-spacing: 3px;
+}
+
+.about-page__hero-title {
+   max-width: 1100px;
+   font-family: $font-montreal, sans-serif;
+   font-size: clamp(2.75rem, 7vw, 6.25rem);
+   line-height: 0.98;
+   font-weight: 800;
+   letter-spacing: -0.04em;
+   color: $primary;
+}
+
+.about-page__hero-title .highlight {
+   color: $accent-deep;
+}
+
+.about-page__hero-text {
+   max-width: 720px;
+   font-family: $font-montreal, sans-serif;
+   font-size: 1.5rem;
+   line-height: 1.45;
+   font-weight: 400;
+   color: $primary-mute;
+   @include max-breakpoint("s") {
+      font-size: 1.1875rem;
+   }
+}
+
+.about-page__actions {
+   margin-top: 8px;
+   @include flex-layout(row, center, none, 12px);
+   flex-wrap: wrap;
+}
+
+//* STATS *//
+.about-page__stats {
+   display: grid;
+   grid-template-columns: repeat(4, minmax(0, 1fr));
+   gap: 16px;
    @include max-breakpoint("md") {
-      font-size: 5.0625rem;
-      line-height: 97.69px;
-      letter-spacing: 2px;
-   }
-   @include max-breakpoint("sm") {
-      font-size: 3.8rem;
-      line-height: 66px;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
    }
    @include max-breakpoint("s") {
-      font-size: 2.25rem;
-      line-height: 44.25px;
+      gap: 12px;
    }
 }
 
-.about-us-page__who-we-are-heading-icon,
-.about-us-page__who-believe-heading-icon,
-.about-us-page__service-heading-icon {
-   position: absolute;
-   left: calc(100% + 20px);
-   bottom: 30px;
-   @include max-breakpoint("sm") {
-      svg {
-         width: 50px;
-         height: 15px;
-      }
-      bottom: 20px;
-   }
+.about-page__stat {
+   min-height: 220px;
+   padding: 28px;
+   border-radius: $radius-md;
+   background-color: $neutral;
+   @include flex-layout(column, flex-start, space-between, 24px);
    @include max-breakpoint("s") {
-      left: calc(100% + 10px);
-      bottom: 5px;
+      min-height: 160px;
+      padding: 20px;
+      border-radius: $radius-sm;
    }
 }
 
-.about-us-page__who-we-are-text-wrapper,
-.about-us-page__who-believe-text-wrapper {
-   align-self: flex-end;
-   width: 539px;
+.about-page__stat:nth-child(1) {
+   background-color: $sun;
+}
+.about-page__stat:nth-child(2) {
+   background-color: $mint;
+}
+.about-page__stat:nth-child(3) {
+   background-color: $rose;
+}
+
+.about-page__stat-value {
+   font-family: $font-montreal, sans-serif;
+   font-size: clamp(2.5rem, 5vw, 4.5rem);
+   line-height: 1;
+   font-weight: 800;
+   letter-spacing: -0.04em;
+   color: $primary;
+}
+
+// Stats written as words rather than numbers — keep them on one line on desktop
+.about-page__stat:nth-child(2) .about-page__stat-value,
+.about-page__stat:nth-child(4) .about-page__stat-value {
+   font-size: clamp(1.75rem, 3.2vw, 3rem);
+}
+
+.about-page__stat-label {
+   font-family: $font-montreal, sans-serif;
+   font-size: 1.0625rem;
+   line-height: 1.4;
+   color: $primary;
+   @include max-breakpoint("s") {
+      font-size: 0.9375rem;
+   }
+}
+
+//* SHARED SECTION STYLES *//
+.about-page__section {
    @include flex-layout(column, none, none, 40px);
-   @include max-breakpoint("md") {
-      max-width: 401px;
-      gap: 30px;
-   }
    @include max-breakpoint("s") {
-      align-self: center;
-      max-width: 100%;
-      gap: 20px;
+      gap: 24px;
    }
 }
 
-.about-us-page__who-we-are-text,
-.about-us-page__who-believe-text,
-.about-us-page__service-list-item {
+.about-page__section-head {
+   @include flex-layout(row, flex-end, space-between, 40px);
+   @include max-breakpoint("sm") {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 16px;
+   }
+}
+
+.about-page__section-title {
+   font-family: $font-montreal, sans-serif;
+   font-size: clamp(2.25rem, 5vw, 4rem);
+   line-height: 1;
+   font-weight: 800;
+   letter-spacing: -0.03em;
+   color: $primary;
+}
+
+.about-page__section-text {
+   max-width: 520px;
+   font-family: $font-montreal, sans-serif;
+   font-size: 1.25rem;
+   line-height: 1.45;
+   color: $primary-mute;
+   @include max-breakpoint("s") {
+      font-size: 1.0625rem;
+   }
+}
+
+//* BELIEFS *//
+.about-page__beliefs {
+   display: grid;
+   grid-template-columns: repeat(3, minmax(0, 1fr));
+   gap: 16px;
+   @include max-breakpoint("md") {
+      grid-template-columns: minmax(0, 1fr);
+   }
+}
+
+.about-page__belief {
+   padding: 32px;
+   border-radius: $radius-md;
+   background-color: $neutral;
+   @include flex-layout(column, none, none, 14px);
+   @include max-breakpoint("s") {
+      padding: 24px;
+      border-radius: $radius-sm;
+   }
+}
+
+.about-page__belief-index {
+   font-family: $font-montreal, sans-serif;
+   font-size: 1rem;
+   font-weight: 530;
+   color: $accent-deep;
+}
+
+.about-page__belief-title {
+   font-family: $font-montreal, sans-serif;
+   font-size: 1.75rem;
+   line-height: 1.15;
+   font-weight: 530;
+   letter-spacing: -0.02em;
+   color: $primary;
+   @include max-breakpoint("s") {
+      font-size: 1.375rem;
+   }
+}
+
+.about-page__belief-text {
+   // pinned to the bottom so descriptions line up when titles wrap differently
+   margin-top: auto;
+   font-family: $font-montreal, sans-serif;
+   font-size: 1.0625rem;
+   line-height: 1.5;
+   color: $primary-mute;
+}
+
+//* TEAM *//
+.about-page__team {
+   display: grid;
+   grid-template-columns: repeat(2, minmax(0, 1fr));
+   gap: 16px;
+   @include max-breakpoint("md") {
+      grid-template-columns: minmax(0, 1fr);
+   }
+}
+
+.about-page__member {
+   overflow: hidden;
+   border-radius: $radius-md;
+   background-color: $neutral;
+   @include flex-layout(column, none, none, none);
+   @include max-breakpoint("s") {
+      border-radius: $radius-sm;
+   }
+}
+
+.about-page__member-photo {
+   position: relative;
+   aspect-ratio: 4 / 3;
+   background-color: $rose;
+   @include flex-layout(row, center, center, none);
+}
+
+.about-page__member-image {
+   object-fit: cover;
+   object-position: center 30%;
+}
+
+.about-page__member-initial {
+   font-family: $font-montreal, sans-serif;
+   font-size: 9rem;
+   line-height: 1;
+   font-weight: 800;
+   letter-spacing: -0.04em;
+   color: $primary;
+}
+
+.about-page__member-info {
+   padding: 28px 32px 32px;
+   @include flex-layout(column, flex-start, none, 12px);
+   @include max-breakpoint("s") {
+      padding: 22px 24px 26px;
+   }
+}
+
+.about-page__member-name {
    font-family: $font-montreal, sans-serif;
    font-size: 2rem;
-   font-weight: 530;
-   line-height: 38.4px;
+   line-height: 1.1;
+   font-weight: 800;
+   letter-spacing: -0.02em;
    color: $primary;
-   letter-spacing: 2px;
-   @include max-breakpoint("md") {
-      font-size: 1.5rem;
-      line-height: 28px;
-      letter-spacing: 1px;
-   }
    @include max-breakpoint("s") {
-      font-size: 1.25rem;
-      line-height: 25.118px;
-      letter-spacing: 1px;
+      font-size: 1.625rem;
    }
 }
 
-.about-us-page__who-believe {
-   z-index: 20;
-   position: relative;
-   height: 80vh;
-   width: 100%;
-   @include max-breakpoint("md") {
-      height: 100%;
-   }
-}
-
-.about-us-page__service-block {
-   position: relative;
-   min-height: 100vh;
-   width: 100%;
-   padding-bottom: 100px;
-   background-color: $neutral;
-   @include max-breakpoint("md") {
-      min-height: 100%;
-   }
-   @include max-breakpoint("sm") {
-      padding-bottom: 50px;
-   }
-}
-
-.about-us-page__service-block-layer {
-   position: absolute;
-   inset: 0;
-   top: -1px;
-   background-color: $secondary-tint;
-   z-index: 1;
-   @media only screen and (min-width: "920px") and (max-width: "1024px") {
-      border-radius: 0px 0px 60px 60px;
-   }
-}
-
-.about-us-page__service {
-   position: relative;
-   z-index: 1;
-   @include max-breakpoint("s") {
-      padding-left: 10px;
-   }
-}
-
-.about-us-page__service-wrapper {
-   @include flex-layout(row, none, space-between, none);
-   @include max-breakpoint("sm") {
-      gap: 50px;
-   }
-   @include max-breakpoint("s") {
-      flex-direction: column;
-      gap: 20px;
-   }
-}
-
-.about-us-page__service-text {
-   margin-top: 50px;
-   max-width: 650px;
+.about-page__member-role {
+   padding: 6px 14px;
+   border-radius: $radius-pill;
+   background-color: $sun;
    font-family: $font-montreal, sans-serif;
-   font-size: 4rem;
+   font-size: 0.9375rem;
    font-weight: 530;
-   line-height: 70.4px;
-   @include max-breakpoint("md") {
-      max-width: 480px;
-      font-size: 2.9375rem;
-      line-height: 52px;
-   }
-   @include max-breakpoint("sm") {
-      max-width: 350px;
-      font-size: 2rem;
-      line-height: 38.4px;
-   }
-   @include max-breakpoint("sm") {
-      max-width: 100%;
-      margin-top: 0px;
-      font-size: 1.5rem;
-      line-height: 28.8px;
-   }
-}
-.about-us-page__service-item-container:nth-child(n + 2) {
-   margin-top: 50px;
-   @include max-breakpoint("md") {
-      margin-top: 30px;
-   }
-}
-.about-us-page__service-item-heading {
-   font-family: $font-montreal, sans-serif;
-   font-size: 2.5rem;
-   font-weight: 700;
-   line-height: 57.6px;
    color: $primary;
+}
+
+.about-page__member-text {
+   margin-top: 4px;
+   font-family: $font-montreal, sans-serif;
+   font-size: 1.0625rem;
+   line-height: 1.55;
+   color: $primary-mute;
+}
+
+//* PROCESS *//
+.about-page__process {
+   display: grid;
+   grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+   gap: 80px;
+   align-items: start;
    @include max-breakpoint("md") {
-      font-size: 1.8125rem;
-      line-height: 42px;
+      grid-template-columns: minmax(0, 1fr);
+      gap: 40px;
    }
 }
-.about-us-page__service-list {
-   margin-top: 20px;
+
+.about-page__process-intro {
+   position: sticky;
+   top: 140px;
+   @include flex-layout(column, flex-start, none, 24px);
+   @include max-breakpoint("md") {
+      position: static;
+   }
+}
+
+.about-page__payment {
+   margin-top: 16px;
+   padding: 28px;
+   border-radius: $radius-md;
+   background-color: $sun;
+   @include flex-layout(column, none, none, 10px);
+   @include max-breakpoint("s") {
+      margin-top: 4px;
+      padding: 22px;
+      border-radius: $radius-sm;
+   }
+}
+
+.about-page__payment-title {
+   font-family: $font-montreal, sans-serif;
+   font-size: 1.25rem;
+   font-weight: 530;
+   color: $primary;
+}
+
+.about-page__payment-text {
+   font-family: $font-montreal, sans-serif;
+   font-size: 1.0625rem;
+   line-height: 1.5;
+   color: $primary;
+}
+
+.about-page__steps {
    list-style: none;
-   @include flex-layout(column, none, none, 20px);
-   @include max-breakpoint("md") {
-      margin-top: 15px;
-      gap: 15px;
+   border-bottom: $border;
+}
+
+.about-page__step {
+   padding: 28px 0px;
+   border-top: $border;
+   display: grid;
+   grid-template-columns: 64px minmax(0, 1fr);
+   gap: 16px;
+   @include max-breakpoint("s") {
+      padding: 22px 0px;
+      grid-template-columns: 40px minmax(0, 1fr);
+      gap: 10px;
    }
+}
+
+.about-page__step-index {
+   font-family: $font-montreal, sans-serif;
+   font-size: 1.25rem;
+   line-height: 1.4;
+   font-weight: 530;
+   color: $accent-deep;
+   @include max-breakpoint("s") {
+      font-size: 1rem;
+   }
+}
+
+.about-page__step-content {
+   @include flex-layout(column, none, none, 8px);
+}
+
+.about-page__step-title {
+   font-family: $font-montreal, sans-serif;
+   font-size: 1.75rem;
+   line-height: 1.2;
+   font-weight: 530;
+   letter-spacing: -0.02em;
+   color: $primary;
+   @include max-breakpoint("s") {
+      font-size: 1.375rem;
+   }
+}
+
+.about-page__step-text {
+   font-family: $font-montreal, sans-serif;
+   font-size: 1.0625rem;
+   line-height: 1.5;
+   color: $primary-mute;
+}
+
+//* SERVICES *//
+.about-page__services {
+   display: grid;
+   grid-template-columns: repeat(3, minmax(0, 1fr));
+   gap: 16px;
+   @include max-breakpoint("md") {
+      grid-template-columns: minmax(0, 1fr);
+   }
+}
+
+.about-page__service {
+   padding: 32px;
+   border-radius: $radius-md;
+   @include flex-layout(column, none, none, 20px);
+   @include max-breakpoint("s") {
+      padding: 24px;
+      border-radius: $radius-sm;
+   }
+}
+
+.about-page__service:nth-child(1) {
+   background-color: $sun;
+}
+.about-page__service:nth-child(2) {
+   background-color: $mint;
+}
+.about-page__service:nth-child(3) {
+   background-color: $rose;
+}
+
+.about-page__service-title {
+   font-family: $font-montreal, sans-serif;
+   font-size: 2rem;
+   line-height: 1.1;
+   font-weight: 800;
+   letter-spacing: -0.02em;
+   color: $primary;
+   @include max-breakpoint("s") {
+      font-size: 1.625rem;
+   }
+}
+
+.about-page__service-list {
+   list-style: none;
+   @include flex-layout(row, none, none, 8px);
+   flex-wrap: wrap;
+}
+
+.about-page__service-item {
+   padding: 7px 14px;
+   border-radius: $radius-pill;
+   background-color: rgba(255, 253, 249, 0.7);
+   font-family: $font-montreal, sans-serif;
+   font-size: 0.9375rem;
+   line-height: 1.2;
+   font-weight: 530;
+   color: $primary;
+}
+
+//* TECHNOLOGIES *//
+.about-page__tech-list {
+   list-style: none;
+   @include flex-layout(row, none, none, 10px);
+   flex-wrap: wrap;
+}
+
+.about-page__tech-item {
+   padding: 12px 22px;
+   border-radius: $radius-pill;
+   border: $border;
+   font-family: $font-montreal, sans-serif;
+   font-size: 1.125rem;
+   font-weight: 530;
+   color: $primary;
+   transition: background-color 0.3s ease-out, border-color 0.3s ease-out;
+   @include max-breakpoint("s") {
+      padding: 9px 16px;
+      font-size: 1rem;
+   }
+}
+
+.about-page__tech-item:hover {
+   background-color: $accent;
+   border-color: $accent;
 }

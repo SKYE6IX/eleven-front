@@ -17,7 +17,7 @@ const config: Config = {
    testMatch: ["**/__tests__/**/*.?([mc])[jt]s?(x)"],
 };
 
-module.exports = async () => ({
+export default async () => ({
    ...(await createJestConfig(config)()),
    transformIgnorePatterns: ["node_modules/(?!next-intl)/"],
 });

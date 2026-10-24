@@ -3,6 +3,9 @@ import { useRef } from "react";
 import { useTranslations } from "next-intl";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
+import { Link } from "@/i18n/navigation";
+import Button from "../button/Button";
+import ArrowLeftIcon from "../icons/ArrowLeftIcon";
 import "./hero-block.scss";
 
 function HeroBlock() {
@@ -51,6 +54,15 @@ function HeroBlock() {
                   span: (chucks) => <span className="highlight">{chucks}</span>,
                })}
             </h1>
+            <div className="hero-block__actions">
+               <Button type="link" textKey="contact" href="/contact" />
+               <Link href="/work" className="button__link ghost">
+                  <span className="button__text">{t("viewWork")}</span>
+                  <span className="button__icon">
+                     <ArrowLeftIcon />
+                  </span>
+               </Link>
+            </div>
          </div>
 
          <div className="hero-block__bottom">

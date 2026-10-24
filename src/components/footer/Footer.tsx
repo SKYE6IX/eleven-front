@@ -110,7 +110,7 @@ function Footer() {
                            <span>
                               <LocationIcon />
                            </span>
-                           Moscow
+                           {t("location")}
                         </h5>
                      </div>
 

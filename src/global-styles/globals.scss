@@ -6,10 +6,15 @@ body {
    height: 100%;
 }
 body {
-   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+   font-family: $font-montreal, "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
    background: $secondary-tint;
+   color: $primary;
    -webkit-font-smoothing: antialiased;
    -moz-osx-font-smoothing: grayscale;
+}
+::selection {
+   background: $accent;
+   color: $primary;
 }
 body:has(.modal-active),
 body:has(.menu-active) {

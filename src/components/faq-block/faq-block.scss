@@ -2,12 +2,13 @@
 @use "@/global-styles/shared-styles.scss" as *;
 
 .faq-block {
-   overflow: hidden;
+   // clip (not hidden) so the sticky title still works
+   overflow-x: clip;
    position: relative;
    padding-top: 120px;
    padding-bottom: 100px;
    width: 100%;
-   background-color: $neutral;
+   background-color: $accent;
    @include flex-layout(row, center, center, none);
    @include max-breakpoint("md") {
       padding-top: 80px;
@@ -32,8 +33,11 @@
 .faq-block__inner-wrapper {
    position: relative;
    z-index: 10;
-   width: clamp(1200px, calc(100% - 200px), 1500px);
-   @include flex-layout(row, none, center, 100px);
+   width: 1240px;
+   @include flex-layout(row-reverse, flex-start, center, 80px);
+   @include max-breakpoint("lg") {
+      width: calc(100% - 100px);
+   }
    @include max-breakpoint("md") {
       width: calc(100% - 100px);
       gap: 50px;
@@ -48,16 +52,16 @@
    }
 }
 .faq-block__left-container {
-   align-self: flex-end;
    width: 100%;
-   @include flex-layout(column, center, none, 20px);
+   @include flex-layout(column, center, none, 12px);
 }
 .faq-block__card {
    width: 100%;
-   max-width: 560px;
-   padding: 0px 20px 20px 20px;
-   border-radius: 15px;
-   background: rgba(15, 29, 7, 0.9);
+   max-width: 600px;
+   padding: 0px 24px 22px 24px;
+   border-radius: $radius-sm;
+   background: $neutral;
+   box-shadow: 0 0 0 1px rgba(27, 26, 23, 0.06);
    @include between-breakpoints("md", "lg") {
       max-width: 100%;
       padding: 0px 15px 15px 15px;
@@ -71,7 +75,7 @@
    }
 }
 .faq-block__card-header {
-   padding-top: 20px;
+   padding-top: 22px;
    @include flex-layout(row, center, space-between, 20px);
    cursor: pointer;
    -webkit-tap-highlight-color: transparent;
@@ -86,8 +90,14 @@
    }
 }
 .faq-block__card-header .arrow-up-icon {
+   flex-shrink: 0;
    align-self: flex-start;
-   transition: transform 0.5s linear;
+   width: 18px;
+   height: 18px;
+   transition: transform 0.4s ease-out;
+   path {
+      fill: $accent-deep;
+   }
 }
 .faq-block__card-header.open .arrow-up-icon {
    transform: rotate(180deg);
@@ -97,10 +107,10 @@
 }
 .faq-block__card-question {
    font-family: $font-montreal;
-   font-size: 1.125rem;
-   line-height: 24px;
+   font-size: 1.1875rem;
+   line-height: 1.35;
    font-weight: 530;
-   color: $neutral;
+   color: $primary;
    @include between-breakpoints("md", "lg") {
       font-size: 1rem;
       line-height: 19.2px;
@@ -126,10 +136,10 @@
 .faq-block__card-answer {
    margin-top: 16px;
    font-family: $font-montreal;
-   font-size: 1rem;
-   line-height: 19.2px;
-   font-weight: 430;
-   color: $neutral;
+   font-size: 1.0625rem;
+   line-height: 1.5;
+   font-weight: 400;
+   color: $primary-mute;
    @include between-breakpoints("md", "lg") {
       margin-top: 10px;
       font-size: 0.875rem;
@@ -149,60 +159,47 @@
 }
 .faq-block__right-container {
    width: 100%;
+   position: sticky;
+   top: 140px;
+   @include max-breakpoint("sm") {
+      position: static;
+   }
 }
 .faq-block__title {
    font-family: $font-montreal;
-   font-size: 3.75rem;
-   line-height: 66px;
-   font-weight: 530;
-   letter-spacing: 0.5px;
+   font-size: clamp(2.25rem, 5vw, 4rem);
+   line-height: 1;
+   font-weight: 800;
+   letter-spacing: -0.03em;
+   white-space: nowrap;
    color: $primary;
-   @include max-breakpoint("md") {
-      font-size: 2.5rem;
-      line-height: 44px;
-   }
-   @include max-breakpoint("sm") {
-      font-size: 3rem;
-      line-height: 57.6px;
-   }
-   @include max-breakpoint("s") {
-      font-size: 2.5rem;
-      line-height: 44px;
-   }
 }
 .faq-block__heading-text {
    max-width: 500px;
    margin-top: 20px;
    font-family: $font-montreal;
-   font-size: 2rem;
-   line-height: 38.4px;
+   font-size: 1.5rem;
+   line-height: 1.4;
    font-weight: 400;
-   letter-spacing: 0.5px;
    color: $primary-mute;
    @include max-breakpoint("md") {
       margin-top: 15px;
-      font-size: 1.5rem;
-      line-height: 28px;
-   }
-   @include max-breakpoint("sm") {
-      font-size: 1.8rem;
-      line-height: 34.56px;
+      font-size: 1.25rem;
    }
    @include max-breakpoint("s") {
       max-width: 100%;
-      margin-top: 15px;
-      font-size: 1.5rem;
-      line-height: 28px;
+      font-size: 1.125rem;
    }
 }
 .faq-block__image-container {
+   display: none;
    margin-top: 40px;
    position: relative;
-   width: 600px;
+   overflow: hidden;
+   width: 560px;
    height: auto;
    aspect-ratio: 4 / 3.5;
-   border-radius: 30px;
-   box-shadow: 0 0 46.233px 0 #f3f3e9;
+   border-radius: $radius-md;
    @include max-breakpoint("md") {
       margin-top: 30px;
       width: 450px;
@@ -211,7 +208,7 @@
       width: 100%;
    }
    @include max-breakpoint("s") {
-      border-radius: 20px;
+      border-radius: $radius-sm;
    }
 }
 .faq-block__image {

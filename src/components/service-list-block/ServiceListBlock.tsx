@@ -11,18 +11,18 @@ import coffeeImage from "./service-stock.webp";
 import "./service-list-block.scss";
 
 const serviceList = [
-   { key: "design", items: ["Web Design", "eCommerce", "Landing Pages"] },
+   { key: "design", items: ["item1", "item2", "item3"] },
    {
       key: "develop",
-      items: ["Web Development", "eCommerce", "Technical SEO"],
+      items: ["item1", "item2", "item3"],
    },
    {
       key: "support",
-      items: ["SEO", "Web Hosting", "PPC(Pay-per-click)"],
+      items: ["item1", "item2", "item3"],
    },
    {
       key: "technologies",
-      items: ["React", "Next.js", "Spring Boot", "Express"],
+      items: ["item1", "item2", "item3", "item4", "item5"],
    },
 ];
 
@@ -156,7 +156,7 @@ function ServiceListBlock() {
                                        />
                                     </svg>
                                  </span>
-                                 {item}
+                                 {t(`serviceList.${service.key}.items.${item}`)}
                               </li>
                            ))}
                         </ul>

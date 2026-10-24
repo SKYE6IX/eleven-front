@@ -4,24 +4,30 @@
 .why-us-block {
    overflow: hidden;
    position: relative;
-   padding-top: 50px;
+   padding-top: 80px;
    width: 100%;
+   @include max-breakpoint("s") {
+      padding-top: 50px;
+   }
 }
 
 .why-us-block__inner-wrapper {
    max-width: 1240px;
    margin-left: auto;
    margin-right: auto;
-   @include flex-layout(column, center, none, 100px);
-   @include max-breakpoint("md") {
-      gap: 70px;
+   @include flex-layout(column, center, none, 64px);
+   @include max-breakpoint("lg") {
       width: calc(100% - 100px);
    }
+   @include max-breakpoint("md") {
+      gap: 48px;
+   }
    @include max-breakpoint("s") {
-      gap: 50px;
+      gap: 32px;
       width: calc(100% - 40px);
    }
 }
+
 .why-us-block__title-wrapper {
    position: relative;
    @include flex-layout(row, center, none, 20px);
@@ -29,129 +35,111 @@
       gap: 10px;
    }
 }
-.why-us-block__title {
-   font-family: $font-montreal-italic, sans-serif;
-   font-size: 7.5rem;
-   line-height: 132px;
-   color: $primary;
-   font-weight: 700;
-   letter-spacing: 1.105px;
-   @include max-breakpoint("md") {
-      font-size: 5.5625rem;
-      line-height: 98.241px;
-      letter-spacing: 0.822px;
-   }
-   @include max-breakpoint("s") {
-      font-size: 3.25rem;
-      line-height: 58px;
-   }
-}
 
-.why-us-block__title:lang(ru) {
-   font-size: 6rem;
-   line-height: 105px;
+.why-us-block__title {
+   font-family: $font-montreal, sans-serif;
+   font-size: 4.5rem;
+   line-height: 1;
+   color: $primary;
+   font-weight: 800;
+   letter-spacing: -0.035em;
+   white-space: nowrap;
    @include max-breakpoint("md") {
-      font-size: 4rem;
-      line-height: 44px;
-   }
-   @include max-breakpoint("820px") {
       font-size: 3.5rem;
-      line-height: 61.6px;
    }
    @include max-breakpoint("s") {
-      font-size: 2rem;
-      line-height: 35.2px;
+      font-size: 2.5rem;
    }
 }
 
 .why-us-block__title-icon {
    position: absolute;
    left: calc(100% + 20px);
-   bottom: 30px;
-   @include max-breakpoint("md") {
-      bottom: 20px;
+   bottom: 14px;
+   svg {
+      width: 90px;
+      height: 11px;
+      path {
+         fill: $accent;
+      }
    }
-   @include max-breakpoint("s") {
+   @include max-breakpoint("md") {
       bottom: 10px;
       svg {
-         width: 55.647px;
-         height: 6.246px;
-      }
-   }
-}
-
-.why-us-block__title-icon:lang(ru) {
-   @include max-breakpoint("md") {
-      bottom: 0px;
-      svg {
-         width: 100px;
-         height: 20.246px;
+         width: 70px;
+         height: 9px;
       }
    }
    @include max-breakpoint("s") {
-      bottom: 5px;
+      left: calc(100% + 10px);
+      bottom: 8px;
       svg {
-         width: 55.647px;
-         height: 6.246px;
+         width: 44px;
+         height: 6px;
       }
    }
 }
 
 .why-us-block__list {
    width: 100%;
-   @include flex-layout(row, none, space-between, none);
-   @include max-breakpoint("md") {
-      flex-direction: column;
-      gap: 50px;
-   }
-   @include max-breakpoint("s") {
-      gap: 30px;
-   }
+   border-bottom: $border;
+   @include flex-layout(column, none, none, none);
 }
 
 .why-us-block__list-item {
-   @include flex-layout(row, center, none, 15px);
+   padding: 32px 0px;
+   border-top: $border;
+   display: grid;
+   grid-template-columns: 80px minmax(0, 1fr) minmax(0, 1.2fr);
+   align-items: baseline;
+   gap: 24px;
+   @include max-breakpoint("sm") {
+      grid-template-columns: 56px minmax(0, 1fr);
+      row-gap: 12px;
+   }
+   @include max-breakpoint("s") {
+      padding: 24px 0px;
+      gap: 8px 12px;
+      grid-template-columns: 40px minmax(0, 1fr);
+   }
 }
 
 .why-us-block__list-item-index {
-   flex-shrink: 0;
-   font-family: $font-montreal-italic, sans-serif;
-   font-size: 5rem;
-   line-height: 88px;
+   font-family: $font-montreal, sans-serif;
+   font-size: 1.25rem;
+   line-height: 1.2;
+   font-weight: 530;
+   color: $accent-deep;
+   @include max-breakpoint("s") {
+      font-size: 1rem;
+   }
+}
+
+.why-us-block__list-item-heading {
+   font-family: $font-montreal, sans-serif;
+   font-size: 2rem;
+   line-height: 1.15;
+   font-weight: 530;
+   letter-spacing: -0.02em;
    color: $primary;
-   letter-spacing: 2px;
    @include max-breakpoint("md") {
-      width: 170px;
-      font-size: 8rem;
-      line-height: 140px;
+      font-size: 1.625rem;
    }
    @include max-breakpoint("s") {
-      width: 90px;
-      font-size: 4.3125rem;
-      line-height: 75.922px;
-      letter-spacing: 1.725px;
+      font-size: 1.375rem;
    }
 }
 
 .why-us-block__list-item-text {
-   max-width: 288px;
    font-family: $font-montreal, sans-serif;
-   font-size: 1.2rem;
-   line-height: 23.04px;
-   font-weight: 530;
-   color: $primary;
-   @include max-breakpoint("md") {
-      max-width: 100%;
-      font-size: 2rem;
-      line-height: 40px;
-   }
+   font-size: 1.125rem;
+   line-height: 1.5;
+   font-weight: 400;
+   color: $primary-mute;
    @include max-breakpoint("sm") {
-      max-width: 100%;
-      font-size: 1.5rem;
-      line-height: 33.6px;
+      grid-column: 2 / 3;
    }
    @include max-breakpoint("s") {
       font-size: 1rem;
-      line-height: 19.2px;
    }
 }

@@ -6,7 +6,7 @@
    overflow-x: clip;
    width: 100%;
    padding-bottom: 100px;
-   background-color: $neutral;
+   background-color: $accent;
    @include max-breakpoint("sm") {
       padding-bottom: 50px;
    }
@@ -24,10 +24,12 @@
    position: relative;
    z-index: 5;
    margin: 100px auto 0px auto;
-   width: clamp(1200px, calc(100% - 200px), 1500px);
+   width: 1240px;
+   @include max-breakpoint("lg") {
+      width: calc(100% - 100px);
+   }
    @include max-breakpoint("md") {
       margin-top: 80px;
-      width: calc(100% - 100px);
    }
    @include max-breakpoint("sm") {
       width: calc(100% - 80px);
@@ -39,10 +41,11 @@
 }
 .work-page__custom-cursor {
    position: fixed;
-   width: 100px;
-   height: 100px;
+   width: 110px;
+   height: 110px;
    border-radius: 50%;
-   background: $secondary-tint;
+   pointer-events: none;
+   background: $accent;
    top: 0px;
    z-index: 999;
    @include flex-layout(row, center, center, none);
@@ -51,91 +54,123 @@
    }
 }
 .work-page__custom-cursor-text {
-   font-family: $font-montreal-italic;
-   font-size: 1.5rem;
-   line-height: 28.8px;
+   font-family: $font-montreal;
+   font-size: 1.125rem;
+   line-height: 1;
    font-weight: 530;
    color: $primary;
 }
 .work-page__heading-text {
-   max-width: 799px;
+   max-width: 900px;
    font-family: $font-montreal, sans-serif;
-   font-size: 3.75rem;
-   font-weight: 530;
-   line-height: 66px;
+   font-size: clamp(2.5rem, 7vw, 6rem);
+   font-weight: 800;
+   line-height: 1;
+   letter-spacing: -0.04em;
    color: $primary;
-   @include max-breakpoint("md") {
-      max-width: 536px;
-      font-size: 2.5rem;
-      line-height: 44px;
-   }
-   @include max-breakpoint("s") {
-      max-width: 353px;
-      font-size: 1.5rem;
-      line-height: 26.4px;
-   }
 }
 .work-page__project-list {
-   --row-number: 5;
-   --column-number: 2;
-   margin-top: 80px;
+   margin-top: 72px;
    width: 100%;
    display: grid;
-   grid-template-columns: repeat(var(--column-number), auto);
-   grid-template-rows: repeat(var(--row-number), auto);
-   column-gap: 50px;
-   row-gap: 80px;
+   grid-template-columns: repeat(2, minmax(0, 1fr));
+   column-gap: 24px;
+   row-gap: 56px;
    @include max-breakpoint("md") {
       margin-top: 40px;
    }
-   @include max-breakpoint("sm") {
-      column-gap: 30px;
-      row-gap: 40px;
-   }
    @include max-breakpoint("s") {
       margin-top: 30px;
-      @include flex-layout(column, center, none, 20px);
+      grid-template-columns: minmax(0, 1fr);
+      row-gap: 40px;
    }
 }
+
 .work-page__project-image-container {
    position: relative;
    width: 100%;
-   height: auto;
-   aspect-ratio: 16 / 9;
-   border-radius: 30px;
-   box-shadow: 0 0 15.628px 0 rgba(0, 0, 0, 0.15);
    cursor: none;
-   @include max-breakpoint("sm") {
-      border-radius: 20px;
+   @include flex-layout(column, none, none, 18px);
+   @include max-breakpoint("md") {
+      cursor: pointer;
    }
 }
 
-.work-page__project-image-container:nth-child(1) {
-   grid-area: 1 / 1 / 2 / 3;
-}
-.work-page__project-image-container:nth-child(5) {
-   grid-area: 3 / 1 / 4 / 3;
-}
-.work-page__project-image-container:nth-child(4) {
-   grid-area: 5 / 1 / 6 / 3;
+// Every third card spans the full width to break up the grid rhythm
+.work-page__project-image-container:nth-child(3n + 1) {
+   grid-column: 1 / 3;
+   @include max-breakpoint("s") {
+      grid-column: auto;
+   }
 }
 
-.work-page__project-image-container.blur {
-   background-size: cover;
-   background-position: center;
+.work-page__project-media {
+   overflow: hidden;
+   position: relative;
+   width: 100%;
+   aspect-ratio: 4 / 3;
+   border-radius: $radius-md;
+   background-color: $secodary-accent;
+   @include max-breakpoint("sm") {
+      border-radius: $radius-sm;
+   }
 }
-.work-page__project-image-container-blur {
-   border-radius: inherit;
-   position: absolute;
-   inset: 0;
-   backdrop-filter: blur(15px);
+
+.work-page__project-image-container:nth-child(3n + 1) .work-page__project-media {
+   aspect-ratio: 16 / 8;
+   @include max-breakpoint("s") {
+      aspect-ratio: 4 / 3;
+   }
 }
-.work-page__project-image-container.blur .work-page__project-image {
-   object-fit: contain;
-   object-position: center top;
-}
+
 .work-page__project-image {
-   border-radius: inherit;
    object-fit: cover;
-   object-position: left top;
+   object-position: center;
+   transition: transform 0.6s ease-out;
+}
+
+.work-page__project-image-container:hover .work-page__project-image {
+   transform: scale(1.03);
+}
+
+.work-page__project-caption {
+   display: grid;
+   grid-template-columns: minmax(0, 1fr) auto;
+   align-items: center;
+   gap: 6px 16px;
+}
+
+.work-page__project-name {
+   font-family: $font-montreal, sans-serif;
+   font-size: 1.75rem;
+   line-height: 1.15;
+   font-weight: 800;
+   letter-spacing: -0.02em;
+   color: $primary;
+   @include max-breakpoint("s") {
+      font-size: 1.375rem;
+   }
+}
+
+.work-page__project-category {
+   justify-self: end;
+   padding: 6px 14px;
+   border-radius: $radius-pill;
+   border: $border;
+   font-family: $font-montreal, sans-serif;
+   font-size: 0.875rem;
+   font-weight: 530;
+   white-space: nowrap;
+   color: $primary;
+}
+
+.work-page__project-tagline {
+   grid-column: 1 / 3;
+   font-family: $font-montreal, sans-serif;
+   font-size: 1.125rem;
+   line-height: 1.45;
+   color: $primary-mute;
+   @include max-breakpoint("s") {
+      font-size: 1rem;
+   }
 }

@@ -3,21 +3,20 @@
 
 .service-list-block {
    overflow: hidden;
-   margin-top: 120px;
+   margin-top: 100px;
    padding-bottom: 50px;
    width: 100%;
    @include flex-layout(row, none, center, none);
    @include max-breakpoint("md") {
-      margin-top: 80px;
+      margin-top: 70px;
    }
    @include max-breakpoint("s") {
       margin-top: 40px;
    }
 }
 .service-list-block__inner-wrapper {
-   max-width: 1500px;
-   width: 1300px;
-   @include max-breakpoint("md") {
+   width: 1240px;
+   @include max-breakpoint("lg") {
       width: calc(100% - 100px);
    }
    @include max-breakpoint("s") {
@@ -25,61 +24,78 @@
    }
 }
 .service-list-block__top-container {
-   @include flex-layout(row, center, none, 100px);
+   width: 100%;
+}
+// Title on the left, description + CTA on the right
+.service-list-block__text-wrapper {
+   display: grid;
+   grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+   column-gap: 80px;
+   align-items: end;
    @include max-breakpoint("md") {
-      gap: 40px;
+      column-gap: 40px;
    }
    @include max-breakpoint("820px") {
-      flex-direction: column;
+      grid-template-columns: minmax(0, 1fr);
+   }
+   & .button__link {
+      grid-column: 2 / 3;
+      @include max-breakpoint("820px") {
+         grid-column: 1 / 2;
+      }
    }
 }
 .service-list-block__title {
-   font-family: $font-montreal, sans-serif;
-   font-size: 3.75rem;
-   line-height: 76.821px;
-   font-weight: 530;
-   color: $primary;
-   margin-bottom: 30px;
-   @include max-breakpoint("md") {
-      font-size: 2.5rem;
-      line-height: 55px;
-      margin-bottom: 20px;
+   grid-row: 1 / 3;
+   align-self: start;
+   white-space: nowrap;
+   @include max-breakpoint("820px") {
+      grid-row: auto;
    }
+   font-family: $font-montreal, sans-serif;
+   font-size: clamp(2.25rem, 5vw, 4rem);
+   line-height: 1;
+   font-weight: 800;
+   letter-spacing: -0.03em;
+   color: $primary;
+   margin-bottom: 24px;
    @include max-breakpoint("s") {
-      margin-bottom: 10px;
+      margin-bottom: 14px;
    }
 }
 .service-list-block__heading-text {
    font-family: $font-montreal, sans-serif;
-   font-size: 1.875rem;
-   line-height: 35.456px;
-   font-weight: 530;
+   font-size: 1.5rem;
+   line-height: 1.4;
+   font-weight: 400;
    color: $primary;
-   margin-bottom: 50px;
+   margin-bottom: 36px;
    @include max-breakpoint("md") {
-      font-size: 1.5rem;
-      line-height: 28px;
-      margin-bottom: 30px;
+      font-size: 1.25rem;
+      margin-bottom: 28px;
    }
    @include max-breakpoint("s") {
+      font-size: 1.125rem;
       margin-bottom: 20px;
    }
 }
 .service-list-block__image-wrapper {
+   display: none;
    flex-shrink: 0;
-   border-radius: 30px;
+   overflow: hidden;
+   border-radius: $radius-md;
    position: relative;
-   width: 600px;
+   width: 560px;
    height: auto;
    aspect-ratio: 4 / 3;
    @include max-breakpoint("md") {
-      width: 450px;
+      width: 420px;
    }
    @include max-breakpoint("820px") {
       width: 100%;
    }
    @include max-breakpoint("s") {
-      border-radius: 20px;
+      border-radius: $radius-sm;
    }
 }
 .service-list-block__image {
@@ -87,121 +103,94 @@
    border-radius: inherit;
 }
 .service-list-block__bottom-container {
-   margin-top: 80px;
-   --width: 554px;
+   margin-top: 64px;
    display: grid;
-   grid-template-columns: repeat(2, var(--width));
-   justify-content: center;
-   gap: 40px;
+   grid-template-columns: repeat(4, minmax(0, 1fr));
+   gap: 16px;
    @include max-breakpoint("md") {
       margin-top: 40px;
-      --width: 430px;
-      gap: 30px;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
    }
-   @include max-breakpoint("sm") {
-      @include flex-layout(column, center, none, none);
+   @include max-breakpoint("s") {
+      grid-template-columns: minmax(0, 1fr);
+      gap: 12px;
    }
 }
 .service-list-block__card {
    position: relative;
-   width: var(--width);
-   height: 241.544px;
-   border-radius: 30px;
+   min-height: 340px;
+   border-radius: $radius-md;
+   background-color: $neutral;
    @include max-breakpoint("md") {
-      height: 180px;
-   }
-   @include max-breakpoint("sm") {
-      width: calc(100% - 100px);
-      height: 241.544px;
+      min-height: 280px;
    }
    @include max-breakpoint("s") {
-      border-radius: 20px;
-      width: 100%;
-      height: 155px;
+      min-height: 0px;
+      border-radius: $radius-sm;
    }
 }
-.service-list-block__card:nth-child(even) {
-   background: linear-gradient(to left, #4acc3866 40%, #399f2c99 60%, #37992a);
+.service-list-block__card:nth-child(1) {
+   background-color: $sun;
 }
-.service-list-block__card:nth-child(odd) {
-   background: linear-gradient(to right, #4acc3866 40%, #399f2c99 60%, #37992a);
+.service-list-block__card:nth-child(2) {
+   background-color: $mint;
+}
+.service-list-block__card:nth-child(3) {
+   background-color: $rose;
 }
 .service-list-block__card-inner-wrapper {
-   position: absolute;
-   border-radius: 26px;
-   inset: 4px;
-   background-color: $secondary-tint;
-   padding: 20px 30px;
+   height: 100%;
+   padding: 32px;
    @include flex-layout(column, none, none, none);
    @include max-breakpoint("md") {
-      padding: 15px 25px;
-      inset: 3px;
-      border-radius: 27px;
+      padding: 28px;
    }
    @include max-breakpoint("s") {
-      padding: 10px 20px;
-      inset: 2px;
-      border-radius: 18px;
+      padding: 24px;
    }
 }
 .service-list-block__card-title {
    font-family: $font-montreal, sans-serif;
-   font-size: 1.625rem;
-   line-height: 34.57px;
+   font-size: 2rem;
+   line-height: 1.1;
    font-weight: 530;
+   letter-spacing: -0.02em;
    color: $primary;
-   padding-bottom: 10px;
-   border-bottom: 2px solid #37992a;
-   @include between-breakpoints("md", "lg") {
-      font-size: 1.1875rem;
-      line-height: 25.821px;
-   }
    @include max-breakpoint("s") {
-      font-size: 1rem;
-      line-height: 19.2px;
-      padding-bottom: 5px;
-      border-bottom: 1px solid #37992a;
+      font-size: 1.625rem;
    }
 }
 .service-list-block__card-text {
-   margin-top: 20px;
+   margin-top: 14px;
    font-family: $font-montreal, sans-serif;
-   font-size: 1.375rem;
-   line-height: 26.592px;
+   font-size: 1.0625rem;
+   line-height: 1.5;
    font-weight: 400;
-   @include between-breakpoints("md", "lg") {
-      font-size: 1rem;
-      line-height: 19.2px;
-   }
-   @include max-breakpoint("sm") {
-      font-size: 1.8rem;
-      line-height: 34.56px;
-   }
-   @include max-breakpoint("s") {
-      font-size: 0.875rem;
-      line-height: 16.2px;
-   }
+   color: $primary;
 }
 .service-list-block__card-list {
    margin-top: auto;
+   padding-top: 28px;
    list-style: none;
-   @include flex-layout(row, none, none, 12px);
+   @include flex-layout(row, none, none, 8px);
+   flex-wrap: wrap;
+   @include max-breakpoint("s") {
+      padding-top: 20px;
+   }
 }
 .service-list-block__card-list-item {
+   padding: 7px 14px;
+   border-radius: $radius-pill;
+   background-color: rgba(255, 253, 249, 0.7);
    font-family: $font-montreal, sans-serif;
-   font-size: 1rem;
-   line-height: 19.2px;
+   font-size: 0.875rem;
+   line-height: 1.2;
    font-weight: 530;
-   @include flex-layout(row, none, none, 5px);
-   @include between-breakpoints("md", "lg") {
-      font-size: 0.875rem;
-      line-height: 16.2px;
-   }
-   @include max-breakpoint("s") {
-      font-size: clamp(0.5rem, 2vw, 0.7rem);
-      line-height: 15px;
-   }
+   color: $primary;
+}
+.service-list-block__card:nth-child(4) .service-list-block__card-list-item {
+   background-color: $secodary-accent;
 }
 .service-list-block__card-list-dot {
-   flex-shrink: 0;
+   display: none;
 }
